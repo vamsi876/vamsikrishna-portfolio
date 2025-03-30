@@ -67,7 +67,8 @@ const portfolioInfo = {
     frameworks: ["React", "Node.js", "Express", "Next.js", "FastAPI"],
     databases: ["MongoDB", "PostgreSQL", "MySQL", "Redis"],
     tools: ["Git", "Docker", "AWS", "Azure", "Power BI"],
-    concepts: ["Machine Learning", "Deep Learning", "NLP", "RESTful APIs", "Microservices"]
+    concepts: ["Machine Learning", "Deep Learning", "NLP", "RESTful APIs", "Microservices"],
+    cloud_ai: ["Azure OpenAI", "Azure Cognitive Services", "Azure Bot Service", "Azure Functions", "Azure App Service", "Azure DevOps"]
   },
   contact: {
     email: "vamsikrishna.kollipara@indstate.edu",
@@ -139,7 +140,8 @@ const ChatBot: React.FC = () => {
       return `${portfolioInfo.name}'s key skills include:
       - Languages: ${portfolioInfo.skills.languages.join(', ')}
       - Frameworks: ${portfolioInfo.skills.frameworks.join(', ')}
-      - Databases: ${portfolioInfo.skills.databases.join(', ')}`;
+      - Databases: ${portfolioInfo.skills.databases.join(', ')}
+      - Cloud & AI: ${portfolioInfo.skills.cloud_ai.join(', ')}`;
     }
 
     // Contact

@@ -96,8 +96,8 @@ const Resume: React.FC = () => {
 
   const skills = {
     languages: ["Python", "TypeScript", "Node.js", "JavaScript", "SQL"],
-    ai_ml: ["NLP", "RAG systems", "LlamaIndex", "OpenAI", "LangChain", "LangGraph"],
-    databases_cloud: ["PostgreSQL", "Redis", "PineCone", "AWS", "Docker", "CI/CD"],
+    ai_ml: ["NLP", "RAG systems", "LlamaIndex", "OpenAI", "LangChain", "LangGraph", "Azure OpenAI", "Azure Cognitive Services", "Azure Bot Service"],
+    databases_cloud: ["PostgreSQL", "Redis", "PineCone", "AWS", "Azure", "Azure Functions", "Azure App Service", "Azure DevOps", "Docker", "CI/CD"],
     asset_orchestration: ["Temporal", "Model Context Protocol (MCP)", "Power Automate"],
     web_frontend: ["React.js", "Next.js", "Express.js"],
     knowledge_retrieval: ["Multi-vector retrieval", "hybrid lexical-semantic search"],

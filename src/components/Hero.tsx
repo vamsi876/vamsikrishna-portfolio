@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
           </h1>
           
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium text-foreground/80 mt-4 text-balance max-w-3xl mx-auto opacity-0 animate-fade-in animation-delay-300">
-            Graduate Research Assistant & AI Engineer at Indiana State University
+            Graduate Assistant at Indiana State University
           </h2>
           
           <p className="max-w-xl mx-auto text-muted-foreground opacity-0 animate-fade-in animation-delay-400">

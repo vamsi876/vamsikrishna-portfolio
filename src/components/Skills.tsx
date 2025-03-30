@@ -20,7 +20,10 @@ const Skills: React.FC = () => {
         "LangChain",
         "LangGraph",
         "Deep Learning",
-        "Machine Learning"
+        "Machine Learning",
+        "Azure OpenAI",
+        "Azure Cognitive Services",
+        "Azure Bot Service"
       ]
     },
     {
@@ -31,6 +34,10 @@ const Skills: React.FC = () => {
         "Redis",
         "PineCone",
         "AWS",
+        "Azure",
+        "Azure Functions",
+        "Azure App Service",
+        "Azure DevOps",
         "Docker",
         "CI/CD"
       ]
