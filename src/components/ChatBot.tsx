@@ -9,95 +9,103 @@ interface Message {
 
 const portfolioInfo = {
   name: "Vamsi Krishna Kollipara",
+  role: "AI Engineer",
   education: {
     masters: {
       degree: "Master of Science in Computer Science",
       school: "Indiana State University",
-      location: "Terre Haute, Indiana",
-      date: "2023 - Present",
-      gpa: "4.0/4.0",
-      coursework: "Advanced Database Systems, Machine Learning, Deep Learning, Natural Language Processing"
+      location: "Terre Haute, IN",
+      date: "Aug 2023 - Present",
+      gpa: "3.8/4.0",
+      coursework: "Cloud Computing, Artificial Intelligence, Data Visualization, Research (Machine Learning), Database Management Systems, Web Programming, Operating Systems"
     },
     bachelors: {
-      degree: "Bachelor of Technology in Computer Science",
-      school: "Sagi Ramakrishnam Raju Engineering College",
-      location: "Bhimavaram, India",
-      date: "2019 - 2023",
-      gpa: "8.9/10.0",
-      coursework: "Data Structures, Algorithms, Operating Systems, Database Management Systems"
+      degree: "Bachelor's in Electronics and Communication Engineering",
+      school: "Vel Tech Rangarajan Dr.Sagunthala R&D Institute of Science and Technology",
+      location: "Chennai, India",
+      date: "June 2018 - May 2022",
+      gpa: "9.01/10.0",
+      coursework: "Deep Learning, Machine Learning, Major Project (Raspberry pi, ML), Minor Project (Esp32, LoRa), Python, C Programming, Java, Technical Communication, Design Thinking"
     }
   },
   experience: [
     {
       title: "Graduate Research & Teaching Assistant",
       company: "Indiana State University",
-      location: "Terre Haute, Indiana",
+      location: "Terre Haute, IN",
       date: "Aug 2023 - Present",
       achievements: [
-        "Developing an automated grading system using LLMs and RAG techniques",
-        "Implementing voice AI chatbots for enhanced student interaction",
-        "Assisting professors in course development and student evaluation"
+        "Developed a voice AI chatbot leveraging LLMs, RAG, and retrieval systems to assist students with university policies and deadlines",
+        "Engineered multi-channel AI automation (voice, email, and chat) for student queries",
+        "Designed intelligent escalation systems that analyze conversations and route students to human advisors",
+        "Implemented LlamaParser-based document parsing for automated policy and academic document retrieval",
+        "Built an AI-powered grading automation system, cutting grading time by 80%",
+        "Developed a graph-based conversation memory system (Zep AI) to enhance chatbot contextual retention"
       ]
     },
     {
       title: "Data Analyst",
-      company: "Cognizant",
+      company: "Cognizant Technology Solutions",
       location: "Hyderabad, India",
-      date: "Jan 2023 - Jul 2023",
+      date: "Jul 2022 - Jul 2023",
       achievements: [
-        "Developed data pipelines and ETL processes",
-        "Created interactive dashboards using Power BI",
-        "Optimized database queries for better performance"
+        "Optimized data processing pipelines for 1M+ records, improving system efficiency by 25%",
+        "Integrated AI-driven data retrieval mechanisms for operational analytics",
+        "Automated data transformation workflows, cutting manual effort by 40%",
+        "Designed PostgreSQL and Redis-backed customer data architectures"
       ]
     },
     {
       title: "Data Analyst Intern",
-      company: "Cognizant",
-      location: "Remote",
-      date: "Aug 2022 - Dec 2022",
+      company: "Cognizant Technology Solutions",
+      location: "Hyderabad, India",
+      date: "Jan 2022 - May 2022",
       achievements: [
-        "Analyzed large datasets using SQL and Python",
-        "Created data visualization reports",
-        "Participated in agile development processes"
+        "Developed ETL processes using Informatica PowerCenter, ensuring high-accuracy data processing",
+        "Created integrated storage analytics dashboards in Power BI for real-time system monitoring",
+        "Worked with distributed storage environments, improving data integration efficiency"
       ]
     }
   ],
   skills: {
-    languages: ["Python", "JavaScript", "TypeScript", "SQL", "Java"],
-    frameworks: ["React", "Node.js", "Express", "Next.js", "FastAPI"],
-    databases: ["MongoDB", "PostgreSQL", "MySQL", "Redis"],
-    tools: ["Git", "Docker", "AWS", "Azure", "Power BI"],
-    concepts: ["Machine Learning", "Deep Learning", "NLP", "RESTful APIs", "Microservices"],
-    cloud_ai: ["Azure OpenAI", "Azure Cognitive Services", "Azure Bot Service", "Azure Functions", "Azure App Service", "Azure DevOps"]
+    languages: ["Python", "TypeScript", "Node.js", "JavaScript", "SQL"],
+    ai_ml: ["NLP", "RAG systems", "LlamaIndex", "OpenAI", "LangChain", "LangGraph", "Azure OpenAI", "Azure Cognitive Services", "Azure Bot Service"],
+    databases_cloud: ["PostgreSQL", "Redis", "PineCone", "AWS", "Azure", "Azure Functions", "Azure App Service", "Azure DevOps", "Docker", "CI/CD"],
+    asset_orchestration: ["Temporal", "Model Context Protocol (MCP)", "Power Automate"],
+    web_frontend: ["React.js", "Next.js", "Express.js"],
+    knowledge_retrieval: ["Multi-vector retrieval", "hybrid lexical-semantic search"],
+    development_tools: ["Git", "WindiStiff", "Cursor IDE", "VS Code"]
   },
   contact: {
-    email: "vamsikrishna.kollipara@indstate.edu",
-    linkedin: "linkedin.com/in/vamsikrishnakollipara",
-    github: "github.com/vamsikrishnareddybevara"
+    email: "kolliparavamsikrishna80@gmail.com",
+    phone: "+1 (812) 223-8818",
+    location: "San Francisco, CA",
+    linkedin: "linkedin.com/in/vamsikollipara",
+    github: "github.com/vamsi876"
   },
   publications: [
     {
-      title: "Enhancing Student Learning through AI-Powered Automated Grading Systems",
-      conference: "International Conference on Education Technology",
-      date: "2024",
-      location: "Virtual Conference",
-      isbn: "978-0-7695-7147-5"
+      title: "A New Paradigm of Smart Embedded System for Elder and Physically Challenged Person Using Raspberry Pi",
+      conference: "12th International Conference on Science and Innovative Engineering",
+      location: "Chennai, India",
+      date: "Jul 2022",
+      isbn: "978-93-87288-22-1"
     }
   ],
   certifications: [
     {
-      name: "Full Stack Developer",
-      issuer: "Cognizant",
-      date: "2023",
-      link: "https://credentials.cognizant.com/123456"
+      title: "Certified Full Stack Developer with Cloud for Web and Mobile",
+      issuer: "Hero Vired",
+      date: "2024",
+      link: "https://drive.google.com/file/d/1XHJQeDRELVtPedEsi7hsDT3Wka8rxrnL/view"
     }
   ],
   openSource: [
     {
-      name: "WebWeaver",
-      description: "A web development framework for building scalable applications",
-      date: "2023",
-      link: "https://github.com/vamsikrishnareddybevara/webweaver"
+      project: "WebWeaver",
+      date: "Sept 2024",
+      description: "Co-developed WebWeaver, a Python library for browser automation and web scraping, published on PyPI",
+      link: "https://github.com/RedBlackWeb/WebWeaver"
     }
   ]
 };
@@ -139,15 +147,20 @@ const ChatBot: React.FC = () => {
     if (input.includes('skill') || input.includes('technology') || input.includes('tech stack')) {
       return `${portfolioInfo.name}'s key skills include:
       - Languages: ${portfolioInfo.skills.languages.join(', ')}
-      - Frameworks: ${portfolioInfo.skills.frameworks.join(', ')}
-      - Databases: ${portfolioInfo.skills.databases.join(', ')}
-      - Cloud & AI: ${portfolioInfo.skills.cloud_ai.join(', ')}`;
+      - AI/ML: ${portfolioInfo.skills.ai_ml.join(', ')}
+      - Databases: ${portfolioInfo.skills.databases_cloud.join(', ')}
+      - Asset Orchestration: ${portfolioInfo.skills.asset_orchestration.join(', ')}
+      - Web Frontend: ${portfolioInfo.skills.web_frontend.join(', ')}
+      - Knowledge Retrieval: ${portfolioInfo.skills.knowledge_retrieval.join(', ')}
+      - Development Tools: ${portfolioInfo.skills.development_tools.join(', ')}`;
     }
 
     // Contact
     if (input.includes('contact') || input.includes('email') || input.includes('reach')) {
       return `You can contact ${portfolioInfo.name} at:
       - Email: ${portfolioInfo.contact.email}
+      - Phone: ${portfolioInfo.contact.phone}
+      - Location: ${portfolioInfo.contact.location}
       - LinkedIn: ${portfolioInfo.contact.linkedin}
       - GitHub: ${portfolioInfo.contact.github}`;
     }
@@ -161,13 +174,13 @@ const ChatBot: React.FC = () => {
     // Open Source
     if (input.includes('open source') || input.includes('github') || input.includes('contribution')) {
       const project = portfolioInfo.openSource[0];
-      return `${portfolioInfo.name} created ${project.name}: ${project.description}. Check it out at ${project.link}`;
+      return `${portfolioInfo.name} created ${project.project}: ${project.description}. Check it out at ${project.link}`;
     }
 
     // Certifications
     if (input.includes('certification') || input.includes('certificate')) {
       const cert = portfolioInfo.certifications[0];
-      return `${portfolioInfo.name} is a certified ${cert.name} by ${cert.issuer} (${cert.date})`;
+      return `${portfolioInfo.name} is a certified ${cert.title} by ${cert.issuer} (${cert.date})`;
     }
 
     // Default response
