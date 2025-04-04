@@ -22,7 +22,7 @@ A modern, responsive portfolio website built with cutting-edge web technologies.
 ### Installation
 ```sh
 # Step 1: Clone the repository
-git clone <YOUR_GIT_URL>
+git clone https://github.com/vamsi876/vamsikrishna-portfolio.git
 
 # Step 2: Navigate to the project directory
 cd vamsikrishna-portfolio
