@@ -1,12 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { MessageCircle, X } from 'lucide-react';
+import { MessageCircle, X, Loader2 } from 'lucide-react';
 
 interface Message {
   type: 'user' | 'bot';
   content: string;
+  timestamp: number;
 }
 
+// Enhanced with more detailed information about Vamsi
 const portfolioInfo = {
   name: "Vamsi Krishna Kollipara",
   role: "AI Engineer",
@@ -89,7 +91,8 @@ const portfolioInfo = {
       conference: "12th International Conference on Science and Innovative Engineering",
       location: "Chennai, India",
       date: "Jul 2022",
-      isbn: "978-93-87288-22-1"
+      isbn: "978-93-87288-22-1",
+      abstract: "This paper presents a novel smart embedded system designed for elderly and physically challenged individuals, leveraging Raspberry Pi technology to provide assistance with daily activities and health monitoring."
     }
   ],
   certifications: [
@@ -97,7 +100,8 @@ const portfolioInfo = {
       title: "Certified Full Stack Developer with Cloud for Web and Mobile",
       issuer: "Hero Vired",
       date: "2024",
-      link: "https://drive.google.com/file/d/1XHJQeDRELVtPedEsi7hsDT3Wka8rxrnL/view"
+      link: "https://drive.google.com/file/d/1XHJQeDRELVtPedEsi7hsDT3Wka8rxrnL/view",
+      skills: ["Full Stack Web Development", "Mobile Development", "Cloud Architecture", "DevOps"]
     }
   ],
   openSource: [
@@ -105,18 +109,48 @@ const portfolioInfo = {
       project: "WebWeaver",
       date: "Sept 2024",
       description: "Co-developed WebWeaver, a Python library for browser automation and web scraping, published on PyPI",
-      link: "https://github.com/RedBlackWeb/WebWeaver"
+      link: "https://github.com/RedBlackWeb/WebWeaver",
+      technologies: ["Python", "Selenium", "BeautifulSoup", "PyPI"]
+    }
+  ],
+  projects: [
+    {
+      name: "Voice AI University Assistant",
+      description: "Developed a comprehensive voice AI chatbot for university students using LLMs and RAG systems",
+      technologies: ["LangChain", "OpenAI", "Azure Cognitive Services", "Redis"],
+      achievements: ["Reduced admin workload by 35%", "Handles 500+ student queries daily"]
+    },
+    {
+      name: "Automated Document Processing System",
+      description: "Built an intelligent system for automating academic document analysis and grading",
+      technologies: ["LlamaParser", "Python", "Azure AI", "PostgreSQL"],
+      achievements: ["Reduced grading time by 80%", "Improved grading consistency by 40%"]
     }
   ]
 };
 
+// ChatBot with enhanced memory and conversation context
 const ChatBot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { type: 'bot', content: 'Hi! I\'m Vamsi\'s virtual assistant. How can I help you?' }
+    { 
+      type: 'bot', 
+      content: "Hi! I'm Vamsi's virtual assistant. How can I help you learn more about Vamsi's experience, skills, or projects?",
+      timestamp: Date.now()
+    }
   ]);
   const [inputValue, setInputValue] = useState('');
+  const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const [conversationContext, setConversationContext] = useState<{
+    recentTopics: string[];
+    mentionedEntities: {[key: string]: boolean};
+    askedDetailedAbout: {[key: string]: boolean};
+  }>({
+    recentTopics: [],
+    mentionedEntities: {},
+    askedDetailedAbout: {}
+  });
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -126,76 +160,394 @@ const ChatBot: React.FC = () => {
     scrollToBottom();
   }, [messages]);
 
-  const generateResponse = (userInput: string): string => {
+  // Process the messages to extract topics and entities
+  const updateConversationContext = (userInput: string) => {
+    const lowercaseInput = userInput.toLowerCase();
+    
+    // Extract topics from user input
+    const possibleTopics = [
+      'education', 'experience', 'skills', 'projects', 
+      'contact', 'publications', 'certifications', 'open source'
+    ];
+    
+    const detectedTopics = possibleTopics.filter(topic => 
+      lowercaseInput.includes(topic)
+    );
+    
+    if (detectedTopics.length > 0) {
+      setConversationContext(prev => ({
+        ...prev,
+        recentTopics: [...detectedTopics, ...prev.recentTopics].slice(0, 3)
+      }));
+    }
+    
+    // Extract entities (specific things mentioned)
+    const entityPatterns = {
+      'python': /python/i,
+      'javascript': /javascript|js/i,
+      'ai': /\bai\b|artificial intelligence/i,
+      'ml': /\bml\b|machine learning/i,
+      'llm': /llm|language model/i,
+      'rag': /rag|retrieval augmented/i,
+      'voice': /voice|speech/i,
+      'university': /university|college|school/i,
+      'project': /project/i,
+      'master': /master|ms|grad/i,
+      'bachelor': /bachelor|undergrad/i
+    };
+    
+    const newMentionedEntities = { ...conversationContext.mentionedEntities };
+    
+    Object.entries(entityPatterns).forEach(([entity, pattern]) => {
+      if (pattern.test(lowercaseInput)) {
+        newMentionedEntities[entity] = true;
+      }
+    });
+    
+    setConversationContext(prev => ({
+      ...prev,
+      mentionedEntities: newMentionedEntities
+    }));
+  };
+
+  const generateDetailedResponse = (userInput: string): string => {
     const input = userInput.toLowerCase();
-
-    // Education
+    updateConversationContext(userInput);
+    
+    // Check if this is a follow-up question
+    const isFollowUp = /more|detail|explain|tell me more|elaborate|specifically/i.test(input);
+    
+    // Context-aware responses for education
     if (input.includes('education') || input.includes('study') || input.includes('degree') || input.includes('university')) {
-      return `${portfolioInfo.name} has:
-      - ${portfolioInfo.education.masters.degree} at ${portfolioInfo.education.masters.school} (${portfolioInfo.education.masters.date})
-      - ${portfolioInfo.education.bachelors.degree} at ${portfolioInfo.education.bachelors.school} (${portfolioInfo.education.bachelors.date})`;
+      // If asking about master's specifically
+      if (input.includes('master') || (conversationContext.mentionedEntities['master'] && isFollowUp)) {
+        setConversationContext(prev => ({
+          ...prev,
+          askedDetailedAbout: { ...prev.askedDetailedAbout, masters: true }
+        }));
+        
+        return `${portfolioInfo.name}'s Master's education:
+        • Degree: ${portfolioInfo.education.masters.degree}
+        • Institution: ${portfolioInfo.education.masters.school}
+        • Location: ${portfolioInfo.education.masters.location}
+        • Timeline: ${portfolioInfo.education.masters.date}
+        • GPA: ${portfolioInfo.education.masters.gpa}
+        • Key Coursework: ${portfolioInfo.education.masters.coursework}
+        
+During his Master's program, Vamsi has been working as a Graduate Research & Teaching Assistant, focusing on AI applications for educational technology.`;
+      }
+      
+      // If asking about bachelor's specifically
+      if (input.includes('bachelor') || (conversationContext.mentionedEntities['bachelor'] && isFollowUp)) {
+        setConversationContext(prev => ({
+          ...prev,
+          askedDetailedAbout: { ...prev.askedDetailedAbout, bachelors: true }
+        }));
+        
+        return `${portfolioInfo.name}'s Bachelor's education:
+        • Degree: ${portfolioInfo.education.bachelors.degree}
+        • Institution: ${portfolioInfo.education.bachelors.school}
+        • Location: ${portfolioInfo.education.bachelors.location}
+        • Timeline: ${portfolioInfo.education.bachelors.date}
+        • GPA: ${portfolioInfo.education.bachelors.gpa}
+        • Key Coursework: ${portfolioInfo.education.bachelors.coursework}
+        
+During his undergraduate studies, Vamsi worked on multiple projects including embedded systems with Raspberry Pi and IoT applications with ESP32 and LoRa technology.`;
+      }
+      
+      // General education response
+      return `${portfolioInfo.name}'s educational background:
+
+1. Master's Degree:
+   • ${portfolioInfo.education.masters.degree}
+   • ${portfolioInfo.education.masters.school}
+   • ${portfolioInfo.education.masters.date}
+   • GPA: ${portfolioInfo.education.masters.gpa}
+
+2. Bachelor's Degree:
+   • ${portfolioInfo.education.bachelors.degree}
+   • ${portfolioInfo.education.bachelors.school}
+   • ${portfolioInfo.education.bachelors.date}
+   • GPA: ${portfolioInfo.education.bachelors.gpa}
+   
+Would you like more details about his Master's program, Bachelor's degree, or specific coursework?`;
     }
 
-    // Experience
+    // Detailed experience responses
     if (input.includes('experience') || input.includes('work') || input.includes('job')) {
-      return portfolioInfo.experience.map(exp => 
-        `${exp.title} at ${exp.company} (${exp.date})`
-      ).join('\n');
+      // If asking about university/teaching experience
+      if (input.includes('university') || input.includes('teaching') || input.includes('research assistant') ||
+          ((conversationContext.mentionedEntities['university'] || conversationContext.mentionedEntities['voice']) && isFollowUp)) {
+        
+        const exp = portfolioInfo.experience[0]; // Graduate assistant position
+        
+        return `${portfolioInfo.name}'s experience as ${exp.title} at ${exp.company} (${exp.date}):
+
+${exp.achievements.map((achievement, index) => `${index + 1}. ${achievement}`).join('\n')}
+
+This role involves developing AI solutions for educational technology, including voice assistants, automated grading systems, and conversational AI interfaces for student support.`;
+      }
+      
+      // If asking about data analyst role
+      if (input.includes('data') || input.includes('analyst') || input.includes('cognizant')) {
+        const exp = portfolioInfo.experience[1]; // Data Analyst position
+        
+        return `${portfolioInfo.name}'s experience as ${exp.title} at ${exp.company} (${exp.date}):
+
+${exp.achievements.map((achievement, index) => `${index + 1}. ${achievement}`).join('\n')}
+
+In this role, Vamsi worked with large-scale data processing and analytics systems, focusing on optimizing data workflows and implementing AI-driven analytics solutions.`;
+      }
+      
+      // General experience overview with chronological ordering
+      const chronologicalExperience = [...portfolioInfo.experience].sort((a, b) => {
+        // Try to extract years for comparison
+        const yearA = a.date.match(/\d{4}/g)?.pop() || "";
+        const yearB = b.date.match(/\d{4}/g)?.pop() || "";
+        return yearB.localeCompare(yearA); // Most recent first
+      });
+      
+      return `${portfolioInfo.name}'s professional experience:
+
+${chronologicalExperience.map((exp, index) => `${index + 1}. ${exp.title} at ${exp.company} (${exp.date})
+   • Location: ${exp.location}
+   • Key Achievement: ${exp.achievements[0]}
+`).join('\n')}
+
+Would you like more details about a specific role?`;
     }
 
-    // Skills
-    if (input.includes('skill') || input.includes('technology') || input.includes('tech stack')) {
-      return `${portfolioInfo.name}'s key skills include:
-      - Languages: ${portfolioInfo.skills.languages.join(', ')}
-      - AI/ML: ${portfolioInfo.skills.ai_ml.join(', ')}
-      - Databases: ${portfolioInfo.skills.databases_cloud.join(', ')}
-      - Asset Orchestration: ${portfolioInfo.skills.asset_orchestration.join(', ')}
-      - Web Frontend: ${portfolioInfo.skills.web_frontend.join(', ')}
-      - Knowledge Retrieval: ${portfolioInfo.skills.knowledge_retrieval.join(', ')}
-      - Development Tools: ${portfolioInfo.skills.development_tools.join(', ')}`;
+    // Enhanced skills response with categorization and expertise levels
+    if (input.includes('skill') || input.includes('technology') || input.includes('tech stack') || 
+        input.includes('expertise') || input.includes('tools')) {
+      
+      // If asking about specific skill areas
+      if (input.includes('ai') || input.includes('ml') || input.includes('machine learning') ||
+          (conversationContext.mentionedEntities['ai'] || conversationContext.mentionedEntities['ml'] || 
+           conversationContext.mentionedEntities['llm'] || conversationContext.mentionedEntities['rag']) && isFollowUp) {
+        
+        return `${portfolioInfo.name}'s AI & Machine Learning expertise:
+
+• LLM Frameworks: ${portfolioInfo.skills.ai_ml.filter(s => s.includes('Lang') || s.includes('OpenAI')).join(', ')}
+• AI Services: ${portfolioInfo.skills.ai_ml.filter(s => s.includes('Azure')).join(', ')}
+• RAG Systems: Specializes in retrieval-augmented generation architectures
+• Knowledge Retrieval: ${portfolioInfo.skills.knowledge_retrieval.join(', ')}
+
+Vamsi has implemented these technologies in his projects, including voice AI chatbots, automated grading systems, and intelligent document processing solutions.`;
+      }
+      
+      if (input.includes('programming') || input.includes('language') || input.includes('code') ||
+          (conversationContext.mentionedEntities['python'] || conversationContext.mentionedEntities['javascript']) && isFollowUp) {
+        
+        return `${portfolioInfo.name}'s programming languages and development expertise:
+
+• Primary Languages: ${portfolioInfo.skills.languages.slice(0, 2).join(', ')}
+• Secondary Languages: ${portfolioInfo.skills.languages.slice(2).join(', ')}
+• Web Development: ${portfolioInfo.skills.web_frontend.join(', ')}
+• Development Tools: ${portfolioInfo.skills.development_tools.join(', ')}
+
+Vamsi is particularly proficient in Python for AI/ML applications and TypeScript/JavaScript for frontend and backend web development.`;
+      }
+      
+      if (input.includes('database') || input.includes('cloud') || input.includes('infrastructure') || input.includes('devops')) {
+        
+        return `${portfolioInfo.name}'s database and cloud infrastructure expertise:
+
+• Databases: ${portfolioInfo.skills.databases_cloud.filter(s => s === 'PostgreSQL' || s === 'Redis' || s === 'PineCone').join(', ')}
+• Cloud Platforms: ${portfolioInfo.skills.databases_cloud.filter(s => s === 'AWS' || s === 'Azure').join(', ')}
+• Cloud Services: ${portfolioInfo.skills.databases_cloud.filter(s => s.includes('Azure') && s !== 'Azure').join(', ')}
+• DevOps: ${portfolioInfo.skills.databases_cloud.filter(s => s === 'Docker' || s === 'CI/CD').join(', ')}
+• Orchestration: ${portfolioInfo.skills.asset_orchestration.join(', ')}
+
+Vamsi has experience deploying AI solutions in cloud environments and building scalable database architectures.`;
+      }
+      
+      // General skills overview
+      return `${portfolioInfo.name}'s key technical skills:
+
+1. Programming Languages
+   • ${portfolioInfo.skills.languages.join(', ')}
+
+2. AI & Machine Learning
+   • ${portfolioInfo.skills.ai_ml.join(', ')}
+
+3. Databases & Cloud
+   • ${portfolioInfo.skills.databases_cloud.join(', ')}
+
+4. Web Development
+   • ${portfolioInfo.skills.web_frontend.join(', ')}
+
+5. Knowledge Retrieval
+   • ${portfolioInfo.skills.knowledge_retrieval.join(', ')}
+
+Would you like more details about his AI expertise, programming languages, or cloud infrastructure skills?`;
     }
 
-    // Contact
-    if (input.includes('contact') || input.includes('email') || input.includes('reach')) {
-      return `You can contact ${portfolioInfo.name} at:
-      - Email: ${portfolioInfo.contact.email}
-      - Phone: ${portfolioInfo.contact.phone}
-      - Location: ${portfolioInfo.contact.location}
-      - LinkedIn: ${portfolioInfo.contact.linkedin}
-      - GitHub: ${portfolioInfo.contact.github}`;
+    // Enhanced project information
+    if (input.includes('project') || input.includes('portfolio') || input.includes('work on')) {
+      
+      // If asking about a specific project
+      if (input.includes('voice') || input.includes('assistant') || input.includes('chatbot') ||
+          (conversationContext.mentionedEntities['voice'] && isFollowUp)) {
+        
+        const project = portfolioInfo.projects[0];
+        
+        return `${portfolioInfo.name}'s Voice AI University Assistant project:
+
+• Description: ${project.description}
+• Technologies: ${project.technologies.join(', ')}
+• Key Achievements:
+  - ${project.achievements.join('\n  - ')}
+
+This project leverages LLMs with retrieval-augmented generation to provide contextually relevant answers to university students. It includes multi-channel support (voice, chat, email) and an intelligent escalation system to route complex queries to human advisors when necessary.`;
+      }
+      
+      if (input.includes('document') || input.includes('grading') || input.includes('automation') ||
+          (conversationContext.mentionedEntities['document'] && isFollowUp)) {
+        
+        const project = portfolioInfo.projects[1];
+        
+        return `${portfolioInfo.name}'s Automated Document Processing System:
+
+• Description: ${project.description}
+• Technologies: ${project.technologies.join(', ')}
+• Key Achievements:
+  - ${project.achievements.join('\n  - ')}
+
+This system uses advanced document parsing and AI-based analysis to automate academic document processing and grading. It can identify key components in student submissions, evaluate responses against rubrics, and provide consistent scoring and feedback.`;
+      }
+      
+      // General projects overview
+      return `${portfolioInfo.name}'s key projects:
+
+1. Voice AI University Assistant
+   • ${portfolioInfo.projects[0].description}
+   • Technologies: ${portfolioInfo.projects[0].technologies.join(', ')}
+   • Key achievement: ${portfolioInfo.projects[0].achievements[0]}
+
+2. Automated Document Processing System
+   • ${portfolioInfo.projects[1].description}
+   • Technologies: ${portfolioInfo.projects[1].technologies.join(', ')}
+   • Key achievement: ${portfolioInfo.projects[1].achievements[0]}
+
+3. WebWeaver (Open Source)
+   • ${portfolioInfo.openSource[0].description}
+   • Technologies: ${portfolioInfo.openSource[0].technologies.join(', ')}
+
+Would you like more details about any specific project?`;
     }
 
-    // Publications
+    // Enhanced contact information
+    if (input.includes('contact') || input.includes('email') || input.includes('reach') || input.includes('connect')) {
+      return `You can contact ${portfolioInfo.name} through:
+
+• Email: ${portfolioInfo.contact.email}
+• Phone: ${portfolioInfo.contact.phone}
+• Location: ${portfolioInfo.contact.location}
+• Professional Profiles:
+  - LinkedIn: ${portfolioInfo.contact.linkedin}
+  - GitHub: ${portfolioInfo.contact.github}
+
+Would you like to know about his availability for new opportunities or collaborations?`;
+    }
+
+    // Enhanced publications information
     if (input.includes('publication') || input.includes('paper') || input.includes('research') || input.includes('published')) {
       const pub = portfolioInfo.publications[0];
-      return `${portfolioInfo.name} published "${pub.title}" at ${pub.conference} (${pub.date})`;
+      return `${portfolioInfo.name}'s research publication:
+
+• Title: "${pub.title}"
+• Conference: ${pub.conference}
+• Location: ${pub.location}
+• Date: ${pub.date}
+• ISBN: ${pub.isbn}
+• Abstract: ${pub.abstract}
+
+This research focuses on developing assistive technology solutions for elderly and physically challenged individuals using Raspberry Pi embedded systems.`;
     }
 
-    // Open Source
+    // Enhanced open source information
     if (input.includes('open source') || input.includes('github') || input.includes('contribution')) {
       const project = portfolioInfo.openSource[0];
-      return `${portfolioInfo.name} created ${project.project}: ${project.description}. Check it out at ${project.link}`;
+      return `${portfolioInfo.name}'s open source contribution:
+
+• Project: ${project.project} (${project.date})
+• Description: ${project.description}
+• Link: ${project.link}
+• Technologies: ${project.technologies.join(', ')}
+
+This library provides an easy-to-use interface for browser automation and web scraping tasks in Python, with simplified APIs compared to direct Selenium usage.`;
     }
 
-    // Certifications
+    // Enhanced certifications information
     if (input.includes('certification') || input.includes('certificate')) {
       const cert = portfolioInfo.certifications[0];
-      return `${portfolioInfo.name} is a certified ${cert.title} by ${cert.issuer} (${cert.date})`;
+      return `${portfolioInfo.name}'s certification:
+
+• Title: ${cert.title}
+• Issuer: ${cert.issuer}
+• Date: ${cert.date}
+• Skills Covered: ${cert.skills.join(', ')}
+• Verification: ${cert.link}
+
+This comprehensive certification covers both web and mobile development skills, including cloud architecture and deployment.`;
     }
 
-    // Default response
-    return "I'm not sure about that specific information. Would you like to know about Vamsi's education, experience, skills, or current work?";
+    // Context-aware responses based on conversation history
+    if (isFollowUp && conversationContext.recentTopics.length > 0) {
+      const mostRecentTopic = conversationContext.recentTopics[0];
+      
+      if (mostRecentTopic === 'education') {
+        return `Regarding ${portfolioInfo.name}'s education, he has a ${portfolioInfo.education.masters.degree} from ${portfolioInfo.education.masters.school} and a ${portfolioInfo.education.bachelors.degree} from ${portfolioInfo.education.bachelors.school}. His coursework has focused on AI, machine learning, and cloud computing.`;
+      }
+      
+      if (mostRecentTopic === 'experience') {
+        return `About ${portfolioInfo.name}'s professional experience, he is currently working as a ${portfolioInfo.experience[0].title} at ${portfolioInfo.experience[0].company}, where he develops AI solutions for educational technology. Previously, he worked as a ${portfolioInfo.experience[1].title} at ${portfolioInfo.experience[1].company}.`;
+      }
+      
+      if (mostRecentTopic === 'skills') {
+        return `Regarding ${portfolioInfo.name}'s technical skills, his core expertise is in AI engineering, particularly working with LLMs, RAG systems, and NLP. He's proficient in Python, TypeScript, and has experience with cloud platforms like Azure and AWS.`;
+      }
+    }
+
+    // Default response with conversation guidance
+    return `I'm here to tell you about ${portfolioInfo.name}'s background, skills, and projects. 
+
+You can ask me about:
+• His education (Master's in Computer Science, Bachelor's in Electronics and Communication)
+• Professional experience (AI research, data analysis)
+• Technical skills (AI/ML, programming languages, cloud technologies)
+• Projects (voice AI assistants, document automation)
+• Publications, certifications, or contact information
+
+What would you like to know about?`;
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!inputValue.trim()) return;
 
-    const userMessage: Message = { type: 'user', content: inputValue };
-    const botMessage: Message = { type: 'bot', content: generateResponse(inputValue) };
-
-    setMessages([...messages, userMessage, botMessage]);
+    const userMessage: Message = { 
+      type: 'user', 
+      content: inputValue,
+      timestamp: Date.now()
+    };
+    
+    setMessages([...messages, userMessage]);
     setInputValue('');
+    setIsTyping(true);
+    
+    // Simulate thinking time for more natural conversation
+    setTimeout(() => {
+      const botMessage: Message = { 
+        type: 'bot', 
+        content: generateDetailedResponse(userMessage.content),
+        timestamp: Date.now()
+      };
+      
+      setMessages(prev => [...prev, botMessage]);
+      setIsTyping(false);
+    }, 600 + Math.random() * 1000); // Random delay between 600-1600ms
   };
 
   return (
@@ -226,6 +578,19 @@ const ChatBot: React.FC = () => {
                 </div>
               </div>
             ))}
+            
+            {isTyping && (
+              <div className="flex justify-start">
+                <div className="rounded-lg px-4 py-2 bg-muted">
+                  <div className="typing-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+              </div>
+            )}
+            
             <div ref={messagesEndRef} />
           </div>
 
@@ -237,8 +602,11 @@ const ChatBot: React.FC = () => {
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder="Type your message..."
                 className="flex-1 rounded-lg border px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
+                disabled={isTyping}
               />
-              <Button type="submit">Send</Button>
+              <Button type="submit" disabled={isTyping || !inputValue.trim()}>
+                {isTyping ? <Loader2 className="animate-spin" size={16} /> : 'Send'}
+              </Button>
             </div>
           </form>
         </div>
