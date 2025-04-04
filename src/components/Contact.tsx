@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -23,6 +23,20 @@ const Contact: React.FC = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isEmailJSInitialized, setIsEmailJSInitialized] = useState(false);
+
+  useEffect(() => {
+    // Initialize EmailJS
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    if (!publicKey) {
+      console.error('EmailJS public key is not defined');
+      toast.error('Email service configuration error. Please contact the site administrator.');
+      return;
+    }
+
+    emailjs.init(publicKey);
+    setIsEmailJSInitialized(true);
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -31,16 +45,51 @@ const Contact: React.FC = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const validateForm = () => {
+    const { name, email, subject, message } = formData;
+    if (!name.trim() || !email.trim() || !subject.trim() || !message.trim()) {
+      toast.error('Please fill in all fields');
+      return false;
+    }
+    if (!email.includes('@') || !email.includes('.')) {
+      toast.error('Please enter a valid email address');
+      return false;
+    }
+    return true;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+
+    if (!isEmailJSInitialized) {
+      toast.error('Email service is not ready. Please try again later.');
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error('Email service configuration is incomplete');
+      }
+
+      if (!formRef.current) {
+        throw new Error('Form reference is not available');
+      }
+
       const result = await emailjs.sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        formRef.current!,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        serviceId,
+        templateId,
+        formRef.current,
+        publicKey
       );
 
       if (result.text === 'OK') {
@@ -51,10 +100,12 @@ const Contact: React.FC = () => {
           subject: '',
           message: '',
         });
+      } else {
+        throw new Error(`Unexpected response: ${result.text}`);
       }
     } catch (error) {
-      console.error('Error sending email:', error);
-      toast.error('Failed to send message. Please try again.');
+      console.error('Email sending error:', error);
+      toast.error('Failed to send message. Please try again later.');
     } finally {
       setIsSubmitting(false);
     }
