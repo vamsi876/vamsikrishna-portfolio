@@ -81,7 +81,7 @@ const portfolioInfo = {
   contact: {
     email: "kolliparavamsikrishna80@gmail.com",
     phone: "+1 (812) 223-8818",
-    location: "San Francisco, CA",
+    location: "Greater Seattle Area",
     linkedin: "linkedin.com/in/vamsikollipara",
     github: "github.com/vamsi876"
   },

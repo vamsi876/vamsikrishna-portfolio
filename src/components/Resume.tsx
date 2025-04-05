@@ -136,7 +136,7 @@ const Resume: React.FC = () => {
               </div>
               <div className="flex items-center">
                 <MapPin className="mr-2" size={16} />
-                <span>San Francisco, CA</span>
+                <span>Greater Seattle Area</span>
               </div>
               <div className="flex items-center gap-4">
                 <a 
