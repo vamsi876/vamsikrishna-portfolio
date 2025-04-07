@@ -5,22 +5,27 @@ import PDFViewer from './PDFViewer';
 
 const Resume: React.FC = () => {
   const [showPDF, setShowPDF] = useState(false);
-  const pdfUrl = '/vamsi_krishna_MAQ.pdf';
+  const pdfUrl = '/vamsi_krishna.pdf';
+
+  const summary = {
+    title: "AI Engineer",
+    description: "AI Engineer with expertise in building AI-driven automation systems, specializing in voice AI, retrieval-augmented generation (RAG), and multi-channel customer interactions. Experience in developing end-to-end AI-powered customer service solutions using Python, TypeScript, Node.js, and PostgreSQL. Proven ability to optimize sales and support workflows through AI-driven automation, NLP, and scalable cloud solutions. Passionate about leveraging AI to drive measurable business outcomes and revenue growth."
+  };
 
   const education = [
     {
-      degree: "Master of Science in Computer Science",
+      degree: "Master's in Computer Science",
       school: "Indiana State University",
       location: "Terre Haute, IN",
       date: "Aug 2023 - Present",
-      gpa: "3.8/4.0",
+      gpa: "3.75/4.0",
       relevantCoursework: "Cloud Computing, Artificial Intelligence, Data Visualization, Research (Machine Learning), Database Management Systems, Web Programming, Operating Systems"
     },
     {
       degree: "Bachelor's in Electronics and Communication Engineering",
-      school: "Vel Tech Rangarajan Dr.Sagunthala R&D Institute of Science and Technology",
+      school: "Vel Tech",
       location: "Chennai, India",
-      date: "June 2018 - May 2022",
+      date: "July 2018 - May 2022",
       gpa: "9.01/10.0",
       relevantCoursework: "Deep Learning, Machine Learning, Major Project (Raspberry pi, ML), Minor Project (Esp32, LoRa), Python, C Programming, Java, Technical Communication, Design Thinking"
     }
@@ -33,12 +38,13 @@ const Resume: React.FC = () => {
       location: "Terre Haute, IN",
       date: "Aug 2023 - Present",
       achievements: [
-        "Developed a voice AI chatbot leveraging LLMs, RAG, and retrieval systems to assist students with university policies and deadlines",
-        "Engineered multi-channel AI automation (voice, email, and chat) for student queries",
-        "Designed intelligent escalation systems that analyze conversations and route students to human advisors",
+        "Developed a voice AI chatbot leveraging LLMs, RAG, and retrieval systems to assist students with university policies and deadlines, enhancing engagement",
+        "Engineered multi-channel AI automation (voice, email, and chat) for student queries, reducing manual intervention",
+        "Designed intelligent escalation systems that analyze conversations and route students to human advisors when necessary",
         "Implemented LlamaParser-based document parsing for automated policy and academic document retrieval",
-        "Built an AI-powered grading automation system, cutting grading time by 80%",
-        "Developed a graph-based conversation memory system (Zep AI) to enhance chatbot contextual retention"
+        "Built an AI-powered grading automation system, cutting grading time by 80% while maintaining accuracy",
+        "Developed a graph-based conversation memory system (Zep AI) to enhance chatbot contextual retention",
+        "Led lab sessions on operating systems, database management, and cloud infrastructure, assisting students in system design and implementation"
       ]
     },
     {
@@ -50,7 +56,7 @@ const Resume: React.FC = () => {
         "Optimized data processing pipelines for 1M+ records, improving system efficiency by 25%",
         "Integrated AI-driven data retrieval mechanisms for operational analytics",
         "Automated data transformation workflows, cutting manual effort by 40%",
-        "Designed PostgreSQL and Redis-backed customer data architectures"
+        "Designed PostgreSQL and Redis-backed customer data architectures to ensure high availability"
       ]
     },
     {
@@ -60,7 +66,7 @@ const Resume: React.FC = () => {
       date: "Jan 2022 - May 2022",
       achievements: [
         "Developed ETL processes using Informatica PowerCenter, ensuring high-accuracy data processing",
-        "Created integrated storage analytics dashboards in Power BI for real-time system monitoring",
+        "Created interactive storage analytics dashboards in Power BI for real-time system monitoring",
         "Worked with distributed storage environments, improving data integration efficiency"
       ]
     }
@@ -81,7 +87,7 @@ const Resume: React.FC = () => {
       conference: "12th International Conference on Science and Innovative Engineering",
       location: "Chennai, India",
       date: "Jul 2022",
-      isbn: "978-93-87288-22-1"
+      isbn: "978-93-81288-22-1"
     }
   ];
 
@@ -89,19 +95,77 @@ const Resume: React.FC = () => {
     {
       title: "Certified Full Stack Developer with Cloud for Web and Mobile",
       issuer: "Hero Vired",
-      date: "2024",
+      date: "Nov 2023",
       link: "https://drive.google.com/file/d/1XHJQeDRELVtPedEsi7hsDT3Wka8rxrnL/view"
     }
   ];
 
   const skills = {
-    languages: ["Python", "TypeScript", "Node.js", "JavaScript", "SQL"],
-    ai_ml: ["NLP", "RAG systems", "LlamaIndex", "OpenAI", "LangChain", "LangGraph", "Azure OpenAI", "Azure Cognitive Services", "Azure Bot Service"],
-    databases_cloud: ["PostgreSQL", "Redis", "PineCone", "AWS", "Azure", "Azure Functions", "Azure App Service", "Azure DevOps", "Docker", "CI/CD"],
-    asset_orchestration: ["Temporal", "Model Context Protocol (MCP)", "Power Automate"],
-    web_frontend: ["React.js", "Next.js", "Express.js"],
-    knowledge_retrieval: ["Multi-vector retrieval", "hybrid lexical-semantic search"],
-    development_tools: ["Git", "WindiStiff", "Cursor IDE", "VS Code"]
+    languages: ["Python", "TypeScript", "Node.js", "JavaScript", "SQL", "Java", "C"],
+    ai_ml: [
+      "NLP", 
+      "RAG Systems", 
+      "LlamaParser", 
+      "OpenAI", 
+      "LangChain", 
+      "LangGraph",
+      "Deep Learning",
+      "Machine Learning",
+      "Azure OpenAI",
+      "Azure Cognitive Services"
+    ],
+    voice_ai: [
+      "Twilio", 
+      "LiveKit", 
+      "OpenPhone", 
+      "Mastra", 
+      "Whisper",
+      "Voice AI Integration",
+      "Multi-channel Communication"
+    ],
+    databases_cloud: [
+      "PostgreSQL", 
+      "Redis", 
+      "Pinecone", 
+      "AWS", 
+      "Azure",
+      "Azure Functions",
+      "Azure App Service",
+      "Docker", 
+      "CI/CD",
+      "Cloud Architecture"
+    ],
+    agent_orchestration: [
+      "Temporal", 
+      "Model Context Protocol (MCP)", 
+      "Power Automate",
+      "Workflow Automation",
+      "Process Optimization"
+    ],
+    web_frontend: [
+      "React.js", 
+      "Next.js", 
+      "Express.js",
+      "Full Stack Development",
+      "Web Programming",
+      "API Development"
+    ],
+    knowledge_retrieval: [
+      "Multi-vector Retrieval", 
+      "Hybrid Lexical-Semantic Search",
+      "Document Parsing",
+      "Information Extraction"
+    ],
+    development_tools: [
+      "Git", 
+      "WindSurf", 
+      "Cursor IDE", 
+      "VS Code",
+      "Operating Systems",
+      "Data Visualization",
+      "Power BI",
+      "Informatica PowerCenter"
+    ]
   };
 
   return (
@@ -118,7 +182,7 @@ const Resume: React.FC = () => {
           {/* Header */}
           <div className="text-center mb-12">
             <div className="inline-block glass-dark px-4 py-2 rounded-full text-sm font-medium mb-4">
-              AI Engineer
+              {summary.title}
             </div>
             <h1 className="text-4xl font-bold mb-4 text-gradient">Vamsi Krishna Kollipara</h1>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
@@ -136,7 +200,7 @@ const Resume: React.FC = () => {
               </div>
               <div className="flex items-center">
                 <MapPin className="mr-2" size={16} />
-                <span>Greater Seattle Area</span>
+                <span>Greater Seattle Area (Ready to Relocate)</span>
               </div>
               <div className="flex items-center gap-4">
                 <a 
@@ -158,6 +222,14 @@ const Resume: React.FC = () => {
                   GitHub
                 </a>
               </div>
+            </div>
+          </div>
+
+          {/* Summary */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold mb-6">Summary</h2>
+            <div className="glass-dark p-4 rounded-lg">
+              <p className="text-sm">{summary.description}</p>
             </div>
           </div>
 
@@ -334,11 +406,10 @@ const Resume: React.FC = () => {
         {/* Download Button */}
         <div className="text-center mt-8">
           <Button size="lg" variant="outline" className="gap-2" asChild>
-            <a 
-              href="/vamsi_krishna_MAQ.pdf" 
-              download="Vamsi_Krishna_Resume.pdf"
-              target="_blank" 
-              rel="noopener noreferrer"
+            <a
+              href="/vamsi_krishna.pdf"
+              download
+              className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
             >
               <Download size={18} />
               Download PDF

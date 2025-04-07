@@ -29,34 +29,37 @@ const About: React.FC = () => {
               <h3 className="text-xl md:text-2xl font-bold">AI Engineer & Full Stack Developer</h3>
               <p className="text-sm md:text-base text-muted-foreground">
                 Graduate Research & Teaching Assistant at Indiana State University, specializing in AI/ML and Full Stack Development. 
-                Currently working on innovative AI solutions including voice chatbots, RAG systems, and automated grading systems.
+                Experienced in building AI-driven automation systems, voice AI solutions, and RAG systems. Currently developing innovative 
+                solutions including voice chatbots, automated grading systems, and multi-channel customer interaction platforms.
               </p>
             </div>
 
             <div className="space-y-3 md:space-y-4">
               <h4 className="text-lg md:text-xl font-semibold">Key Focus Areas</h4>
               <ul className="list-disc list-inside space-y-2 text-sm md:text-base text-muted-foreground">
-                <li>Developing AI-powered automation solutions using LLMs and RAG</li>
-                <li>Building scalable web applications with modern frameworks</li>
-                <li>Implementing efficient data processing pipelines</li>
+                <li>Developing AI-powered automation solutions using LLMs and RAG systems</li>
+                <li>Building scalable voice AI and multi-channel communication platforms</li>
+                <li>Implementing efficient data processing and retrieval systems</li>
                 <li>Creating intelligent conversation systems with contextual memory</li>
+                <li>Designing and deploying cloud-native applications</li>
               </ul>
             </div>
 
             <div className="space-y-3 md:space-y-4">
               <h4 className="text-lg md:text-xl font-semibold">Current Work</h4>
               <p className="text-sm md:text-base text-muted-foreground">
-                At Indiana State University, I'm developing a voice AI chatbot that assists students with university policies and deadlines. 
-                The system leverages LLMs, RAG, and retrieval systems for accurate and contextual responses.
+                At Indiana State University, I'm leading the development of a voice AI chatbot that assists students with university policies 
+                and deadlines. The system leverages LLMs, RAG, and advanced retrieval systems for accurate and contextual responses. 
+                Additionally, I'm working on an AI-powered grading automation system that has reduced grading time by 80% while maintaining accuracy.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button className="w-full sm:w-auto" asChild>
-                <a 
-                  href="/vamsi_krishna_MAQ.pdf" 
-                  download="Vamsi_Krishna_Resume.pdf"
-                  className="gap-2"
+                <a
+                  href="/vamsi_krishna.pdf"
+                  download
+                  className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
                 >
                   <Download size={16} />
                   Download Resume
@@ -101,6 +104,10 @@ const About: React.FC = () => {
             <div className="glass-dark p-4 md:p-6 rounded-xl space-y-4">
               <h4 className="text-lg md:text-xl font-semibold">Recent Achievements</h4>
               <div className="space-y-3">
+                <div>
+                  <h5 className="font-medium">AI Innovation</h5>
+                  <p className="text-xs md:text-sm text-muted-foreground">Developed a voice AI chatbot with 80% reduction in grading time</p>
+                </div>
                 <div>
                   <h5 className="font-medium">Open Source Contribution</h5>
                   <p className="text-xs md:text-sm text-muted-foreground">Co-developed WebWeaver, a Python library for web automation</p>
