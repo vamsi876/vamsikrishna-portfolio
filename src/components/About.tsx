@@ -7,16 +7,12 @@ const About: React.FC = () => {
   return (
     <section className="py-12 md:py-20 px-4 md:px-6 lg:px-24 bg-secondary/50" id="about">
       <div className="container mx-auto max-w-6xl">
-        <motion.div 
-          className="text-center mb-8 md:mb-16"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="text-2xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60">
-            About Me
-          </h2>
-        </motion.div>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            AI/ML Engineer with experience building scalable automation systems in voice AI, biomedical-inspired AI, and retrieval-augmented generation (RAG). Passionate about applying AI to solve complex healthcare and life sciences challenges.
+          </p>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
           <motion.div
@@ -26,31 +22,31 @@ const About: React.FC = () => {
             className="space-y-6"
           >
             <div className="space-y-3 md:space-y-4">
-              <h3 className="text-xl md:text-2xl font-bold">AI Engineer & Full Stack Developer</h3>
+              <h3 className="text-xl md:text-2xl font-bold">AI/ML Engineer</h3>
               <p className="text-sm md:text-base text-muted-foreground">
-                Graduate Research & Teaching Assistant at Indiana State University, specializing in AI/ML and Full Stack Development. 
-                Experienced in building AI-driven automation systems, voice AI solutions, and RAG systems. Currently developing innovative 
-                solutions including voice chatbots, automated grading systems, and multi-channel customer interaction platforms.
+                Graduate Research & Teaching Assistant at Indiana State University, specializing in AI/ML development. 
+                Proficient in developing end-to-end AI solutions using Python, PyTorch, TensorFlow, LangChain, and cloud-based
+                infrastructure. Skilled in deploying models across multi-modal interfaces and integrating with real-world data
+                sources.
               </p>
             </div>
 
             <div className="space-y-3 md:space-y-4">
               <h4 className="text-lg md:text-xl font-semibold">Key Focus Areas</h4>
               <ul className="list-disc list-inside space-y-2 text-sm md:text-base text-muted-foreground">
-                <li>Developing AI-powered automation solutions using LLMs and RAG systems</li>
-                <li>Building scalable voice AI and multi-channel communication platforms</li>
-                <li>Implementing efficient data processing and retrieval systems</li>
-                <li>Creating intelligent conversation systems with contextual memory</li>
-                <li>Designing and deploying cloud-native applications</li>
+                <li>Building scalable AI automation systems with RAG and LLMs</li>
+                <li>Developing biomedical-inspired AI solutions</li>
+                <li>Implementing efficient data processing and model deployment</li>
+                <li>Designing cloud-native AI applications</li>
               </ul>
             </div>
 
             <div className="space-y-3 md:space-y-4">
               <h4 className="text-lg md:text-xl font-semibold">Current Work</h4>
               <p className="text-sm md:text-base text-muted-foreground">
-                At Indiana State University, I'm leading the development of a voice AI chatbot that assists students with university policies 
-                and deadlines. The system leverages LLMs, RAG, and advanced retrieval systems for accurate and contextual responses. 
-                Additionally, I'm working on an AI-powered grading automation system that has reduced grading time by 80% while maintaining accuracy.
+                At Indiana State University, I'm focused on developing AI solutions that bridge healthcare and technology. 
+                This includes research in biomedical-inspired AI systems and implementing machine learning models for real-world applications. 
+                I also lead technical sessions on AI/ML fundamentals, deep learning, and cloud infrastructure deployment.
               </p>
             </div>
 
@@ -105,20 +101,40 @@ const About: React.FC = () => {
               <h4 className="text-lg md:text-xl font-semibold">Recent Achievements</h4>
               <div className="space-y-3">
                 <div>
-                  <h5 className="font-medium">AI Innovation</h5>
-                  <p className="text-xs md:text-sm text-muted-foreground">Developed a voice AI chatbot with 80% reduction in grading time</p>
-                </div>
-                <div>
                   <h5 className="font-medium">Open Source Contribution</h5>
-                  <p className="text-xs md:text-sm text-muted-foreground">Co-developed WebWeaver, a Python library for web automation</p>
+                  <a 
+                    href="https://github.com/RedBlackWeb/WebWeaver"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs md:text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
+                  >
+                    Co-developed WebWeaver, a Python library for web automation
+                    <ExternalLink size={12} />
+                  </a>
                 </div>
                 <div>
-                  <h5 className="font-medium">Research Publication</h5>
-                  <p className="text-xs md:text-sm text-muted-foreground">Published paper on Smart Embedded Systems at ICSI Conference</p>
+                  <h5 className="font-medium">Paper Publication</h5>
+                  <a 
+                    href="https://www.icsiconference.org/proceedings"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs md:text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
+                  >
+                    Published paper on Smart Embedded Systems at ICSI Conference
+                    <ExternalLink size={12} />
+                  </a>
                 </div>
                 <div>
                   <h5 className="font-medium">Professional Certification</h5>
-                  <p className="text-xs md:text-sm text-muted-foreground">Full Stack Developer with Cloud for Web and Mobile - Hero Vired</p>
+                  <a 
+                    href="https://drive.google.com/file/d/1XHJQeDRELVtPedEsi7hsDT3Wka8rxrnL/view"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs md:text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
+                  >
+                    Full Stack Developer with Cloud for Web and Mobile - Hero Vired
+                    <ExternalLink size={12} />
+                  </a>
                 </div>
               </div>
             </div>

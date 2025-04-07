@@ -19,13 +19,13 @@ const Projects: React.FC = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: 'Voice AI Chatbot for University',
-      description: 'A comprehensive AI chatbot system built with RAG and LLMs to assist students with university policies and deadlines. Features include multi-channel support (voice, email, chat) and intelligent human escalation.',
-      image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
-      tags: ['Python', 'LLM', 'RAG', 'NLP', 'LlamaParser'],
+      title: 'RAG-powered University Chatbot',
+      description: 'A context-aware chatbot using Retrieval Augmented Generation (RAG) with Pinecone vector database for efficient similarity search. Integrates OpenAI embeddings for document vectorization and GPT models for natural responses. Features include semantic search across university documents, real-time query processing, and context-aware responses.',
+      image: '/screenshots/rag-chatbot.avif',
+      tags: ['Python', 'OpenAI', 'Pinecone', 'RAG', 'FastAPI', 'Vector DB'],
       links: {
-        github: '#',
-        live: '#',
+        github: 'https://github.com/vamsi876/RAG-Chatbot',
+        live: 'https://rag-chatbot-demo.vercel.app',
       },
     },
     {
@@ -43,11 +43,33 @@ const Projects: React.FC = () => {
       id: 3,
       title: 'Voice Command Canvas',
       description: 'An interactive web application that allows users to navigate on canvas using voice commands. Built with React and TypeScript, it leverages the Web Speech API for voice recognition.',
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+      image: '/screenshots/voice-command-canvas.png',
       tags: ['TypeScript', 'React', 'Web Speech API', 'Canvas API', 'Tailwind CSS'],
       links: {
         github: 'https://github.com/vamsi876/voice-command-canvas',
         live: 'https://voice-command-canvas.vercel.app',
+      },
+    },
+    {
+      id: 4,
+      title: 'COVID-19 U.S. County Map Visualization',
+      description: 'An interactive map built using Python and Folium to visualize COVID-19 cases and deaths across U.S. counties in 2020. Features dynamically rendered circles proportional to case counts, hoverable tooltips with detailed stats, and state border outlines.',
+      image: 'https://raw.githubusercontent.com/vamsi876/us-covid-map-2020/main/TotalCovidMap-LN-superJumbo.png.webp',
+      tags: ['Python', 'Folium', 'Pandas', 'GeoJSON', 'Data Visualization'],
+      links: {
+        github: 'https://github.com/vamsi876/us-covid-map-2020',
+        live: 'https://vamsi876.github.io/us-covid-map-2020/',
+      },
+    },
+    {
+      id: 5,
+      title: 'Personal Portfolio Website',
+      description: 'A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. Features include a dynamic chatbot, contact form with email integration, and a showcase of projects and skills. Deployed on Vercel with continuous integration.',
+      image: '/screenshots/portfolio-homepage.png',
+      tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'EmailJS', 'Vercel'],
+      links: {
+        github: 'https://github.com/vamsi876/vamsikrishna-portfolio',
+        live: 'https://vamsikrishna.vercel.app',
       },
     },
   ];
@@ -74,12 +96,28 @@ const Projects: React.FC = () => {
             >
               <div className="md:w-1/2 overflow-hidden rounded-xl">
                 <div className="bg-muted rounded-xl h-64 md:h-80 overflow-hidden transition-transform duration-500 hover:scale-105">
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover"
-                    loading="lazy" 
-                  />
+                  {project.links.live ? (
+                    <a 
+                      href={project.links.live} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="block w-full h-full"
+                    >
+                      <img 
+                        src={project.image} 
+                        alt={project.title} 
+                        className="w-full h-full object-cover cursor-pointer"
+                        loading="lazy" 
+                      />
+                    </a>
+                  ) : (
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className="w-full h-full object-cover"
+                      loading="lazy" 
+                    />
+                  )}
                 </div>
               </div>
               

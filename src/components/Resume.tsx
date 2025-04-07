@@ -8,8 +8,8 @@ const Resume: React.FC = () => {
   const pdfUrl = '/vamsi_krishna.pdf';
 
   const summary = {
-    title: "AI Engineer",
-    description: "AI Engineer with expertise in building AI-driven automation systems, specializing in voice AI, retrieval-augmented generation (RAG), and multi-channel customer interactions. Experience in developing end-to-end AI-powered customer service solutions using Python, TypeScript, Node.js, and PostgreSQL. Proven ability to optimize sales and support workflows through AI-driven automation, NLP, and scalable cloud solutions. Passionate about leveraging AI to drive measurable business outcomes and revenue growth."
+    title: "AI/ML Engineer",
+    description: "AI/ML Engineer with experience building scalable automation systems in voice AI, biomedical-inspired AI, and retrieval-augmented generation (RAG). Proficient in developing end-to-end AI solutions using Python, PyTorch, TensorFlow, LangChain, and cloud-based infrastructure. Skilled in deploying models across multi-modal interfaces (voice, web, chat) and integrating with real-world data sources. Passionate about applying AI to solve complex healthcare and life sciences challenges through interdisciplinary collaboration and research."
   };
 
   const education = [
@@ -38,13 +38,13 @@ const Resume: React.FC = () => {
       location: "Terre Haute, IN",
       date: "Aug 2023 - Present",
       achievements: [
-        "Developed a voice AI chatbot leveraging LLMs, RAG, and retrieval systems to assist students with university policies and deadlines, enhancing engagement",
-        "Engineered multi-channel AI automation (voice, email, and chat) for student queries, reducing manual intervention",
-        "Designed intelligent escalation systems that analyze conversations and route students to human advisors when necessary",
-        "Implemented LlamaParser-based document parsing for automated policy and academic document retrieval",
-        "Built an AI-powered grading automation system, cutting grading time by 80% while maintaining accuracy",
-        "Developed a graph-based conversation memory system (Zep AI) to enhance chatbot contextual retention",
-        "Led lab sessions on operating systems, database management, and cloud infrastructure, assisting students in system design and implementation"
+        "Developed a university-wide RAG-based AI assistant for answering queries about policies, deadlines, and curriculum across 10,000+ scraped websites",
+        "Engineered a voice+web AI chatbot using LangChain and LlamaParser for dynamic student support and automated document retrieval",
+        "Created a grading automation system using Azure Text Analytics, Power Automate, and Excel—reducing grading time by 80%",
+        "Built a plagiarism detection tool using Azure Document Intelligence to validate originality of student submissions",
+        "Implemented dynamic attendance tracking using Microsoft Forms, Power BI, and cloud pipelines",
+        "Trained ML models using PyTorch, TensorFlow, and Scikit-learn for academic simulations (e.g., document classification, time series)",
+        "Led tutorials and advised students in AI, database management, and operating systems courses"
       ]
     },
     {
@@ -101,70 +101,59 @@ const Resume: React.FC = () => {
   ];
 
   const skills = {
-    languages: ["Python", "TypeScript", "Node.js", "JavaScript", "SQL", "Java", "C"],
-    ai_ml: [
-      "NLP", 
-      "RAG Systems", 
-      "LlamaParser", 
-      "OpenAI", 
-      "LangChain", 
+    languages_frameworks: [
+      "Python",
+      "TypeScript",
+      "Node.js",
+      "JavaScript",
+      "SQL"
+    ],
+    ai_ml_data_science: [
+      "PyTorch",
+      "TensorFlow",
+      "Scikit-learn",
+      "Transformers",
+      "Biomedical Text Mining",
+      "NLP",
+      "RAG",
+      "LangChain",
       "LangGraph",
-      "Deep Learning",
-      "Machine Learning",
-      "Azure OpenAI",
-      "Azure Cognitive Services"
+      "LlamaParser"
     ],
-    voice_ai: [
-      "Twilio", 
-      "LiveKit", 
-      "OpenPhone", 
-      "Mastra", 
-      "Whisper",
-      "Voice AI Integration",
-      "Multi-channel Communication"
+    biomedical_ai: [
+      "Azure ML",
+      "Document Intelligence",
+      "SciSpacy (familiar)",
+      "BioBERT (exploring)"
     ],
-    databases_cloud: [
-      "PostgreSQL", 
-      "Redis", 
-      "Pinecone", 
-      "AWS", 
-      "Azure",
-      "Azure Functions",
-      "Azure App Service",
-      "Docker", 
+    cloud_data_systems: [
+      "AWS",
+      "Docker",
+      "PostgreSQL",
+      "Redis",
+      "Pinecone",
       "CI/CD",
-      "Cloud Architecture"
+      "Power BI"
     ],
-    agent_orchestration: [
-      "Temporal", 
-      "Model Context Protocol (MCP)", 
+    automation_orchestration: [
+      "Temporal",
       "Power Automate",
-      "Workflow Automation",
-      "Process Optimization"
+      "Model Context Protocol (MCP)"
     ],
     web_frontend: [
-      "React.js", 
-      "Next.js", 
-      "Express.js",
-      "Full Stack Development",
-      "Web Programming",
-      "API Development"
+      "React.js",
+      "Next.js",
+      "Express.js"
     ],
-    knowledge_retrieval: [
-      "Multi-vector Retrieval", 
-      "Hybrid Lexical-Semantic Search",
-      "Document Parsing",
-      "Information Extraction"
+    search_retrieval: [
+      "Multi-vector search",
+      "Hybrid lexical-semantic search"
     ],
     development_tools: [
-      "Git", 
-      "WindSurf", 
-      "Cursor IDE", 
+      "Git",
       "VS Code",
-      "Operating Systems",
-      "Data Visualization",
-      "Power BI",
-      "Informatica PowerCenter"
+      "Cursor IDE",
+      "WindSurf"
     ]
   };
 
