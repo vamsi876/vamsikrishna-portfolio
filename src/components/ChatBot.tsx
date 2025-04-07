@@ -11,25 +11,8 @@ interface Message {
 // Enhanced with more detailed information about Vamsi
 const portfolioInfo = {
   name: "Vamsi Krishna Kollipara",
-  role: "AI Engineer",
-  education: {
-    masters: {
-      degree: "Master of Science in Computer Science",
-      school: "Indiana State University",
-      location: "Terre Haute, IN",
-      date: "Aug 2023 - Present",
-      gpa: "3.8/4.0",
-      coursework: "Cloud Computing, Artificial Intelligence, Data Visualization, Research (Machine Learning), Database Management Systems, Web Programming, Operating Systems"
-    },
-    bachelors: {
-      degree: "Bachelor's in Electronics and Communication Engineering",
-      school: "Vel Tech Rangarajan Dr.Sagunthala R&D Institute of Science and Technology",
-      location: "Chennai, India",
-      date: "June 2018 - May 2022",
-      gpa: "9.01/10.0",
-      coursework: "Deep Learning, Machine Learning, Major Project (Raspberry pi, ML), Minor Project (Esp32, LoRa), Python, C Programming, Java, Technical Communication, Design Thinking"
-    }
-  },
+  summary: "AI/ML Engineer with experience building scalable automation systems in voice AI, biomedical-inspired AI, and retrieval-augmented generation (RAG). Proficient in developing end-to-end AI solutions using Python, PyTorch, TensorFlow, LangChain, and cloud-based infrastructure. Skilled in deploying models across multi-modal interfaces (voice, web, chat) and integrating with real-world data sources. Passionate about applying AI to solve complex healthcare and life sciences challenges through interdisciplinary collaboration and research.",
+  
   experience: [
     {
       title: "Graduate Research & Teaching Assistant",
@@ -37,12 +20,13 @@ const portfolioInfo = {
       location: "Terre Haute, IN",
       date: "Aug 2023 - Present",
       achievements: [
-        "Developed a voice AI chatbot leveraging LLMs, RAG, and retrieval systems to assist students with university policies and deadlines",
-        "Engineered multi-channel AI automation (voice, email, and chat) for student queries",
-        "Designed intelligent escalation systems that analyze conversations and route students to human advisors",
-        "Implemented LlamaParser-based document parsing for automated policy and academic document retrieval",
-        "Built an AI-powered grading automation system, cutting grading time by 80%",
-        "Developed a graph-based conversation memory system (Zep AI) to enhance chatbot contextual retention"
+        "Developed a university-wide RAG-based AI assistant for answering queries about policies, deadlines, and curriculum across 10,000+ scraped websites",
+        "Engineered a voice+web AI chatbot using LangChain and LlamaParser for dynamic student support and automated document retrieval",
+        "Created a grading automation system using Azure Text Analytics, Power Automate, and Excel—reducing grading time by 80%",
+        "Built a plagiarism detection tool using Azure Document Intelligence to validate originality of student submissions",
+        "Implemented dynamic attendance tracking using Microsoft Forms, Power BI, and cloud pipelines",
+        "Trained ML models using PyTorch, TensorFlow, and Scikit-learn for academic simulations (e.g., document classification, time series)",
+        "Led tutorials and advised students in AI, database management, and operating systems courses"
       ]
     },
     {
@@ -54,7 +38,7 @@ const portfolioInfo = {
         "Optimized data processing pipelines for 1M+ records, improving system efficiency by 25%",
         "Integrated AI-driven data retrieval mechanisms for operational analytics",
         "Automated data transformation workflows, cutting manual effort by 40%",
-        "Designed PostgreSQL and Redis-backed customer data architectures"
+        "Designed PostgreSQL and Redis-backed customer data architectures to ensure high availability"
       ]
     },
     {
@@ -64,20 +48,82 @@ const portfolioInfo = {
       date: "Jan 2022 - May 2022",
       achievements: [
         "Developed ETL processes using Informatica PowerCenter, ensuring high-accuracy data processing",
-        "Created integrated storage analytics dashboards in Power BI for real-time system monitoring",
+        "Created interactive storage analytics dashboards in Power BI for real-time system monitoring",
         "Worked with distributed storage environments, improving data integration efficiency"
       ]
     }
   ],
+
   skills: {
-    languages: ["Python", "TypeScript", "Node.js", "JavaScript", "SQL"],
-    ai_ml: ["NLP", "RAG systems", "LlamaIndex", "OpenAI", "LangChain", "LangGraph", "Azure OpenAI", "Azure Cognitive Services", "Azure Bot Service"],
-    databases_cloud: ["PostgreSQL", "Redis", "PineCone", "AWS", "Azure", "Azure Functions", "Azure App Service", "Azure DevOps", "Docker", "CI/CD"],
-    asset_orchestration: ["Temporal", "Model Context Protocol (MCP)", "Power Automate"],
-    web_frontend: ["React.js", "Next.js", "Express.js"],
-    knowledge_retrieval: ["Multi-vector retrieval", "hybrid lexical-semantic search"],
-    development_tools: ["Git", "WindiStiff", "Cursor IDE", "VS Code"]
+    languages_frameworks: ["Python", "TypeScript", "Node.js", "JavaScript", "SQL"],
+    ai_ml_data_science: [
+      "PyTorch",
+      "TensorFlow",
+      "Scikit-learn",
+      "Transformers",
+      "Biomedical Text Mining",
+      "NLP",
+      "RAG",
+      "LangChain",
+      "LangGraph",
+      "LlamaParser"
+    ],
+    biomedical_ai: [
+      "Azure ML",
+      "Document Intelligence",
+      "SciSpacy (familiar)",
+      "BioBERT (exploring)"
+    ],
+    cloud_data_systems: [
+      "AWS",
+      "Docker",
+      "PostgreSQL",
+      "Redis",
+      "Pinecone",
+      "CI/CD",
+      "Power BI"
+    ],
+    automation_orchestration: [
+      "Temporal",
+      "Power Automate",
+      "Model Context Protocol (MCP)"
+    ],
+    web_frontend: [
+      "React.js",
+      "Next.js",
+      "Express.js"
+    ],
+    search_retrieval: [
+      "Multi-vector search",
+      "Hybrid lexical-semantic search"
+    ],
+    development_tools: [
+      "Git",
+      "VS Code",
+      "Cursor IDE",
+      "WindSurf"
+    ]
   },
+
+  education: [
+    {
+      degree: "Master's in Computer Science",
+      school: "Indiana State University",
+      location: "Terre Haute, IN",
+      date: "Aug 2023 - Present",
+      gpa: "3.75/4.0",
+      relevantCoursework: "Cloud Computing, Artificial Intelligence, Data Visualization, Research (Machine Learning), Database Management Systems, Web Programming, Operating Systems"
+    },
+    {
+      degree: "Bachelor's in Electronics and Communication Engineering",
+      school: "Vel Tech",
+      location: "Chennai, India",
+      date: "July 2018 - May 2022",
+      gpa: "9.01/10.0",
+      relevantCoursework: "Deep Learning, Machine Learning, Major Project (Raspberry pi, ML), Minor Project (Esp32, LoRa), Python, C Programming, Java, Technical Communication, Design Thinking"
+    }
+  ],
+
   contact: {
     email: "kolliparavamsikrishna80@gmail.com",
     phone: "+1 (812) 223-8818",
@@ -85,6 +131,7 @@ const portfolioInfo = {
     linkedin: "linkedin.com/in/vamsikollipara",
     github: "github.com/vamsi876"
   },
+
   publications: [
     {
       title: "A New Paradigm of Smart Embedded System for Elder and Physically Challenged Person Using Raspberry Pi",
@@ -95,6 +142,7 @@ const portfolioInfo = {
       abstract: "This paper presents a novel smart embedded system designed for elderly and physically challenged individuals, leveraging Raspberry Pi technology to provide assistance with daily activities and health monitoring."
     }
   ],
+
   certifications: [
     {
       title: "Certified Full Stack Developer with Cloud for Web and Mobile",
@@ -104,6 +152,7 @@ const portfolioInfo = {
       skills: ["Full Stack Web Development", "Mobile Development", "Cloud Architecture", "DevOps"]
     }
   ],
+
   openSource: [
     {
       project: "WebWeaver",
@@ -113,18 +162,25 @@ const portfolioInfo = {
       technologies: ["Python", "Selenium", "BeautifulSoup", "PyPI"]
     }
   ],
+
   projects: [
     {
-      name: "Voice AI University Assistant",
-      description: "Developed a comprehensive voice AI chatbot for university students using LLMs and RAG systems",
-      technologies: ["LangChain", "OpenAI", "Azure Cognitive Services", "Redis"],
-      achievements: ["Reduced admin workload by 35%", "Handles 500+ student queries daily"]
+      name: "RAG-powered University Chatbot",
+      description: "A context-aware chatbot using Retrieval Augmented Generation (RAG) with Pinecone vector database for efficient similarity search. Integrates OpenAI embeddings for document vectorization and GPT models for natural responses.",
+      technologies: ["Python", "OpenAI", "Pinecone", "RAG", "FastAPI", "Vector DB"],
+      achievements: ["Processes 10,000+ university documents", "Real-time query handling"]
     },
     {
-      name: "Automated Document Processing System",
-      description: "Built an intelligent system for automating academic document analysis and grading",
-      technologies: ["LlamaParser", "Python", "Azure AI", "PostgreSQL"],
-      achievements: ["Reduced grading time by 80%", "Improved grading consistency by 40%"]
+      name: "Voice Command Canvas",
+      description: "An interactive web application that allows users to navigate on canvas using voice commands",
+      technologies: ["TypeScript", "React", "Web Speech API", "Canvas API", "Tailwind CSS"],
+      achievements: ["Voice-controlled drawing", "Real-time speech recognition"]
+    },
+    {
+      name: "COVID-19 U.S. County Map",
+      description: "Interactive map visualization of COVID-19 cases across U.S. counties",
+      technologies: ["Python", "Folium", "Pandas", "GeoJSON"],
+      achievements: ["County-level visualization", "Dynamic data updates"]
     }
   ]
 };
@@ -226,13 +282,13 @@ const ChatBot: React.FC = () => {
           askedDetailedAbout: { ...prev.askedDetailedAbout, masters: true }
         }));
         
-        return `${portfolioInfo.name}'s Master's education:
-        • Degree: ${portfolioInfo.education.masters.degree}
-        • Institution: ${portfolioInfo.education.masters.school}
-        • Location: ${portfolioInfo.education.masters.location}
-        • Timeline: ${portfolioInfo.education.masters.date}
-        • GPA: ${portfolioInfo.education.masters.gpa}
-        • Key Coursework: ${portfolioInfo.education.masters.coursework}
+        return `Vamsi's Master's education:
+        • Degree: ${portfolioInfo.education[0].degree}
+        • Institution: ${portfolioInfo.education[0].school}
+        • Location: ${portfolioInfo.education[0].location}
+        • Timeline: ${portfolioInfo.education[0].date}
+        • GPA: ${portfolioInfo.education[0].gpa}
+        • Key Coursework: ${portfolioInfo.education[0].relevantCoursework}
         
 During his Master's program, Vamsi has been working as a Graduate Research & Teaching Assistant, focusing on AI applications for educational technology.`;
       }
@@ -244,31 +300,31 @@ During his Master's program, Vamsi has been working as a Graduate Research & Tea
           askedDetailedAbout: { ...prev.askedDetailedAbout, bachelors: true }
         }));
         
-        return `${portfolioInfo.name}'s Bachelor's education:
-        • Degree: ${portfolioInfo.education.bachelors.degree}
-        • Institution: ${portfolioInfo.education.bachelors.school}
-        • Location: ${portfolioInfo.education.bachelors.location}
-        • Timeline: ${portfolioInfo.education.bachelors.date}
-        • GPA: ${portfolioInfo.education.bachelors.gpa}
-        • Key Coursework: ${portfolioInfo.education.bachelors.coursework}
+        return `Vamsi's Bachelor's education:
+        • Degree: ${portfolioInfo.education[1].degree}
+        • Institution: ${portfolioInfo.education[1].school}
+        • Location: ${portfolioInfo.education[1].location}
+        • Timeline: ${portfolioInfo.education[1].date}
+        • GPA: ${portfolioInfo.education[1].gpa}
+        • Key Coursework: ${portfolioInfo.education[1].relevantCoursework}
         
 During his undergraduate studies, Vamsi worked on multiple projects including embedded systems with Raspberry Pi and IoT applications with ESP32 and LoRa technology.`;
       }
       
       // General education response
-      return `${portfolioInfo.name}'s educational background:
+      return `Vamsi's educational background:
 
 1. Master's Degree:
-   • ${portfolioInfo.education.masters.degree}
-   • ${portfolioInfo.education.masters.school}
-   • ${portfolioInfo.education.masters.date}
-   • GPA: ${portfolioInfo.education.masters.gpa}
+   • ${portfolioInfo.education[0].degree}
+   • ${portfolioInfo.education[0].school}
+   • ${portfolioInfo.education[0].date}
+   • GPA: ${portfolioInfo.education[0].gpa}
 
 2. Bachelor's Degree:
-   • ${portfolioInfo.education.bachelors.degree}
-   • ${portfolioInfo.education.bachelors.school}
-   • ${portfolioInfo.education.bachelors.date}
-   • GPA: ${portfolioInfo.education.bachelors.gpa}
+   • ${portfolioInfo.education[1].degree}
+   • ${portfolioInfo.education[1].school}
+   • ${portfolioInfo.education[1].date}
+   • GPA: ${portfolioInfo.education[1].gpa}
    
 Would you like more details about his Master's program, Bachelor's degree, or specific coursework?`;
     }
@@ -281,7 +337,7 @@ Would you like more details about his Master's program, Bachelor's degree, or sp
         
         const exp = portfolioInfo.experience[0]; // Graduate assistant position
         
-        return `${portfolioInfo.name}'s experience as ${exp.title} at ${exp.company} (${exp.date}):
+        return `Vamsi's experience as ${exp.title} at ${exp.company} (${exp.date}):
 
 ${exp.achievements.map((achievement, index) => `${index + 1}. ${achievement}`).join('\n')}
 
@@ -292,7 +348,7 @@ This role involves developing AI solutions for educational technology, including
       if (input.includes('data') || input.includes('analyst') || input.includes('cognizant')) {
         const exp = portfolioInfo.experience[1]; // Data Analyst position
         
-        return `${portfolioInfo.name}'s experience as ${exp.title} at ${exp.company} (${exp.date}):
+        return `Vamsi's experience as ${exp.title} at ${exp.company} (${exp.date}):
 
 ${exp.achievements.map((achievement, index) => `${index + 1}. ${achievement}`).join('\n')}
 
@@ -307,7 +363,7 @@ In this role, Vamsi worked with large-scale data processing and analytics system
         return yearB.localeCompare(yearA); // Most recent first
       });
       
-      return `${portfolioInfo.name}'s professional experience:
+      return `Vamsi's professional experience:
 
 ${chronologicalExperience.map((exp, index) => `${index + 1}. ${exp.title} at ${exp.company} (${exp.date})
    • Location: ${exp.location}
@@ -326,12 +382,12 @@ Would you like more details about a specific role?`;
           (conversationContext.mentionedEntities['ai'] || conversationContext.mentionedEntities['ml'] || 
            conversationContext.mentionedEntities['llm'] || conversationContext.mentionedEntities['rag']) && isFollowUp) {
         
-        return `${portfolioInfo.name}'s AI & Machine Learning expertise:
+        return `Vamsi's AI & Machine Learning expertise:
 
-• LLM Frameworks: ${portfolioInfo.skills.ai_ml.filter(s => s.includes('Lang') || s.includes('OpenAI')).join(', ')}
-• AI Services: ${portfolioInfo.skills.ai_ml.filter(s => s.includes('Azure')).join(', ')}
+• LLM Frameworks: ${portfolioInfo.skills.ai_ml_data_science.filter(s => s.includes('Lang') || s.includes('OpenAI')).join(', ')}
+• AI Services: ${portfolioInfo.skills.ai_ml_data_science.filter(s => s.includes('Azure')).join(', ')}
 • RAG Systems: Specializes in retrieval-augmented generation architectures
-• Knowledge Retrieval: ${portfolioInfo.skills.knowledge_retrieval.join(', ')}
+• Knowledge Retrieval: ${portfolioInfo.skills.search_retrieval.join(', ')}
 
 Vamsi has implemented these technologies in his projects, including voice AI chatbots, automated grading systems, and intelligent document processing solutions.`;
       }
@@ -339,10 +395,10 @@ Vamsi has implemented these technologies in his projects, including voice AI cha
       if (input.includes('programming') || input.includes('language') || input.includes('code') ||
           (conversationContext.mentionedEntities['python'] || conversationContext.mentionedEntities['javascript']) && isFollowUp) {
         
-        return `${portfolioInfo.name}'s programming languages and development expertise:
+        return `Vamsi's programming languages and development expertise:
 
-• Primary Languages: ${portfolioInfo.skills.languages.slice(0, 2).join(', ')}
-• Secondary Languages: ${portfolioInfo.skills.languages.slice(2).join(', ')}
+• Primary Languages: ${portfolioInfo.skills.languages_frameworks.slice(0, 2).join(', ')}
+• Secondary Languages: ${portfolioInfo.skills.languages_frameworks.slice(2).join(', ')}
 • Web Development: ${portfolioInfo.skills.web_frontend.join(', ')}
 • Development Tools: ${portfolioInfo.skills.development_tools.join(', ')}
 
@@ -351,34 +407,34 @@ Vamsi is particularly proficient in Python for AI/ML applications and TypeScript
       
       if (input.includes('database') || input.includes('cloud') || input.includes('infrastructure') || input.includes('devops')) {
         
-        return `${portfolioInfo.name}'s database and cloud infrastructure expertise:
+        return `Vamsi's database and cloud infrastructure expertise:
 
-• Databases: ${portfolioInfo.skills.databases_cloud.filter(s => s === 'PostgreSQL' || s === 'Redis' || s === 'PineCone').join(', ')}
-• Cloud Platforms: ${portfolioInfo.skills.databases_cloud.filter(s => s === 'AWS' || s === 'Azure').join(', ')}
-• Cloud Services: ${portfolioInfo.skills.databases_cloud.filter(s => s.includes('Azure') && s !== 'Azure').join(', ')}
-• DevOps: ${portfolioInfo.skills.databases_cloud.filter(s => s === 'Docker' || s === 'CI/CD').join(', ')}
-• Orchestration: ${portfolioInfo.skills.asset_orchestration.join(', ')}
+• Databases: ${portfolioInfo.skills.cloud_data_systems.filter(s => s === 'PostgreSQL' || s === 'Redis' || s === 'Pinecone').join(', ')}
+• Cloud Platforms: ${portfolioInfo.skills.cloud_data_systems.filter(s => s === 'AWS' || s === 'Docker').join(', ')}
+• Cloud Services: ${portfolioInfo.skills.cloud_data_systems.filter(s => s.includes('CI/CD') && s !== 'CI/CD').join(', ')}
+• DevOps: ${portfolioInfo.skills.cloud_data_systems.filter(s => s === 'Power BI').join(', ')}
+• Orchestration: ${portfolioInfo.skills.automation_orchestration.join(', ')}
 
 Vamsi has experience deploying AI solutions in cloud environments and building scalable database architectures.`;
       }
       
       // General skills overview
-      return `${portfolioInfo.name}'s key technical skills:
+      return `Vamsi's key technical skills:
 
 1. Programming Languages
-   • ${portfolioInfo.skills.languages.join(', ')}
+   • ${portfolioInfo.skills.languages_frameworks.join(', ')}
 
 2. AI & Machine Learning
-   • ${portfolioInfo.skills.ai_ml.join(', ')}
+   • ${portfolioInfo.skills.ai_ml_data_science.join(', ')}
 
 3. Databases & Cloud
-   • ${portfolioInfo.skills.databases_cloud.join(', ')}
+   • ${portfolioInfo.skills.cloud_data_systems.join(', ')}
 
 4. Web Development
    • ${portfolioInfo.skills.web_frontend.join(', ')}
 
 5. Knowledge Retrieval
-   • ${portfolioInfo.skills.knowledge_retrieval.join(', ')}
+   • ${portfolioInfo.skills.search_retrieval.join(', ')}
 
 Would you like more details about his AI expertise, programming languages, or cloud infrastructure skills?`;
     }
@@ -392,14 +448,16 @@ Would you like more details about his AI expertise, programming languages, or cl
         
         const project = portfolioInfo.projects[0];
         
-        return `${portfolioInfo.name}'s Voice AI University Assistant project:
+        return `Vamsi's RAG-powered University Chatbot project:
 
 • Description: ${project.description}
 • Technologies: ${project.technologies.join(', ')}
-• Key Achievements:
+• Achievements:
   - ${project.achievements.join('\n  - ')}
 
-This project leverages LLMs with retrieval-augmented generation to provide contextually relevant answers to university students. It includes multi-channel support (voice, chat, email) and an intelligent escalation system to route complex queries to human advisors when necessary.`;
+This project leverages RAG with Pinecone for efficient similarity search and OpenAI for natural responses. It integrates with real-world data sources and provides contextually relevant answers to university students.
+
+You can learn more about this project at: https://github.com/vamsi876/rag-university-chatbot`;
       }
       
       if (input.includes('document') || input.includes('grading') || input.includes('automation') ||
@@ -407,39 +465,65 @@ This project leverages LLMs with retrieval-augmented generation to provide conte
         
         const project = portfolioInfo.projects[1];
         
-        return `${portfolioInfo.name}'s Automated Document Processing System:
+        return `Vamsi's Voice Command Canvas project:
 
 • Description: ${project.description}
 • Technologies: ${project.technologies.join(', ')}
-• Key Achievements:
+• Achievements:
   - ${project.achievements.join('\n  - ')}
 
-This system uses advanced document parsing and AI-based analysis to automate academic document processing and grading. It can identify key components in student submissions, evaluate responses against rubrics, and provide consistent scoring and feedback.`;
+This project allows users to navigate on canvas using voice commands. It integrates with the Web Speech API and Canvas API for real-time speech recognition and voice-controlled drawing.
+
+Check out the project at: https://github.com/vamsi876/voice-command-canvas`;
+      }
+      
+      if (input.includes('covid') || input.includes('us') || input.includes('county') || input.includes('map')) {
+        const project = portfolioInfo.projects[2];
+        
+        return `Vamsi's COVID-19 U.S. County Map project:
+
+• Description: ${project.description}
+• Technologies: ${project.technologies.join(', ')}
+• Achievements:
+  - ${project.achievements.join('\n  - ')}
+
+This project provides an interactive visualization of COVID-19 cases across U.S. counties.
+
+View the project here: https://github.com/vamsi876/us-covid-map-2020`;
       }
       
       // General projects overview
-      return `${portfolioInfo.name}'s key projects:
+      return `Vamsi's key projects:
 
-1. Voice AI University Assistant
+1. RAG-powered University Chatbot
    • ${portfolioInfo.projects[0].description}
    • Technologies: ${portfolioInfo.projects[0].technologies.join(', ')}
    • Key achievement: ${portfolioInfo.projects[0].achievements[0]}
+   • Link: https://github.com/vamsi876/rag-university-chatbot
 
-2. Automated Document Processing System
+2. Voice Command Canvas
    • ${portfolioInfo.projects[1].description}
    • Technologies: ${portfolioInfo.projects[1].technologies.join(', ')}
    • Key achievement: ${portfolioInfo.projects[1].achievements[0]}
+   • Link: https://github.com/vamsi876/voice-command-canvas
 
-3. WebWeaver (Open Source)
+3. COVID-19 U.S. County Map
+   • ${portfolioInfo.projects[2].description}
+   • Technologies: ${portfolioInfo.projects[2].technologies.join(', ')}
+   • Key achievement: ${portfolioInfo.projects[2].achievements[0]}
+   • Link: https://github.com/vamsi876/us-covid-map-2020
+
+4. WebWeaver (Open Source)
    • ${portfolioInfo.openSource[0].description}
    • Technologies: ${portfolioInfo.openSource[0].technologies.join(', ')}
+   • Link: ${portfolioInfo.openSource[0].link}
 
-Would you like more details about any specific project?`;
+Would you like more details about any of these projects?`;
     }
 
     // Enhanced contact information
     if (input.includes('contact') || input.includes('email') || input.includes('reach') || input.includes('connect')) {
-      return `You can contact ${portfolioInfo.name} through:
+      return `You can contact Vamsi through:
 
 • Email: ${portfolioInfo.contact.email}
 • Phone: ${portfolioInfo.contact.phone}
@@ -454,7 +538,7 @@ Would you like to know about his availability for new opportunities or collabora
     // Enhanced publications information
     if (input.includes('publication') || input.includes('paper') || input.includes('research') || input.includes('published')) {
       const pub = portfolioInfo.publications[0];
-      return `${portfolioInfo.name}'s research publication:
+      return `Vamsi's research publication:
 
 • Title: "${pub.title}"
 • Conference: ${pub.conference}
@@ -469,28 +553,28 @@ This research focuses on developing assistive technology solutions for elderly a
     // Enhanced open source information
     if (input.includes('open source') || input.includes('github') || input.includes('contribution')) {
       const project = portfolioInfo.openSource[0];
-      return `${portfolioInfo.name}'s open source contribution:
+      return `Vamsi's open source contributions:
 
-• Project: ${project.project} (${project.date})
-• Description: ${project.description}
-• Link: ${project.link}
-• Technologies: ${project.technologies.join(', ')}
+• ${project.project}
+  - Description: ${project.description}
+  - Technologies: ${project.technologies.join(', ')}
+  - Link: ${project.link}
 
-This library provides an easy-to-use interface for browser automation and web scraping tasks in Python, with simplified APIs compared to direct Selenium usage.`;
+Would you like more details about his open source work?`;
     }
 
     // Enhanced certifications information
     if (input.includes('certification') || input.includes('certificate')) {
       const cert = portfolioInfo.certifications[0];
-      return `${portfolioInfo.name}'s certification:
+      return `Vamsi's certifications:
 
-• Title: ${cert.title}
-• Issuer: ${cert.issuer}
-• Date: ${cert.date}
-• Skills Covered: ${cert.skills.join(', ')}
-• Verification: ${cert.link}
+• ${cert.title}
+  - Issued by: ${cert.issuer}
+  - Date: ${cert.date}
+  - Skills: ${cert.skills.join(', ')}
+  - Link: ${cert.link}
 
-This comprehensive certification covers both web and mobile development skills, including cloud architecture and deployment.`;
+Would you like more details about his certification or specific skills?`;
     }
 
     // Context-aware responses based on conversation history
@@ -498,20 +582,20 @@ This comprehensive certification covers both web and mobile development skills, 
       const mostRecentTopic = conversationContext.recentTopics[0];
       
       if (mostRecentTopic === 'education') {
-        return `Regarding ${portfolioInfo.name}'s education, he has a ${portfolioInfo.education.masters.degree} from ${portfolioInfo.education.masters.school} and a ${portfolioInfo.education.bachelors.degree} from ${portfolioInfo.education.bachelors.school}. His coursework has focused on AI, machine learning, and cloud computing.`;
+        return `Regarding Vamsi's education, he has a ${portfolioInfo.education[0].degree} from ${portfolioInfo.education[0].school} and a ${portfolioInfo.education[1].degree} from ${portfolioInfo.education[1].school}. His coursework has focused on AI, machine learning, and cloud computing.`;
       }
       
       if (mostRecentTopic === 'experience') {
-        return `About ${portfolioInfo.name}'s professional experience, he is currently working as a ${portfolioInfo.experience[0].title} at ${portfolioInfo.experience[0].company}, where he develops AI solutions for educational technology. Previously, he worked as a ${portfolioInfo.experience[1].title} at ${portfolioInfo.experience[1].company}.`;
+        return `About Vamsi's professional experience, he is currently working as a ${portfolioInfo.experience[0].title} at ${portfolioInfo.experience[0].company}, where he develops AI solutions for educational technology. Previously, he worked as a ${portfolioInfo.experience[1].title} at ${portfolioInfo.experience[1].company}.`;
       }
       
       if (mostRecentTopic === 'skills') {
-        return `Regarding ${portfolioInfo.name}'s technical skills, his core expertise is in AI engineering, particularly working with LLMs, RAG systems, and NLP. He's proficient in Python, TypeScript, and has experience with cloud platforms like Azure and AWS.`;
+        return `Regarding Vamsi's technical skills, his core expertise is in AI engineering, particularly working with LLMs, RAG systems, and NLP. He's proficient in Python, TypeScript, and has experience with cloud platforms like AWS and Azure.`;
       }
     }
 
     // Default response with conversation guidance
-    return `I'm here to tell you about ${portfolioInfo.name}'s background, skills, and projects. 
+    return `I'm here to tell you about Vamsi's background, skills, and projects. 
 
 You can ask me about:
 • His education (Master's in Computer Science, Bachelor's in Electronics and Communication)
