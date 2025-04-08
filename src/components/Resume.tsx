@@ -14,12 +14,12 @@ const Resume: React.FC = () => {
 
   const education = [
     {
-      degree: "Master's in Computer Science",
+      degree: "Master of Science in Computer Science",
       school: "Indiana State University",
       location: "Terre Haute, IN",
       date: "Aug 2023 - Present",
       gpa: "3.75/4.0",
-      relevantCoursework: "Cloud Computing, Artificial Intelligence, Data Visualization, Research (Machine Learning), Database Management Systems, Web Programming, Operating Systems"
+      coursework: "Cloud Computing, Artificial Intelligence, Data Visualization, Research (Machine Learning), Database Management Systems, Web Programming, Operating Systems"
     },
     {
       degree: "Bachelor's in Electronics and Communication Engineering",
@@ -239,7 +239,7 @@ const Resume: React.FC = () => {
                   </div>
                   <div className="glass-dark p-4 rounded-lg">
                     <p className="text-sm text-muted-foreground mb-2">GPA: {edu.gpa}</p>
-                    <p className="text-sm">Relevant Coursework: {edu.relevantCoursework}</p>
+                    <p className="text-sm">Relevant Coursework: {edu.coursework}</p>
                   </div>
                 </div>
               ))}

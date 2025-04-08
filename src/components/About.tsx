@@ -86,8 +86,9 @@ const About: React.FC = () => {
               <div className="space-y-4">
                 <div>
                   <h5 className="font-medium">Master of Science in Computer Science</h5>
-                  <p className="text-xs md:text-sm text-muted-foreground">Indiana State University | GPA: 3.8/4.0</p>
+                  <p className="text-xs md:text-sm text-muted-foreground">Indiana State University - Terre Haute, IN</p>
                   <p className="text-xs md:text-sm text-muted-foreground">Aug 2023 - Present</p>
+                  <p className="text-xs md:text-sm text-muted-foreground">GPA: 3.75/4.0</p>
                 </div>
                 <div>
                   <h5 className="font-medium">Bachelor's in Electronics and Communication Engineering</h5>
