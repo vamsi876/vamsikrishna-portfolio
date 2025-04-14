@@ -722,7 +722,7 @@ What would you like to know about?`;
               <X size={24} className="text-gray-700" />
             ) : (
               <img 
-                src="/screenshots/bot.png" 
+                src="/images/webweaver.png" 
                 alt="Chat" 
                 className="w-14 h-14"
                 style={{ animation: 'floating 3s ease-in-out infinite' }}
