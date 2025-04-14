@@ -158,7 +158,7 @@ const portfolioInfo = {
     {
       project: "WebWeaver",
       date: "Sept 2024",
-      description: "Co-developed WebWeaver, a Python library for browser automation and web scraping, published on PyPI",
+      description: "WebWeaver is a Python package for crawling and extracting URLs from web pages. It provides an easy-to-use interface for crawling a single page or an entire site, while handling errors and incomplete URLs gracefully. All crawling functionality is encapsulated within the WebWeaver class.",
       link: "https://github.com/RedBlackWeb/WebWeaver",
       technologies: ["Python", "Selenium", "BeautifulSoup", "PyPI"]
     }
