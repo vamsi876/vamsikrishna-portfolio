@@ -32,7 +32,7 @@ const Projects: React.FC = () => {
       id: 2,
       title: 'WebWeaver',
       description: 'A Python library for browser automation and web scraping, published on PyPI. Features include URL extraction, site crawling with timeout control, and multi-threaded crawling capabilities. Built with Python and designed for efficient web data extraction.',
-      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+      image: '/images/webweaver.png',
       tags: ['Python', 'Web Scraping', 'Browser Automation', 'PyPI', 'Multi-threading'],
       links: {
         github: 'https://github.com/RedBlackWeb/WebWeaver',
