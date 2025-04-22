@@ -24,7 +24,7 @@ const Projects: React.FC = () => {
       image: '/screenshots/rag-chatbot.avif',
       tags: ['Python', 'OpenAI', 'Pinecone', 'RAG', 'FastAPI', 'Vector DB'],
       links: {
-        github: 'https://github.com/vamsi876/RAG-Chatbot',
+        github: 'https://github.com/vamsi876/ISU-End-to-End-Chatbot',
         live: 'https://rag-chatbot-demo.vercel.app',
       },
     },
