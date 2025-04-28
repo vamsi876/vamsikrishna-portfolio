@@ -1,18 +1,20 @@
 import React from 'react';
 import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import ChatBot from '@/components/ChatBot';
 import About from '@/components/About';
+import Background3D from '@/components/Background3D';
 
 const AboutPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main>
-        <About />
-      </main>
-      <Footer />
-      <ChatBot />
+    <div className="relative min-h-screen overflow-hidden">
+      <Background3D />
+      <div className="relative z-10">
+        <Header />
+        <main>
+          <About />
+        </main>
+        <ChatBot />
+      </div>
     </div>
   );
 };

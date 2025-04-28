@@ -120,7 +120,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section className="py-20 px-6 md:px-12 lg:px-24 bg-secondary/50" id="contact">
+    <section className="py-20 px-6 md:px-12 lg:px-24" id="contact">
       <div className="container mx-auto max-w-5xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>

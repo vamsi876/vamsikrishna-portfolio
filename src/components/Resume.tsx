@@ -395,7 +395,7 @@ const Resume: React.FC = () => {
         {/* Download Button */}
         <div className="text-center mt-8">
           <Button size="lg" variant="outline" className="gap-2" asChild>
-            <a
+            <a 
               href="/vamsi_krishna.pdf"
               download
               className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"

@@ -72,7 +72,7 @@ const Experience: React.FC = () => {
   };
 
   return (
-    <section className="py-20 px-6 md:px-12 lg:px-24 bg-secondary/50" id="experience">
+    <section className="py-20 px-6 md:px-12 lg:px-24" id="experience">
       <div className="container mx-auto max-w-5xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience</h2>

@@ -5,7 +5,7 @@ import { Download, ExternalLink } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
-    <section className="py-12 md:py-20 px-4 md:px-6 lg:px-24 bg-secondary/50" id="about">
+    <section className="py-12 md:py-20 px-4 md:px-6 lg:px-24" id="about">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
@@ -52,7 +52,7 @@ const About: React.FC = () => {
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button className="w-full sm:w-auto" asChild>
-                <a
+                <a 
                   href="/vamsi_krishna.pdf"
                   download
                   className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
