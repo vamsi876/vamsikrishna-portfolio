@@ -69,7 +69,7 @@ const Projects: React.FC = () => {
       tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'EmailJS', 'Vercel'],
       links: {
         github: 'https://github.com/vamsi876/vamsikrishna-portfolio',
-        live: 'https://vamsikrishna.vercel.app',
+        live: 'https://vamsikrishnakollipara.vercel.app',
       },
     },
   ];
