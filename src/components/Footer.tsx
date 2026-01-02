@@ -13,12 +13,6 @@ const Footer: React.FC = () => {
               © {currentYear} Vamsi Krishna Kollipara. All rights reserved.
             </p>
           </div>
-          
-          <div className="flex items-center">
-            <p className="text-sm text-muted-foreground flex items-center">
-              Designed & Built with <Brain className="h-3 w-3 mx-1 text-blue-500" /> by Vamsi Krishna
-            </p>
-          </div>
         </div>
       </div>
     </footer>

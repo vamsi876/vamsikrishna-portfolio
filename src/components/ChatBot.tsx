@@ -128,7 +128,7 @@ const portfolioInfo = {
   contact: {
     email: "kolliparavamsikrishna80@gmail.com",
     phone: "+1 (812) 223-8818",
-    location: "Greater Seattle Area",
+    location: "Terre Haute, Indiana (Ready to Relocate)",
     linkedin: "linkedin.com/in/vamsikollipara",
     github: "github.com/vamsi876"
   },

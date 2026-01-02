@@ -9,11 +9,11 @@ const AboutPage: React.FC = () => {
     <div className="relative min-h-screen overflow-hidden">
       <Background3D />
       <div className="relative z-10">
-        <Header />
-        <main>
-          <About />
-        </main>
-        <ChatBot />
+      <Header />
+      <main>
+        <About />
+      </main>
+      <ChatBot />
       </div>
     </div>
   );

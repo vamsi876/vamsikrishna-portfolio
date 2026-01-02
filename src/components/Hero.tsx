@@ -22,11 +22,11 @@ const Hero: React.FC = () => {
           </h1>
           
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium text-foreground/80 mt-4 text-balance max-w-3xl mx-auto opacity-0 animate-fade-in animation-delay-300">
-            Graduate Assistant at Indiana State University
+            AI Developer at AIDM
           </h2>
           
           <p className="max-w-xl mx-auto text-muted-foreground opacity-0 animate-fade-in animation-delay-400">
-            Developing innovative AI solutions with LLMs and RAG systems. Currently working on voice AI chatbots and automated grading systems while pursuing my Master's in Computer Science. Passionate about creating intelligent systems that enhance human capabilities.
+            Building secure, HIPAA-compliant healthcare web platforms with AI-powered features, RBAC authentication, and enterprise automations. Experienced in full-stack development, RAG systems, and scalable AI applications. Passionate about delivering production-ready solutions that enhance healthcare operations and support clinical workflows.
           </p>
           
           <div className="flex justify-center pt-4 opacity-0 animate-fade-in animation-delay-500">

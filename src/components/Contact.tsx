@@ -164,7 +164,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Location</p>
-                  <p className="font-medium">Greater Seattle Area</p>
+                  <p className="font-medium">Terre Haute, Indiana (Ready to Relocate)</p>
                 </div>
               </div>
             </div>

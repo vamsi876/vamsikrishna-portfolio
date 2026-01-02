@@ -10,12 +10,12 @@ const ContactPage: React.FC = () => {
     <div className="relative min-h-screen overflow-hidden">
       <Background3D />
       <div className="relative z-10">
-        <Header />
-        <main className="pt-24">
-          <Contact />
-        </main>
-        <Footer />
-        <ChatBot />
+      <Header />
+      <main className="pt-24">
+        <Contact />
+      </main>
+      <Footer />
+      <ChatBot />
       </div>
     </div>
   );

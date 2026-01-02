@@ -8,17 +8,17 @@ const Resume: React.FC = () => {
   const pdfUrl = '/vamsi_krishna.pdf';
 
   const summary = {
-    title: "AI/ML Engineer",
-    description: "AI/ML Engineer with experience building scalable automation systems in voice AI, biomedical-inspired AI, and retrieval-augmented generation (RAG). Proficient in developing end-to-end AI solutions using Python, PyTorch, TensorFlow, LangChain, and cloud-based infrastructure. Skilled in deploying models across multi-modal interfaces (voice, web, chat) and integrating with real-world data sources. Passionate about applying AI to solve complex healthcare and life sciences challenges through interdisciplinary collaboration and research."
+    title: "AI Developer",
+    description: "AI Developer and Computer Science graduate student with strong experience delivering production AI solutions across full-stack development, machine learning, and data engineering. At AIDM, built secure healthcare web platforms from scratch for organizations with 250 and 100+ employees, integrating AI features, RBAC authentication, enterprise automations, and EHR-integrated workflows to support clinical operations. Developed HIPAA- and SOC-compliant systems with high-security controls for sensitive healthcare data and enterprise communication using Azure Enterprise Applications + Microsoft Graph API. Previously engineered a RAG chatbot by crawling 40,000+ URLs and scraping 10,000+ websites, building end-to-end pipelines for cleaning, chunking, embeddings, and vector search to support 250+ users. Experienced in scalable deployments, ETL automation, and building reliable AI applications for real-world users."
   };
 
   const education = [
     {
-      degree: "Master of Science in Computer Science",
+      degree: "Masters in Computer Science",
       school: "Indiana State University",
       location: "Terre Haute, IN",
-      date: "Aug 2023 - Present",
-      gpa: "3.75/4.0",
+      date: "Aug 2023 - May 2025",
+      gpa: "3.66/4.0",
       coursework: "Cloud Computing, Artificial Intelligence, Data Visualization, Research (Machine Learning), Database Management Systems, Web Programming, Operating Systems"
     },
     {
@@ -33,41 +33,48 @@ const Resume: React.FC = () => {
 
   const experience = [
     {
+      title: "AI Developer",
+      company: "AIDM",
+      location: "Terre Haute, IN",
+      date: "Jul 2025 – Present",
+      achievements: [
+        "Developed full-stack healthcare web platforms from scratch, delivering secure, scalable employee portals used by 250 employees and 100+ employees across two client organizations",
+        "Built HIPAA- and SOC-compliant applications with high-security controls, including encryption, audit-friendly logging, secure PHI handling, and policy-based data governance",
+        "Implemented authentication, RBAC, and least-privilege access, ensuring secure user management and compliant data access across multi-role healthcare environments",
+        "Created an Azure Enterprise Application integrated with Microsoft Graph API to enable authentication, email automations, secure communications, and operational workflows across the organization",
+        "Delivered AI-powered features and automations, including RAG-based LLM assistants (cleaning, chunking, embeddings, vector search), workflow pipelines, monitoring/guardrails, and 20+ n8n + custom scripting automations for content scheduling, approvals, publishing, and reporting"
+      ]
+    },
+    {
       title: "Graduate Research & Teaching Assistant",
       company: "Indiana State University",
       location: "Terre Haute, IN",
-      date: "Aug 2023 - Present",
+      date: "Aug 2023 – May 2025",
       achievements: [
-        "Developed a university-wide RAG-based AI assistant for answering queries about policies, deadlines, and curriculum across 10,000+ scraped websites",
-        "Engineered a voice+web AI chatbot using LangChain and LlamaParser for dynamic student support and automated document retrieval",
-        "Created a grading automation system using Azure Text Analytics, Power Automate, and Excel—reducing grading time by 80%",
-        "Built a plagiarism detection tool using Azure Document Intelligence to validate originality of student submissions",
-        "Implemented dynamic attendance tracking using Microsoft Forms, Power BI, and cloud pipelines",
-        "Trained ML models using PyTorch, TensorFlow, and Scikit-learn for academic simulations (e.g., document classification, time series)",
-        "Led tutorials and advised students in AI, database management, and operating systems courses"
+        "Built a university RAG chatbot to answer queries on courses, deadlines, and policies by converting web content into a searchable knowledge base",
+        "Developed large-scale web crawling + scraping pipelines (40,000+ URLs, 10,000+ sites) to collect and structure university data for downstream NLP use",
+        "Created an end-to-end dataset creation + ETL workflow: extraction, validation, cleaning, deduplication, and normalization to ensure high-quality documents",
+        "Implemented document chunking, embedding/vectorization, and indexing to support fast semantic retrieval and accurate RAG-based responses for students and staff"
       ]
     },
     {
       title: "Data Analyst",
       company: "Cognizant Technology Solutions",
       location: "Hyderabad, India",
-      date: "Jul 2022 - Jul 2023",
+      date: "Jul 2022 – Jul 2023",
       achievements: [
-        "Optimized data processing pipelines for 1M+ records, improving system efficiency by 25%",
-        "Integrated AI-driven data retrieval mechanisms for operational analytics",
-        "Automated data transformation workflows, cutting manual effort by 40%",
-        "Designed PostgreSQL and Redis-backed customer data architectures to ensure high availability"
+        "Managed and optimized 5+ SQL databases, improving query performance by 30%, while collaborating with 3+ cross-functional teams to deliver reliable database operations and meet business data requirements",
+        "Executed 100+ monthly Python/SQL transformations and automated 20+ workflows, performing data quality checks across 1M+ records to reduce manual effort by 40% and improve system reliability by 25%"
       ]
     },
     {
       title: "Data Analyst Intern",
       company: "Cognizant Technology Solutions",
       location: "Hyderabad, India",
-      date: "Jan 2022 - May 2022",
+      date: "Jan 2022 – May 2022",
       achievements: [
-        "Developed ETL processes using Informatica PowerCenter, ensuring high-accuracy data processing",
-        "Created interactive storage analytics dashboards in Power BI for real-time system monitoring",
-        "Worked with distributed storage environments, improving data integration efficiency"
+        "Designed and maintained ETL pipelines using Informatica PowerCenter, ensuring accurate and efficient data extraction, transformation, and loading for enterprise reporting",
+        "Used SQL for querying and business reporting, and built 10+ Power BI dashboards and interactive reports to deliver actionable insights aligned with business objectives"
       ]
     }
   ];
@@ -101,59 +108,57 @@ const Resume: React.FC = () => {
   ];
 
   const skills = {
-    languages_frameworks: [
+    programming_languages: [
       "Python",
-      "TypeScript",
-      "Node.js",
+      "Java",
       "JavaScript",
-      "SQL"
+      "SQL",
+      "HTML",
+      "CSS"
     ],
-    ai_ml_data_science: [
-      "PyTorch",
-      "TensorFlow",
-      "Scikit-learn",
-      "Transformers",
-      "Biomedical Text Mining",
-      "NLP",
-      "RAG",
-      "LangChain",
-      "LangGraph",
-      "LlamaParser"
-    ],
-    biomedical_ai: [
-      "Azure ML",
-      "Document Intelligence",
-      "SciSpacy (familiar)",
-      "BioBERT (exploring)"
-    ],
-    cloud_data_systems: [
-      "AWS",
-      "Docker",
-      "PostgreSQL",
-      "Redis",
-      "Pinecone",
-      "CI/CD",
-      "Power BI"
-    ],
-    automation_orchestration: [
-      "Temporal",
-      "Power Automate",
-      "Model Context Protocol (MCP)"
-    ],
-    web_frontend: [
+    full_stack_development: [
       "React.js",
-      "Next.js",
-      "Express.js"
+      "Node.js",
+      "Express.js",
+      "REST APIs",
+      "API Development",
+      "Role-Based Access Control (RBAC)"
     ],
-    search_retrieval: [
-      "Multi-vector search",
-      "Hybrid lexical-semantic search"
+    ai_and_machine_learning: [
+      "TensorFlow",
+      "PyTorch",
+      "Hugging Face",
+      "LLM Applications",
+      "RAG",
+      "Prompt Engineering"
     ],
-    development_tools: [
+    databases_and_data_engineering: [
+      "PostgreSQL",
+      "MongoDB",
+      "Supabase",
+      "Pinecone",
+      "ETL",
+      "Data Cleaning",
+      "Data Modeling"
+    ],
+    cloud_devops_and_deployment: [
+      "AWS",
+      "Azure",
+      "Docker",
+      "CI/CD",
+      "Vercel"
+    ],
+    tools_automation_and_productivity: [
       "Git",
-      "VS Code",
-      "Cursor IDE",
-      "WindSurf"
+      "Postman",
+      "n8n",
+      "Make",
+      "Zapier",
+      "Power Automate",
+      "Cursor",
+      "Antigravity",
+      "Claude Code",
+      "Codex"
     ]
   };
 
@@ -189,7 +194,7 @@ const Resume: React.FC = () => {
               </div>
               <div className="flex items-center">
                 <MapPin className="mr-2" size={16} />
-                <span>Greater Seattle Area (Ready to Relocate)</span>
+                <span>Terre Haute, IN (Ready to Relocate)</span>
               </div>
               <div className="flex items-center gap-4">
                 <a 

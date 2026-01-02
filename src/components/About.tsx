@@ -10,7 +10,7 @@ const About: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            AI/ML Engineer with experience building scalable automation systems in voice AI, biomedical-inspired AI, and retrieval-augmented generation (RAG). Passionate about applying AI to solve complex healthcare and life sciences challenges.
+            AI Developer and Computer Science graduate student with strong experience delivering production AI solutions across full-stack development, machine learning, and data engineering. Experienced in building secure healthcare platforms, HIPAA-compliant systems, and scalable AI applications for real-world users.
           </p>
         </div>
 
@@ -22,31 +22,26 @@ const About: React.FC = () => {
             className="space-y-6"
           >
             <div className="space-y-3 md:space-y-4">
-              <h3 className="text-xl md:text-2xl font-bold">AI/ML Engineer</h3>
+              <h3 className="text-xl md:text-2xl font-bold">AI Developer</h3>
               <p className="text-sm md:text-base text-muted-foreground">
-                Graduate Research & Teaching Assistant at Indiana State University, specializing in AI/ML development. 
-                Proficient in developing end-to-end AI solutions using Python, PyTorch, TensorFlow, LangChain, and cloud-based
-                infrastructure. Skilled in deploying models across multi-modal interfaces and integrating with real-world data
-                sources.
+                AI Developer and Computer Science graduate student with strong experience delivering production AI solutions across full-stack development, machine learning, and data engineering. At AIDM, built secure healthcare web platforms from scratch for organizations with 250 and 100+ employees, integrating AI features, RBAC authentication, enterprise automations, and EHR-integrated workflows. Previously engineered a RAG chatbot by crawling 40,000+ URLs and scraping 10,000+ websites, building end-to-end pipelines for cleaning, chunking, embeddings, and vector search to support 250+ users.
               </p>
             </div>
 
             <div className="space-y-3 md:space-y-4">
               <h4 className="text-lg md:text-xl font-semibold">Key Focus Areas</h4>
               <ul className="list-disc list-inside space-y-2 text-sm md:text-base text-muted-foreground">
-                <li>Building scalable AI automation systems with RAG and LLMs</li>
-                <li>Developing biomedical-inspired AI solutions</li>
-                <li>Implementing efficient data processing and model deployment</li>
-                <li>Designing cloud-native AI applications</li>
+                <li>Building HIPAA- and SOC-compliant healthcare platforms with secure AI features</li>
+                <li>Developing full-stack web applications with RBAC and enterprise automations</li>
+                <li>Implementing RAG-based LLM assistants and vector search systems</li>
+                <li>Creating scalable ETL pipelines and data processing workflows</li>
               </ul>
             </div>
 
             <div className="space-y-3 md:space-y-4">
               <h4 className="text-lg md:text-xl font-semibold">Current Work</h4>
               <p className="text-sm md:text-base text-muted-foreground">
-                At Indiana State University, I'm focused on developing AI solutions that bridge healthcare and technology. 
-                This includes research in biomedical-inspired AI systems and implementing machine learning models for real-world applications. 
-                I also lead technical sessions on AI/ML fundamentals, deep learning, and cloud infrastructure deployment.
+                At AIDM, I'm developing full-stack healthcare web platforms from scratch, delivering secure, scalable employee portals used by 250+ employees across client organizations. I build HIPAA- and SOC-compliant applications with high-security controls, implement RBAC authentication, and create Azure Enterprise Applications integrated with Microsoft Graph API. I also deliver AI-powered features including RAG-based LLM assistants, workflow pipelines, and 20+ automation solutions for content scheduling, approvals, and reporting.
               </p>
             </div>
 
@@ -85,10 +80,10 @@ const About: React.FC = () => {
               <h4 className="text-lg md:text-xl font-semibold">Education</h4>
               <div className="space-y-4">
                 <div>
-                  <h5 className="font-medium">Master of Science in Computer Science</h5>
+                  <h5 className="font-medium">Masters in Computer Science</h5>
                   <p className="text-xs md:text-sm text-muted-foreground">Indiana State University - Terre Haute, IN</p>
-                  <p className="text-xs md:text-sm text-muted-foreground">Aug 2023 - Present</p>
-                  <p className="text-xs md:text-sm text-muted-foreground">GPA: 3.75/4.0</p>
+                  <p className="text-xs md:text-sm text-muted-foreground">Aug 2023 - May 2025</p>
+                  <p className="text-xs md:text-sm text-muted-foreground">GPA: 3.66/4.0</p>
                 </div>
                 <div>
                   <h5 className="font-medium">Bachelor's in Electronics and Communication Engineering</h5>
