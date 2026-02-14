@@ -1,4 +1,4 @@
-# Vamsikrishna Portfolio
+# Vamsi-krishna Portfolio
 
 ## Project Overview
 A modern, responsive portfolio website built with cutting-edge web technologies. This project showcases my skills and projects in an elegant and professional manner.
