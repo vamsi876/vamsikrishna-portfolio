@@ -23,17 +23,18 @@ const Experience: React.FC = () => {
   const jobs: Job[] = [
     {
       id: 'job1',
-      title: 'AI Developer',
-      company: 'AIDM',
-      location: 'Terre Haute, IN',
+      title: 'Full-Stack Developer',
+      company: 'AIDM — Software Consultancy',
+      location: 'Remote',
       startDate: 'Jul 2025',
       endDate: 'Present',
       description: [
-        'Developed full-stack healthcare web platforms from scratch, delivering secure, scalable employee portals used by 250 employees and 100+ employees across two client organizations.',
-        'Built HIPAA- and SOC-compliant applications with high-security controls, including encryption, audit-friendly logging, secure PHI handling, and policy-based data governance.',
-        'Implemented authentication, RBAC, and least-privilege access, ensuring secure user management and compliant data access across multi-role healthcare environments.',
-        'Created an Azure Enterprise Application integrated with Microsoft Graph API to enable authentication, email automations, secure communications, and operational workflows across the organization.',
-        'Delivered AI-powered features and automations, including RAG-based LLM assistants (cleaning, chunking, embeddings, vector search), workflow pipelines, monitoring/guardrails, and 20+ n8n + custom scripting automations for content scheduling, approvals, publishing, and reporting.',
+        'Built two healthcare web portals with Next.js (TypeScript), Node.js, GraphQL, and PostgreSQL, supporting multi-role access for clinical and administrative users; developed within a 6-person cross-functional team.',
+        'Implemented security controls aligned with HIPAA requirements — AES-256 encryption for PHI at rest, TLS in transit, role-based access control (RBAC) with minimum-necessary access, and audit logging for sensitive user actions.',
+        'Integrated Azure Active Directory with Microsoft Graph API for enterprise SSO, eliminating manual onboarding steps and automating email notification workflows across client organizations.',
+        'Built a healthcare-domain RAG assistant (LangChain, OpenAI API, Pinecone) with PHI-aware document filtering, MMR-based retrieval, automated fallback to deterministic responses, and structured per-request logging for compliance auditing.',
+        'Automated 5 internal approval workflows, reporting pipelines, and content publishing processes using n8n and Power Automate, eliminating ~10 hours/week of recurring manual effort.',
+        'Set up PR-based code review workflows and GitHub Actions CI/CD pipelines with automated linting and type-checking gates; added structured JSON logging across AI pipeline stages for per-request tracing.',
       ],
     },
     {
@@ -44,34 +45,31 @@ const Experience: React.FC = () => {
       startDate: 'Aug 2023',
       endDate: 'May 2025',
       description: [
-        'Built a university RAG chatbot to answer queries on courses, deadlines, and policies by converting web content into a searchable knowledge base.',
-        'Developed large-scale web crawling + scraping pipelines (40,000+ URLs, 10,000+ sites) to collect and structure university data for downstream NLP use.',
-        'Created an end-to-end dataset creation + ETL workflow: extraction, validation, cleaning, deduplication, and normalization to ensure high-quality documents.',
-        'Implemented document chunking, embedding/vectorization, and indexing to support fast semantic retrieval and accurate RAG-based responses for students and staff.',
+        'Developed and deployed a RAG chatbot on the university portal (LangChain, OpenAI API, Pinecone) to answer student queries on courses, deadlines, and academic policies; implemented configurable semantic retrieval with cosine similarity thresholds, chunk-overlap tuning, and vector indexing.',
+        'Built and open-sourced WebWeaver, a Python crawling library, and used it to ingest 40,000+ university URLs into a curated knowledge base of ~8,000 documents powering the RAG chatbot\'s semantic search.',
       ],
     },
     {
       id: 'job3',
-      title: 'Data Analyst',
+      title: 'Full-Stack Developer',
       company: 'Cognizant Technology Solutions',
       location: 'Hyderabad, India',
       startDate: 'Jul 2022',
       endDate: 'Jul 2023',
       description: [
-        'Managed and optimized 5+ SQL databases, improving query performance by 30%, while collaborating with 3+ cross-functional teams to deliver reliable database operations and meet business data requirements.',
-        'Executed 100+ monthly Python/SQL transformations and automated 20+ workflows, performing data quality checks across 1M+ records to reduce manual effort by 40% and improve system reliability by 25%.',
+        'Built and shipped React UI components and Express.js REST APIs for a client-facing logistics dashboard, delivering real-time shipment tracking and reporting features used by operations teams across multiple regions.',
+        'Optimized SQL queries on multi-million-row databases — reduced average execution time by 30% through composite indexing, join restructuring, and eliminating N+1 query patterns across backend services.',
       ],
     },
     {
       id: 'job4',
-      title: 'Data Analyst Intern',
+      title: 'Full-Stack Developer Intern',
       company: 'Cognizant Technology Solutions',
       location: 'Hyderabad, India',
       startDate: 'Jan 2022',
       endDate: 'May 2022',
       description: [
-        'Designed and maintained ETL pipelines using Informatica PowerCenter, ensuring accurate and efficient data extraction, transformation, and loading for enterprise reporting.',
-        'Used SQL for querying and business reporting, and built 10+ Power BI dashboards and interactive reports to deliver actionable insights aligned with business objectives.',
+        'Built frontend interfaces and integrated REST APIs for an internal reporting tool using JavaScript, HTML/CSS, and Node.js; developed SQL-driven dashboards delivering actionable insights to business stakeholders.',
       ],
     },
   ];
@@ -86,7 +84,7 @@ const Experience: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience</h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            My professional journey and work experience in AI engineering and data analysis.
+            My professional journey in full-stack development, from enterprise systems to open-source tools.
           </p>
         </div>
 

@@ -22,11 +22,11 @@ const Hero: React.FC = () => {
           </h1>
           
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium text-foreground/80 mt-4 text-balance max-w-3xl mx-auto opacity-0 animate-fade-in animation-delay-300">
-            AI Developer at AIDM
+            Full-Stack Developer at AIDM
           </h2>
           
           <p className="max-w-xl mx-auto text-muted-foreground opacity-0 animate-fade-in animation-delay-400">
-            Building secure, HIPAA-compliant healthcare web platforms with AI-powered features, RBAC authentication, and enterprise automations. Experienced in full-stack development, RAG systems, and scalable AI applications. Passionate about delivering production-ready solutions that enhance healthcare operations and support clinical workflows.
+            Full-stack developer who has shipped healthcare web portals, RAG pipelines, and data automation systems using React, Next.js, Node.js, and PostgreSQL. MS in Computer Science (Indiana State University, GPA 3.66) with enterprise experience at Cognizant and two production RAG systems built with LangChain, OpenAI API, and Pinecone.
           </p>
           
           <div className="flex justify-center pt-4 opacity-0 animate-fade-in animation-delay-500">

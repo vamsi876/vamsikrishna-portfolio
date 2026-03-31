@@ -1,24 +1,22 @@
 import React from 'react';
-import { Code2, Database, Brain, Globe, Terminal, Wrench, Cloud, Sparkles, Bot, Code } from 'lucide-react';
+import { Code2, Database, Brain, Globe, Terminal, Wrench, Cloud, Bot } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { 
-  SiPython, 
-  SiJavascript, 
-  SiPostgresql, 
-  SiMongodb, 
-  SiReact, 
-  SiNodedotjs, 
-  SiExpress, 
-  SiTensorflow, 
-  SiPytorch, 
-  SiHuggingface, 
-  SiAmazon, 
-  SiDocker, 
-  SiVercel, 
-  SiGit, 
-  SiPostman, 
-  SiN8N, 
-  SiZapier,
+import {
+  SiPython,
+  SiJavascript,
+  SiTypescript,
+  SiPostgresql,
+  SiReact,
+  SiNodedotjs,
+  SiExpress,
+  SiAmazon,
+  SiDocker,
+  SiVercel,
+  SiGit,
+  SiPostman,
+  SiGraphql,
+  SiNextdotjs,
+  SiTailwindcss,
   SiSupabase,
   SiHtml5,
   SiCss3,
@@ -29,115 +27,76 @@ const Skills: React.FC = () => {
   // Mapping of skill names to their icons
   const skillIcons: Record<string, React.ReactNode> = {
     // Programming Languages
-    "Python": <SiPython className="text-primary" size={16} />,
-    "Java": <Code2 className="text-primary" size={16} />, // Using generic code icon as fallback
     "JavaScript": <SiJavascript className="text-primary" size={16} />,
+    "TypeScript": <SiTypescript className="text-primary" size={16} />,
+    "Python": <SiPython className="text-primary" size={16} />,
+    "SQL": <SiMysql className="text-primary" size={16} />,
     "HTML": <SiHtml5 className="text-primary" size={16} />,
     "CSS": <SiCss3 className="text-primary" size={16} />,
-    "SQL": <SiMysql className="text-primary" size={16} />,
-    
-    // Full-Stack Development
-    "React.js": <SiReact className="text-primary" size={16} />,
+
+    // Frontend
+    "React": <SiReact className="text-primary" size={16} />,
+    "Next.js": <SiNextdotjs className="text-primary" size={16} />,
+    "Tailwind CSS": <SiTailwindcss className="text-primary" size={16} />,
+
+    // Backend
     "Node.js": <SiNodedotjs className="text-primary" size={16} />,
     "Express.js": <SiExpress className="text-primary" size={16} />,
-    
-    // AI & Machine Learning
-    "TensorFlow": <SiTensorflow className="text-primary" size={16} />,
-    "PyTorch": <SiPytorch className="text-primary" size={16} />,
-    "Hugging Face": <SiHuggingface className="text-primary" size={16} />,
-    
+    "GraphQL": <SiGraphql className="text-primary" size={16} />,
+
     // Databases
     "PostgreSQL": <SiPostgresql className="text-primary" size={16} />,
-    "MongoDB": <SiMongodb className="text-primary" size={16} />,
+    "Pinecone": <Database className="text-primary" size={16} />,
     "Supabase": <SiSupabase className="text-primary" size={16} />,
-    
+
     // Cloud & DevOps
+    "Azure": <Cloud className="text-primary" size={16} />,
     "AWS": <SiAmazon className="text-primary" size={16} />,
-    "Azure": <Cloud className="text-primary" size={16} />, // Using cloud icon as fallback
     "Docker": <SiDocker className="text-primary" size={16} />,
     "Vercel": <SiVercel className="text-primary" size={16} />,
-    
+
     // Tools
     "Git": <SiGit className="text-primary" size={16} />,
     "Postman": <SiPostman className="text-primary" size={16} />,
-    "n8n": <SiN8N className="text-primary" size={16} />,
-    "Zapier": <SiZapier className="text-primary" size={16} />,
-    "Power Automate": <Cloud className="text-primary" size={16} />, // Using cloud icon as fallback for Microsoft product
-    "Cursor": <Code2 className="text-primary" size={16} />, // Cursor IDE icon
-    "Antigravity": <Sparkles className="text-primary" size={16} />, // Antigravity AI icon
-    "Claude Code": <Bot className="text-primary" size={16} />, // Claude AI icon
-    "Codex": <Code className="text-primary" size={16} />, // Codex AI icon
+    "LangChain": <Bot className="text-primary" size={16} />,
+    "OpenAI API": <Bot className="text-primary" size={16} />,
   };
 
   const skillCategories = [
     {
-      title: "Programming Languages",
+      title: "Languages",
       icon: <Code2 className="text-primary" size={24} />,
-      skills: ["Python", "Java", "JavaScript", "SQL", "HTML", "CSS"]
+      skills: ["JavaScript", "TypeScript", "Python", "SQL", "HTML", "CSS"]
     },
     {
-      title: "Full-Stack Development",
+      title: "Frontend",
       icon: <Globe className="text-primary" size={24} />,
-      skills: [
-        "React.js",
-        "Node.js",
-        "Express.js",
-        "REST APIs",
-        "API Development",
-        "Role-Based Access Control (RBAC)"
-      ]
+      skills: ["React", "Next.js", "Tailwind CSS"]
     },
     {
-      title: "AI & Machine Learning",
-      icon: <Brain className="text-primary" size={24} />,
-      skills: [
-        "TensorFlow",
-        "PyTorch",
-        "Hugging Face",
-        "LLM Applications",
-        "RAG",
-        "Prompt Engineering"
-      ]
-    },
-    {
-      title: "Databases & Data Engineering",
-      icon: <Database className="text-primary" size={24} />,
-      skills: [
-        "PostgreSQL",
-        "MongoDB",
-        "Supabase",
-        "Pinecone",
-        "ETL",
-        "Data Cleaning",
-        "Data Modeling"
-      ]
-    },
-    {
-      title: "Cloud, DevOps & Deployment",
+      title: "Backend",
       icon: <Terminal className="text-primary" size={24} />,
-      skills: [
-        "AWS",
-        "Azure",
-        "Docker",
-        "CI/CD",
-        "Vercel"
-      ]
+      skills: ["Node.js", "Express.js", "GraphQL", "REST APIs"]
     },
     {
-      title: "Tools, Automation & Productivity",
+      title: "AI & LLM",
+      icon: <Brain className="text-primary" size={24} />,
+      skills: ["LangChain", "OpenAI API", "Vector Databases", "Retrieval-Augmented Generation"]
+    },
+    {
+      title: "Databases",
+      icon: <Database className="text-primary" size={24} />,
+      skills: ["PostgreSQL", "Pinecone", "Supabase"]
+    },
+    {
+      title: "Cloud & DevOps",
       icon: <Wrench className="text-primary" size={24} />,
-      skills: [
-        "Git",
-        "Postman",
-        "n8n",
-        "Make",
-        "Zapier",
-        "Power Automate",
-        "Cursor",
-        "Antigravity",
-        "Claude Code",
-        "Codex"
-      ]
+      skills: ["Azure", "AWS", "Docker", "GitHub Actions", "CI/CD", "Vercel"]
+    },
+    {
+      title: "Tools",
+      icon: <Wrench className="text-primary" size={24} />,
+      skills: ["Git", "Postman", "Jest", "React Testing Library", "Pytest"]
     }
   ];
 
@@ -218,18 +177,18 @@ const Skills: React.FC = () => {
                 {category.skills.map((skill, skillIndex) => {
                   const skillIcon = skillIcons[skill];
                   return (
-                    <motion.span
-                      key={skillIndex}
-                      variants={skillVariants}
-                      className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium
-                               hover:bg-primary hover:text-white cursor-default
+                  <motion.span
+                    key={skillIndex}
+                    variants={skillVariants}
+                    className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium
+                             hover:bg-primary hover:text-white cursor-default
                                transition-colors duration-300 flex items-center gap-2"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
                       {skillIcon && <span className="flex-shrink-0">{skillIcon}</span>}
                       <span>{skill}</span>
-                    </motion.span>
+                  </motion.span>
                   );
                 })}
               </div>

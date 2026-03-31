@@ -19,46 +19,44 @@ const Projects: React.FC = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: 'RAG-powered University Chatbot',
-      description: 'A context-aware chatbot using Retrieval Augmented Generation (RAG) with Pinecone vector database for efficient similarity search. Integrates OpenAI embeddings for document vectorization and GPT models for natural responses. Features include semantic search across university documents, real-time query processing, and context-aware responses.',
+      title: 'GitBar — macOS Menubar Git Dashboard',
+      description: 'Open-source macOS menubar app providing a unified Git dashboard aggregating PRs, issues, CI/CD status, and local repo health across GitHub, GitLab, and Bitbucket. Published on PyPI.',
       image: '/screenshots/rag-chatbot.avif',
-      tags: ['Python', 'OpenAI', 'Pinecone', 'RAG', 'FastAPI', 'Vector DB'],
+      tags: ['Python', 'PyObjC', 'GitHub API', 'GitLab API', 'PyPI'],
       links: {
-        github: 'https://github.com/vamsi876/ISU-End-to-End-Chatbot',
-        live: 'https://rag-chatbot-demo.vercel.app',
+        github: 'https://github.com/vamsi876/gitbar',
+        live: 'https://pypi.org/project/gitbar/',
       },
     },
     {
       id: 2,
-      title: 'WebWeaver',
-      description: 'A Python library for browser automation and web scraping, published on PyPI. Features include URL extraction, site crawling with timeout control, and multi-threaded crawling capabilities. Built with Python and designed for efficient web data extraction.',
+      title: 'GadgetBox — Cross-Platform Developer Utilities',
+      description: 'Cross-platform system tray app bundling 12 developer utilities — JSON formatter, JWT decoder, UUID generator, Base64 encoder, hash generator, regex tester, and more — with intelligent clipboard auto-detection. Published on PyPI.',
       image: '/images/webweaver.png',
-      tags: ['Python', 'Web Scraping', 'Browser Automation', 'PyPI', 'Multi-threading'],
+      tags: ['Python', 'pystray', 'tkinter', 'PyPI', 'Cross-Platform'],
       links: {
-        github: 'https://github.com/RedBlackWeb/WebWeaver',
-        live: 'https://pypi.org/project/WebWeaver/',
+        github: 'https://github.com/vamsi876/gadgetbox',
+        live: 'https://pypi.org/project/gadgetbox/',
       },
     },
     {
       id: 3,
-      title: 'Voice Command Canvas',
-      description: 'An interactive web application that allows users to navigate on canvas using voice commands. Built with React and TypeScript, it leverages the Web Speech API for voice recognition.',
+      title: 'WebWeaver — Web Crawling Library',
+      description: 'Open-source Python library for configurable web crawling with URL validation, deduplication, robots.txt compliance, and recursive/breadth-first modes. Powers the data ingestion layer behind the ISU RAG chatbot with 40K+ crawled URLs. Published on PyPI.',
       image: '/screenshots/voice-command-canvas.png',
-      tags: ['TypeScript', 'React', 'Web Speech API', 'Canvas API', 'Tailwind CSS'],
+      tags: ['Python', 'asyncio', 'aiohttp', 'PyPI', 'Web Crawling'],
       links: {
-        github: 'https://github.com/vamsi876/voice-command-canvas',
-        live: 'https://voice-command-canvas.vercel.app',
+        live: 'https://pypi.org/project/WebWeaver/',
       },
     },
     {
       id: 4,
-      title: 'COVID-19 U.S. County Map Visualization',
-      description: 'An interactive map built using Python and Folium to visualize COVID-19 cases and deaths across U.S. counties in 2020. Features dynamically rendered circles proportional to case counts, hoverable tooltips with detailed stats, and state border outlines.',
+      title: 'ISU RAG Chatbot — University Q&A System',
+      description: 'RAG chatbot answering student queries on courses, deadlines, and academic policies with semantic retrieval over 8,000 curated documents. Built with LangChain, OpenAI API, and Pinecone with configurable cosine similarity thresholds and chunk-overlap tuning.',
       image: 'https://raw.githubusercontent.com/vamsi876/us-covid-map-2020/main/TotalCovidMap-LN-superJumbo.png.webp',
-      tags: ['Python', 'Folium', 'Pandas', 'GeoJSON', 'Data Visualization'],
+      tags: ['LangChain', 'OpenAI', 'Pinecone', 'RAG', 'Python'],
       links: {
-        github: 'https://github.com/vamsi876/us-covid-map-2020',
-        live: 'https://vamsi876.github.io/us-covid-map-2020/',
+        github: 'https://github.com/vamsi876/ISU-End-to-End-Chatbot',
       },
     },
     {
@@ -80,7 +78,7 @@ const Projects: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Projects</h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            A collection of projects that showcase my skills and experience in AI engineering.
+            Open-source tools and full-stack projects — 3 packages published on PyPI.
           </p>
         </div>
 

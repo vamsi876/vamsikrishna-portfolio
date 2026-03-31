@@ -10,7 +10,7 @@ const About: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            AI Developer and Computer Science graduate student with strong experience delivering production AI solutions across full-stack development, machine learning, and data engineering. Experienced in building secure healthcare platforms, HIPAA-compliant systems, and scalable AI applications for real-world users.
+            Full-stack developer who has shipped healthcare web portals, RAG pipelines, and data automation systems using React, Next.js, Node.js, and PostgreSQL. MS in Computer Science (Indiana State University, GPA 3.66) with enterprise experience at Cognizant and two production RAG systems built with LangChain, OpenAI API, and Pinecone.
           </p>
         </div>
 
@@ -22,26 +22,26 @@ const About: React.FC = () => {
             className="space-y-6"
           >
             <div className="space-y-3 md:space-y-4">
-              <h3 className="text-xl md:text-2xl font-bold">AI Developer</h3>
+              <h3 className="text-xl md:text-2xl font-bold">Full-Stack Developer</h3>
               <p className="text-sm md:text-base text-muted-foreground">
-                AI Developer and Computer Science graduate student with strong experience delivering production AI solutions across full-stack development, machine learning, and data engineering. At AIDM, built secure healthcare web platforms from scratch for organizations with 250 and 100+ employees, integrating AI features, RBAC authentication, enterprise automations, and EHR-integrated workflows. Previously engineered a RAG chatbot by crawling 40,000+ URLs and scraping 10,000+ websites, building end-to-end pipelines for cleaning, chunking, embeddings, and vector search to support 250+ users.
+                Full-stack developer with enterprise experience shipping healthcare web portals, RAG pipelines, and data automation systems. At AIDM, built two healthcare web portals with Next.js, Node.js, GraphQL, and PostgreSQL supporting multi-role access for clinical and administrative users. Implemented HIPAA-aligned security controls, Azure AD SSO integration, and a healthcare-domain RAG assistant with LangChain and Pinecone. Previously at Cognizant, built React UI components and Express.js REST APIs for client-facing logistics dashboards.
               </p>
             </div>
 
             <div className="space-y-3 md:space-y-4">
               <h4 className="text-lg md:text-xl font-semibold">Key Focus Areas</h4>
               <ul className="list-disc list-inside space-y-2 text-sm md:text-base text-muted-foreground">
-                <li>Building HIPAA- and SOC-compliant healthcare platforms with secure AI features</li>
-                <li>Developing full-stack web applications with RBAC and enterprise automations</li>
-                <li>Implementing RAG-based LLM assistants and vector search systems</li>
-                <li>Creating scalable ETL pipelines and data processing workflows</li>
+                <li>Full-stack web development with React, Next.js, Node.js, and PostgreSQL</li>
+                <li>Building HIPAA-compliant healthcare platforms with enterprise SSO and RBAC</li>
+                <li>RAG pipelines and LLM integrations with LangChain, OpenAI API, and Pinecone</li>
+                <li>Open-source developer tools — 3 packages published on PyPI</li>
               </ul>
             </div>
 
             <div className="space-y-3 md:space-y-4">
               <h4 className="text-lg md:text-xl font-semibold">Current Work</h4>
               <p className="text-sm md:text-base text-muted-foreground">
-                At AIDM, I'm developing full-stack healthcare web platforms from scratch, delivering secure, scalable employee portals used by 250+ employees across client organizations. I build HIPAA- and SOC-compliant applications with high-security controls, implement RBAC authentication, and create Azure Enterprise Applications integrated with Microsoft Graph API. I also deliver AI-powered features including RAG-based LLM assistants, workflow pipelines, and 20+ automation solutions for content scheduling, approvals, and reporting.
+                At AIDM, I'm building healthcare web portals with Next.js, Node.js, GraphQL, and PostgreSQL within a 6-person cross-functional team. I've implemented HIPAA-aligned security controls (AES-256 encryption, RBAC, audit logging), integrated Azure AD with Microsoft Graph API for enterprise SSO, built a healthcare-domain RAG assistant with LangChain and Pinecone, and automated 5 internal workflows eliminating ~10 hours/week of manual effort.
               </p>
             </div>
 
@@ -86,49 +86,49 @@ const About: React.FC = () => {
                   <p className="text-xs md:text-sm text-muted-foreground">GPA: 3.66/4.0</p>
                 </div>
                 <div>
-                  <h5 className="font-medium">Bachelor's in Electronics and Communication Engineering</h5>
-                  <p className="text-xs md:text-sm text-muted-foreground">Vel Tech Rangarajan Dr.Sagunthala R&D Institute of Science and Technology</p>
-                  <p className="text-xs md:text-sm text-muted-foreground">June 2018 - May 2022 | GPA: 9.01/10.0</p>
+                  <h5 className="font-medium">Bachelor of Technology in Electronics & Communication Engineering</h5>
+                  <p className="text-xs md:text-sm text-muted-foreground">Vel Tech University — Chennai, India</p>
+                  <p className="text-xs md:text-sm text-muted-foreground">Jun 2018 - May 2022 | GPA: 9.01/10</p>
                 </div>
               </div>
             </div>
 
             <div className="glass-dark p-4 md:p-6 rounded-xl space-y-4">
-              <h4 className="text-lg md:text-xl font-semibold">Recent Achievements</h4>
+              <h4 className="text-lg md:text-xl font-semibold">Open Source — PyPI Packages</h4>
               <div className="space-y-3">
                 <div>
-                  <h5 className="font-medium">Open Source Contribution</h5>
-                  <a 
-                    href="https://github.com/RedBlackWeb/WebWeaver"
+                  <h5 className="font-medium">GitBar — macOS Menubar Git Dashboard</h5>
+                  <a
+                    href="https://pypi.org/project/gitbar/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs md:text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
                   >
-                    Co-developed WebWeaver, a Python library for web automation
+                    Unified menubar dashboard for PRs, issues, CI/CD across GitHub, GitLab & Bitbucket
                     <ExternalLink size={12} />
                   </a>
                 </div>
                 <div>
-                  <h5 className="font-medium">Paper Publication</h5>
-                  <a 
-                    href="https://www.icsiconference.org/proceedings"
+                  <h5 className="font-medium">GadgetBox — Developer Utilities</h5>
+                  <a
+                    href="https://pypi.org/project/gadgetbox/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs md:text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
                   >
-                    Published paper on Smart Embedded Systems at ICSI Conference
+                    System tray app with 12 dev utilities — JSON formatter, JWT decoder, UUID gen & more
                     <ExternalLink size={12} />
                   </a>
                 </div>
                 <div>
-                  <h5 className="font-medium">Professional Certification</h5>
-                  <a 
-                    href="https://drive.google.com/file/d/1XHJQeDRELVtPedEsi7hsDT3Wka8rxrnL/view"
+                  <h5 className="font-medium">WebWeaver — Web Crawling Library</h5>
+                  <a
+                    href="https://pypi.org/project/WebWeaver/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs md:text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
                   >
-                    Full Stack Developer with Cloud for Web and Mobile - Hero Vired
+                    Async web crawling with URL validation, deduplication & robots.txt compliance
                     <ExternalLink size={12} />
                   </a>
                 </div>
