@@ -128,7 +128,7 @@ const portfolioInfo = {
   contact: {
     email: "kolliparavamsikrishna80@gmail.com",
     phone: "+1 (812) 223-8818",
-    location: "Terre Haute, Indiana (Ready to Relocate)",
+    location: "San Francisco, CA",
     linkedin: "linkedin.com/in/vamsikollipara",
     github: "github.com/vamsi876"
   },
@@ -285,7 +285,7 @@ const ChatBot: React.FC = () => {
   const generateDetailedResponse = (userInput: string): string => {
     const input = userInput.toLowerCase();
     updateConversationContext(userInput);
-    
+
     // Check if this is a follow-up question
     const isFollowUp = /more|detail|explain|tell me more|elaborate|specifically/i.test(input);
 
