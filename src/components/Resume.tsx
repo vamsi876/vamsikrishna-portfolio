@@ -79,10 +79,22 @@ const Resume: React.FC = () => {
 
   const openSourceContributions = [
     {
-      project: "WebWeaver",
-      date: "Sept 2024",
-      description: "Co-developed WebWeaver, a Python library for browser automation and web scraping, published on PyPI",
-      link: "https://github.com/RedBlackWeb/WebWeaver"
+      project: "GitBar — macOS Menubar Git Dashboard",
+      date: "Mar 2026",
+      description: "Built and published an open-source macOS menubar app providing a unified Git dashboard aggregating PRs, issues, CI/CD status, and local repo health across GitHub, GitLab, and Bitbucket. Tech: Python, PyObjC, GitHub/GitLab REST APIs.",
+      link: "https://pypi.org/project/gitbar/"
+    },
+    {
+      project: "GadgetBox — Cross-Platform Developer Utilities",
+      date: "Feb 2026",
+      description: "Published a cross-platform system tray app bundling 12 developer utilities (JSON formatter, JWT decoder, UUID generator, Base64, hash, regex tester, etc.) with intelligent clipboard auto-detection. Tech: Python, pystray, tkinter.",
+      link: "https://pypi.org/project/gadgetbox/"
+    },
+    {
+      project: "WebWeaver — Web Scraping & Crawling Library",
+      date: "Sep 2024",
+      description: "Open-source Python library for configurable web crawling with URL validation, deduplication, robots.txt compliance, and recursive/breadth-first modes; powers the data ingestion layer behind the ISU RAG chatbot. Tech: Python, asyncio, aiohttp.",
+      link: "https://pypi.org/project/WebWeaver/"
     }
   ];
 
@@ -106,57 +118,50 @@ const Resume: React.FC = () => {
   ];
 
   const skills = {
-    programming_languages: [
-      "Python",
-      "Java",
+    languages: [
       "JavaScript",
+      "TypeScript",
+      "Python",
       "SQL",
       "HTML",
       "CSS"
     ],
-    full_stack_development: [
-      "React.js",
+    frontend: [
+      "React",
+      "Next.js",
+      "Tailwind CSS"
+    ],
+    backend: [
       "Node.js",
       "Express.js",
-      "REST APIs",
-      "API Development",
-      "Role-Based Access Control (RBAC)"
+      "GraphQL",
+      "REST APIs"
     ],
-    ai_and_machine_learning: [
-      "TensorFlow",
-      "PyTorch",
-      "Hugging Face",
-      "LLM Applications",
-      "RAG",
-      "Prompt Engineering"
-    ],
-    databases_and_data_engineering: [
+    databases: [
       "PostgreSQL",
-      "MongoDB",
-      "Supabase",
-      "Pinecone",
-      "ETL",
-      "Data Cleaning",
-      "Data Modeling"
+      "Pinecone"
     ],
-    cloud_devops_and_deployment: [
-      "AWS",
+    cloud_and_devops: [
       "Azure",
+      "AWS",
       "Docker",
+      "GitHub Actions",
       "CI/CD",
-      "Vercel"
+      "Vercel",
+      "Supabase"
     ],
-    tools_automation_and_productivity: [
+    ai_and_llm: [
+      "LangChain",
+      "OpenAI API",
+      "Vector Databases",
+      "Retrieval-Augmented Generation"
+    ],
+    tools: [
       "Git",
       "Postman",
-      "n8n",
-      "Make",
-      "Zapier",
-      "Power Automate",
-      "Cursor",
-      "Antigravity",
-      "Claude Code",
-      "Codex"
+      "Jest",
+      "React Testing Library",
+      "Pytest"
     ]
   };
 
