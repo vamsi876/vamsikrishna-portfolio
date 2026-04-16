@@ -1,11 +1,7 @@
-
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
-import { 
-  Briefcase, 
-  Calendar, 
-  ChevronRight 
-} from 'lucide-react';
+import { Briefcase, Calendar, ChevronRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface Job {
   id: string;
@@ -15,6 +11,7 @@ interface Job {
   startDate: string;
   endDate: string;
   description: string[];
+  active?: boolean;
 }
 
 const Experience: React.FC = () => {
@@ -28,6 +25,7 @@ const Experience: React.FC = () => {
       location: 'Remote',
       startDate: 'Jul 2025',
       endDate: 'Present',
+      active: true,
       description: [
         'Architected a healthcare data integration pipeline ingesting clinical data from Homecare Homebase (HCHB) EHR via SFTP log shipping into SQL Server 2022 on Azure, feeding a Next.js operational analytics dashboard.',
         'Built PowerShell automation chaining WinSCP SFTP download and SQL Server transaction log restore into an idempotent hourly SQL Agent job, with lock-file concurrency control, structured logging, and exit-code-driven email alerts.',
@@ -48,7 +46,7 @@ const Experience: React.FC = () => {
       description: [
         'Built internal web applications for Indiana State University (React, Node.js, PostgreSQL), including a course catalog portal, faculty directory, and student resource dashboard used by academic departments.',
         'Built a RAG-powered knowledge assistant (LangChain, OpenAI API, Pinecone) for university staff to query academic policies and HR procedures, with configurable semantic retrieval, chunk-overlap tuning, and vector indexing.',
-        'Built and open-sourced WebWeaver, a Python crawling library, and used it to ingest 40,000+ university URLs into a curated knowledge base of 8,000 documents powering the RAG assistant\'s semantic search.',
+        "Built and open-sourced WebWeaver, a Python crawling library, and used it to ingest 40,000+ university URLs into a curated knowledge base of 8,000 documents powering the RAG assistant's semantic search.",
       ],
     },
     {
@@ -59,7 +57,7 @@ const Experience: React.FC = () => {
       startDate: 'Jan 2022',
       endDate: 'Jul 2023',
       description: [
-        'Developed React-based portal modules for Duke Energy\'s energy management platform, delivering real-time usage analytics, billing history, and outage status with interactive D3.js visualizations to residential and commercial customers.',
+        "Developed React-based portal modules for Duke Energy's energy management platform, delivering real-time usage analytics, billing history, and outage status with interactive D3.js visualizations to residential and commercial customers.",
         'Built Node.js/Express REST APIs integrated with Oracle and SAP backends to surface smart meter telemetry data, achieving sub-200ms p95 latency through Redis caching and connection pooling.',
         'Built an internal outage reporting dashboard (React, PostgreSQL, Mapbox GL) aggregating grid sensor data to help operations teams identify fault zones and coordinate field crew dispatch.',
         'Optimized SQL queries on multi-million-row smart meter and billing tables, reducing average execution time by 30% through composite indexing, join restructuring, and eliminating N+1 patterns.',
@@ -69,74 +67,102 @@ const Experience: React.FC = () => {
     },
   ];
 
-  const handleJobClick = (jobId: string) => {
-    setActiveJob(jobId);
-  };
-
   return (
     <section className="py-20 px-6 md:px-12 lg:px-24" id="experience">
       <div className="container mx-auto max-w-5xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience</h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-12"
+        >
+          <span className="section-number">03 — EXPERIENCE</span>
+          <h2 className="text-3xl md:text-4xl font-bold mt-2 text-foreground">Experience</h2>
+          <p className="text-muted-foreground mt-2 max-w-xl">
             My professional journey in full-stack development, from enterprise systems to open-source tools.
           </p>
-        </div>
+        </motion.div>
 
         <div className="flex flex-col md:flex-row gap-8">
+          {/* Company tabs */}
           <div className="md:w-1/3">
-            <div className="flex flex-row md:flex-col overflow-x-auto md:overflow-visible">
-              {jobs.map((job) => (
-                <button
+            <div className="flex flex-row md:flex-col overflow-x-auto md:overflow-visible gap-1">
+              {jobs.map((job, index) => (
+                <motion.button
                   key={job.id}
-                  onClick={() => handleJobClick(job.id)}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.4 }}
+                  onClick={() => setActiveJob(job.id)}
                   className={cn(
-                    "px-4 py-3 text-left border-b-2 md:border-b-0 md:border-l-2 border-secondary hover:bg-secondary/50 transition-all whitespace-nowrap md:whitespace-normal",
+                    'px-4 py-3 text-left border-l-2 transition-all whitespace-nowrap md:whitespace-normal text-sm',
                     activeJob === job.id
-                      ? "border-primary text-primary font-medium md:bg-secondary/50"
-                      : "border-muted text-muted-foreground"
+                      ? 'border-primary text-foreground bg-primary/5'
+                      : 'border-[hsl(var(--card-border))] text-muted-foreground hover:text-foreground hover:bg-card'
                   )}
                 >
-                  {job.company}
-                </button>
+                  <div className="flex items-center gap-2">
+                    <div className={cn(
+                      'w-2 h-2 rounded-full flex-shrink-0',
+                      job.active && activeJob === job.id ? 'bg-primary animate-pulse-green' : activeJob === job.id ? 'bg-primary' : 'bg-[hsl(var(--card-border))]'
+                    )} />
+                    {job.company}
+                  </div>
+                </motion.button>
               ))}
             </div>
           </div>
-          
+
+          {/* Job detail */}
           <div className="md:w-2/3">
-            {jobs
-              .filter((job) => job.id === activeJob)
-              .map((job) => (
-                <div key={job.id} className="animate-fade-in">
-                  <div className="mb-4">
-                    <h3 className="text-xl font-semibold">
-                      {job.title}{" "}
-                      <span className="text-primary">@ {job.company}</span>
-                    </h3>
-                    
-                    <div className="flex items-center text-sm text-muted-foreground mt-1">
-                      <Calendar size={14} className="mr-1" />
-                      <span>
-                        {job.startDate} - {job.endDate}
-                      </span>
-                      
-                      <div className="mx-2">•</div>
-                      
-                      <Briefcase size={14} className="mr-1" />
-                      <span>{job.location}</span>
+            <AnimatePresence mode="wait">
+              {jobs
+                .filter((job) => job.id === activeJob)
+                .map((job) => (
+                  <motion.div
+                    key={job.id}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="mb-4">
+                      <h3 className="text-xl font-semibold text-foreground">
+                        {job.title}{' '}
+                        <span className="text-primary">@ {job.company}</span>
+                      </h3>
+
+                      <div className="flex items-center text-sm text-muted-foreground mt-1 gap-3">
+                        <span className="flex items-center gap-1">
+                          <Calendar size={14} />
+                          {job.startDate} – {job.endDate}
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <Briefcase size={14} />
+                          {job.location}
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                  
-                  <ul className="space-y-3">
-                    {job.description.map((item, index) => (
-                      <li key={index} className="flex">
-                        <ChevronRight size={18} className="mt-0.5 mr-2 text-primary flex-shrink-0" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+
+                    <ul className="space-y-3">
+                      {job.description.map((item, index) => (
+                        <motion.li
+                          key={index}
+                          initial={{ opacity: 0, x: 10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: index * 0.05, duration: 0.3 }}
+                          className="flex text-sm text-muted-foreground"
+                        >
+                          <ChevronRight size={16} className="mt-0.5 mr-2 text-primary flex-shrink-0" />
+                          <span>{item}</span>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                ))}
+            </AnimatePresence>
           </div>
         </div>
       </div>
