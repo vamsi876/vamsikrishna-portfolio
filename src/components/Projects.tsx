@@ -6,6 +6,7 @@ import { ExternalLink, Github } from 'lucide-react';
 interface Project {
   id: number;
   title: string;
+  date: string;
   description: string;
   image: string;
   tags: string[];
@@ -20,9 +21,10 @@ const Projects: React.FC = () => {
     {
       id: 1,
       title: 'GitBar — macOS Menubar Git Dashboard',
-      description: 'Open-source macOS menubar app providing a unified Git dashboard aggregating PRs, issues, CI/CD status, and local repo health across GitHub, GitLab, and Bitbucket. Published on PyPI.',
+      date: 'Mar 2026',
+      description: 'Built and published an open-source macOS menubar app providing a unified Git dashboard aggregating PRs, issues, CI/CD status, and local repo health across GitHub, GitLab, and Bitbucket.',
       image: '/screenshots/rag-chatbot.avif',
-      tags: ['Python', 'PyObjC', 'GitHub API', 'GitLab API', 'PyPI'],
+      tags: ['Python', 'PyObjC', 'GitHub/GitLab REST APIs', 'PyPI'],
       links: {
         github: 'https://github.com/vamsi876/gitbar',
         live: 'https://pypi.org/project/gitbar/',
@@ -31,9 +33,10 @@ const Projects: React.FC = () => {
     {
       id: 2,
       title: 'GadgetBox — Cross-Platform Developer Utilities',
-      description: 'Cross-platform system tray app bundling 12 developer utilities — JSON formatter, JWT decoder, UUID generator, Base64 encoder, hash generator, regex tester, and more — with intelligent clipboard auto-detection. Published on PyPI.',
+      date: 'Feb 2026',
+      description: 'Published a cross-platform system tray app bundling 12 developer utilities (JSON formatter, JWT decoder, UUID generator, Base64, hash, regex tester, etc.) with intelligent clipboard auto-detection.',
       image: '/images/webweaver.png',
-      tags: ['Python', 'pystray', 'tkinter', 'PyPI', 'Cross-Platform'],
+      tags: ['Python', 'pystray', 'tkinter', 'PyPI'],
       links: {
         github: 'https://github.com/vamsi876/gadgetbox',
         live: 'https://pypi.org/project/gadgetbox/',
@@ -41,27 +44,20 @@ const Projects: React.FC = () => {
     },
     {
       id: 3,
-      title: 'WebWeaver — Web Crawling Library',
-      description: 'Open-source Python library for configurable web crawling with URL validation, deduplication, robots.txt compliance, and recursive/breadth-first modes. Powers the data ingestion layer behind the ISU RAG chatbot with 40K+ crawled URLs. Published on PyPI.',
+      title: 'WebWeaver — Web Scraping & Crawling Library',
+      date: 'Sep 2024',
+      description: 'Open-source Python library for configurable web crawling with URL validation, deduplication, robots.txt compliance, and recursive/breadth-first modes; powers the data ingestion layer behind the ISU RAG chatbot.',
       image: '/screenshots/voice-command-canvas.png',
-      tags: ['Python', 'asyncio', 'aiohttp', 'PyPI', 'Web Crawling'],
+      tags: ['Python', 'asyncio', 'aiohttp', 'PyPI'],
       links: {
+        github: 'https://github.com/vamsi876/webweaver',
         live: 'https://pypi.org/project/WebWeaver/',
       },
     },
     {
       id: 4,
-      title: 'ISU RAG Chatbot — University Q&A System',
-      description: 'RAG chatbot answering student queries on courses, deadlines, and academic policies with semantic retrieval over 8,000 curated documents. Built with LangChain, OpenAI API, and Pinecone with configurable cosine similarity thresholds and chunk-overlap tuning.',
-      image: 'https://raw.githubusercontent.com/vamsi876/us-covid-map-2020/main/TotalCovidMap-LN-superJumbo.png.webp',
-      tags: ['LangChain', 'OpenAI', 'Pinecone', 'RAG', 'Python'],
-      links: {
-        github: 'https://github.com/vamsi876/ISU-End-to-End-Chatbot',
-      },
-    },
-    {
-      id: 5,
       title: 'Personal Portfolio Website',
+      date: 'Jan 2025',
       description: 'A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. Features include a dynamic chatbot, contact form with email integration, and a showcase of projects and skills. Deployed on Vercel with continuous integration.',
       image: '/screenshots/portfolio-homepage.png',
       tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'EmailJS', 'Vercel'],
@@ -120,7 +116,10 @@ const Projects: React.FC = () => {
               </div>
               
               <div className="md:w-1/2">
-                <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
+                <div className="flex items-center gap-3 mb-4">
+                  <h3 className="text-2xl font-bold">{project.title}</h3>
+                  <span className="text-sm text-muted-foreground bg-secondary px-2 py-1 rounded">{project.date}</span>
+                </div>
                 
                 <div className="mb-4 glass p-6 rounded-xl">
                   <p className="text-foreground/80">{project.description}</p>

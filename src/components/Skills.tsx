@@ -20,7 +20,14 @@ import {
   SiSupabase,
   SiHtml5,
   SiCss3,
-  SiMysql
+  SiMysql,
+  SiVite,
+  SiD3Dotjs,
+  SiRabbitmq,
+  SiRedis,
+  SiGithubactions,
+  SiJest,
+  SiPytest
 } from 'react-icons/si';
 
 const Skills: React.FC = () => {
@@ -31,67 +38,83 @@ const Skills: React.FC = () => {
     "TypeScript": <SiTypescript className="text-primary" size={16} />,
     "Python": <SiPython className="text-primary" size={16} />,
     "SQL": <SiMysql className="text-primary" size={16} />,
+    "PowerShell": <Terminal className="text-primary" size={16} />,
     "HTML": <SiHtml5 className="text-primary" size={16} />,
     "CSS": <SiCss3 className="text-primary" size={16} />,
 
     // Frontend
     "React": <SiReact className="text-primary" size={16} />,
     "Next.js": <SiNextdotjs className="text-primary" size={16} />,
+    "Vite": <SiVite className="text-primary" size={16} />,
     "Tailwind CSS": <SiTailwindcss className="text-primary" size={16} />,
+    "shadcn/ui": <Globe className="text-primary" size={16} />,
+    "D3.js": <SiD3Dotjs className="text-primary" size={16} />,
+    "Mapbox GL": <Globe className="text-primary" size={16} />,
 
     // Backend
     "Node.js": <SiNodedotjs className="text-primary" size={16} />,
     "Express.js": <SiExpress className="text-primary" size={16} />,
     "GraphQL": <SiGraphql className="text-primary" size={16} />,
+    "RabbitMQ": <SiRabbitmq className="text-primary" size={16} />,
 
     // Databases
     "PostgreSQL": <SiPostgresql className="text-primary" size={16} />,
+    "SQL Server": <Database className="text-primary" size={16} />,
+    "Oracle": <Database className="text-primary" size={16} />,
+    "Redis": <SiRedis className="text-primary" size={16} />,
     "Pinecone": <Database className="text-primary" size={16} />,
-    "Supabase": <SiSupabase className="text-primary" size={16} />,
 
     // Cloud & DevOps
     "Azure": <Cloud className="text-primary" size={16} />,
     "AWS": <SiAmazon className="text-primary" size={16} />,
     "Docker": <SiDocker className="text-primary" size={16} />,
+    "GitHub Actions": <SiGithubactions className="text-primary" size={16} />,
     "Vercel": <SiVercel className="text-primary" size={16} />,
+    "Supabase": <SiSupabase className="text-primary" size={16} />,
+
+    // AI & LLM
+    "Anthropic Claude API": <Bot className="text-primary" size={16} />,
+    "LangChain": <Bot className="text-primary" size={16} />,
+    "OpenAI API": <Bot className="text-primary" size={16} />,
 
     // Tools
     "Git": <SiGit className="text-primary" size={16} />,
     "Postman": <SiPostman className="text-primary" size={16} />,
-    "LangChain": <Bot className="text-primary" size={16} />,
-    "OpenAI API": <Bot className="text-primary" size={16} />,
+    "Jest": <SiJest className="text-primary" size={16} />,
+    "React Testing Library": <Wrench className="text-primary" size={16} />,
+    "Pytest": <SiPytest className="text-primary" size={16} />,
   };
 
   const skillCategories = [
     {
       title: "Languages",
       icon: <Code2 className="text-primary" size={24} />,
-      skills: ["JavaScript", "TypeScript", "Python", "SQL", "HTML", "CSS"]
+      skills: ["JavaScript", "TypeScript", "Python", "SQL", "PowerShell", "HTML", "CSS"]
     },
     {
       title: "Frontend",
       icon: <Globe className="text-primary" size={24} />,
-      skills: ["React", "Next.js", "Tailwind CSS"]
+      skills: ["React", "Next.js", "Vite", "Tailwind CSS", "shadcn/ui", "D3.js", "Mapbox GL"]
     },
     {
       title: "Backend",
       icon: <Terminal className="text-primary" size={24} />,
-      skills: ["Node.js", "Express.js", "GraphQL", "REST APIs"]
-    },
-    {
-      title: "AI & LLM",
-      icon: <Brain className="text-primary" size={24} />,
-      skills: ["LangChain", "OpenAI API", "Vector Databases", "Retrieval-Augmented Generation"]
+      skills: ["Node.js", "Express.js", "GraphQL", "REST APIs", "RabbitMQ"]
     },
     {
       title: "Databases",
       icon: <Database className="text-primary" size={24} />,
-      skills: ["PostgreSQL", "Pinecone", "Supabase"]
+      skills: ["PostgreSQL", "SQL Server", "Oracle", "Redis", "Pinecone"]
     },
     {
       title: "Cloud & DevOps",
-      icon: <Wrench className="text-primary" size={24} />,
-      skills: ["Azure", "AWS", "Docker", "GitHub Actions", "CI/CD", "Vercel"]
+      icon: <Cloud className="text-primary" size={24} />,
+      skills: ["Azure", "AWS", "Docker", "GitHub Actions", "CI/CD", "Vercel", "Supabase"]
+    },
+    {
+      title: "AI & LLM",
+      icon: <Brain className="text-primary" size={24} />,
+      skills: ["Anthropic Claude API", "LangChain", "OpenAI API", "Vector Databases", "RAG"]
     },
     {
       title: "Tools",

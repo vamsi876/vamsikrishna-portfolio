@@ -10,7 +10,7 @@ const About: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Full-stack developer who has shipped healthcare web portals, RAG pipelines, and data automation systems using React, Next.js, Node.js, and PostgreSQL. MS in Computer Science (Indiana State University, GPA 3.66) with enterprise experience at Cognizant and two production RAG systems built with LangChain, OpenAI API, and Pinecone.
+            Full-stack developer with 2+ years of industry experience shipping React/TypeScript frontends and Node.js backends across healthcare and energy domains, plus hands-on AI integration (RAG pipelines with LangChain and Pinecone, Claude API). Most recently sole developer on a Supabase-powered operations platform serving 8 organizational roles daily. MS in Computer Science from Indiana State University. 3 published PyPI packages.
           </p>
         </div>
 
@@ -24,7 +24,7 @@ const About: React.FC = () => {
             <div className="space-y-3 md:space-y-4">
               <h3 className="text-xl md:text-2xl font-bold">Full-Stack Developer</h3>
               <p className="text-sm md:text-base text-muted-foreground">
-                Full-stack developer with enterprise experience shipping healthcare web portals, RAG pipelines, and data automation systems. At AIDM, built two healthcare web portals with Next.js, Node.js, GraphQL, and PostgreSQL supporting multi-role access for clinical and administrative users. Implemented HIPAA-aligned security controls, Azure AD SSO integration, and a healthcare-domain RAG assistant with LangChain and Pinecone. Previously at Cognizant, built React UI components and Express.js REST APIs for client-facing logistics dashboards.
+                Full-stack developer with 2+ years of industry experience shipping React/TypeScript frontends and Node.js backends across healthcare and energy domains. At AIDM, I built and shipped a full-stack operations platform on Supabase serving 8 organizational roles daily, integrating Anthropic Claude for AI-powered features. Previously at Cognizant, developed React-based portal modules for Duke Energy's energy management platform with D3.js visualizations.
               </p>
             </div>
 
@@ -32,8 +32,8 @@ const About: React.FC = () => {
               <h4 className="text-lg md:text-xl font-semibold">Key Focus Areas</h4>
               <ul className="list-disc list-inside space-y-2 text-sm md:text-base text-muted-foreground">
                 <li>Full-stack web development with React, Next.js, Node.js, and PostgreSQL</li>
-                <li>Building HIPAA-compliant healthcare platforms with enterprise SSO and RBAC</li>
-                <li>RAG pipelines and LLM integrations with LangChain, OpenAI API, and Pinecone</li>
+                <li>Healthcare and energy domain applications with enterprise SSO and RBAC</li>
+                <li>AI integration — RAG pipelines with LangChain, Anthropic Claude API, Pinecone</li>
                 <li>Open-source developer tools — 3 packages published on PyPI</li>
               </ul>
             </div>
@@ -41,7 +41,7 @@ const About: React.FC = () => {
             <div className="space-y-3 md:space-y-4">
               <h4 className="text-lg md:text-xl font-semibold">Current Work</h4>
               <p className="text-sm md:text-base text-muted-foreground">
-                At AIDM, I'm building healthcare web portals with Next.js, Node.js, GraphQL, and PostgreSQL within a 6-person cross-functional team. I've implemented HIPAA-aligned security controls (AES-256 encryption, RBAC, audit logging), integrated Azure AD with Microsoft Graph API for enterprise SSO, built a healthcare-domain RAG assistant with LangChain and Pinecone, and automated 5 internal workflows eliminating ~10 hours/week of manual effort.
+                At AIDM Software Consultancy, I'm the sole developer on a Supabase-powered operations platform (React 18, TypeScript, Vite, GraphQL) consolidating HR/applicant tracking, hospice CRM, email campaigns, training/LMS, and e-commerce. Integrated Anthropic Claude for automated resume screening, built a hospice CRM with Leaflet maps and OSRM route optimization, and enforced multi-tenant RBAC across 8 roles via Supabase RLS and Azure AD SSO.
               </p>
             </div>
 

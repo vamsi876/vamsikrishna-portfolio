@@ -9,179 +9,132 @@ interface Message {
   timestamp: number;
 }
 
-// Enhanced with more detailed information about Vamsi
+// Enhanced with more detailed information about Vamsi - Updated to match resume
 const portfolioInfo = {
   name: "Vamsi Krishna Kollipara",
-  summary: "AI/ML Engineer with experience building scalable automation systems in voice AI, biomedical-inspired AI, and retrieval-augmented generation (RAG). Proficient in developing end-to-end AI solutions using Python, PyTorch, TensorFlow, LangChain, and cloud-based infrastructure. Skilled in deploying models across multi-modal interfaces (voice, web, chat) and integrating with real-world data sources. Passionate about applying AI to solve complex healthcare and life sciences challenges through interdisciplinary collaboration and research.",
+  summary: "Full-stack developer with 2+ years of industry experience shipping React/TypeScript frontends and Node.js backends across healthcare and energy domains, plus hands-on AI integration (RAG pipelines with LangChain and Pinecone, Claude API). Most recently sole developer on a Supabase-powered operations platform serving 8 organizational roles daily. MS in Computer Science from Indiana State University. 3 published PyPI packages.",
   
   experience: [
+    {
+      title: "Full-Stack Developer",
+      company: "AIDM Software Consultancy",
+      location: "Remote",
+      date: "Jul 2025 - Present",
+      achievements: [
+        "Architected a healthcare data integration pipeline ingesting clinical data from Homecare Homebase (HCHB) EHR via SFTP log shipping into SQL Server 2022 on Azure, feeding a Next.js operational analytics dashboard",
+        "Built PowerShell automation chaining WinSCP SFTP download and SQL Server transaction log restore into an idempotent hourly SQL Agent job, with lock-file concurrency control, structured logging, and exit-code-driven email alerts",
+        "Built and shipped a full-stack operations platform (React 18, TypeScript, Vite, Tailwind, shadcn/ui, GraphQL) on Supabase (PostgreSQL, Auth, Storage, Edge Functions, RLS), deployed via GitHub Actions CI/CD across AWS and Vercel",
+        "Consolidated HR/applicant tracking, hospice CRM, email campaigns, training/LMS, and e-commerce into one SPA used daily across 8 organizational roles over 10 months",
+        "Integrated Anthropic Claude via Supabase Edge Functions to automate resume screening with fit scoring and reasoning, generate one-click application and CRM-account summaries",
+        "Designed a hospice CRM with account management, stage-tracked opportunity pipeline, territory assignment, FullCalendar visit planner, Leaflet map views with OSRM route optimization",
+        "Developed an email campaign engine with dynamic CRM-driven templates, business-day scheduling, and Microsoft Graph API integration",
+        "Enforced multi-tenant RBAC across 8 roles via centralized permission matrix, Supabase Row Level Security, JWT-verified Edge Function auth, and Azure AD SSO"
+      ]
+    },
     {
       title: "Graduate Research & Teaching Assistant",
       company: "Indiana State University",
       location: "Terre Haute, IN",
-      date: "Aug 2023 - Present",
+      date: "Aug 2023 - May 2025",
       achievements: [
-        "Developed a university-wide RAG-based AI assistant for answering queries about policies, deadlines, and curriculum across 10,000+ scraped websites",
-        "Engineered a voice+web AI chatbot using LangChain and LlamaParser for dynamic student support and automated document retrieval",
-        "Created a grading automation system using Azure Text Analytics, Power Automate, and Excel—reducing grading time by 80%",
-        "Built a plagiarism detection tool using Azure Document Intelligence to validate originality of student submissions",
-        "Implemented dynamic attendance tracking using Microsoft Forms, Power BI, and cloud pipelines",
-        "Trained ML models using PyTorch, TensorFlow, and Scikit-learn for academic simulations (e.g., document classification, time series)",
-        "Led tutorials and advised students in AI, database management, and operating systems courses"
+        "Built internal web applications for Indiana State University (React, Node.js, PostgreSQL), including a course catalog portal, faculty directory, and student resource dashboard",
+        "Built a RAG-powered knowledge assistant (LangChain, OpenAI API, Pinecone) for university staff to query academic policies and HR procedures, with configurable semantic retrieval and vector indexing",
+        "Built and open-sourced WebWeaver, a Python crawling library, and used it to ingest 40,000+ university URLs into a curated knowledge base of 8,000 documents powering the RAG assistant's semantic search"
       ]
     },
     {
-      title: "Data Analyst",
+      title: "Full-Stack Developer",
       company: "Cognizant Technology Solutions",
       location: "Hyderabad, India",
-      date: "Jul 2022 - Jul 2023",
+      date: "Jan 2022 - Jul 2023",
       achievements: [
-        "Optimized data processing pipelines for 1M+ records, improving system efficiency by 25%",
-        "Integrated AI-driven data retrieval mechanisms for operational analytics",
-        "Automated data transformation workflows, cutting manual effort by 40%",
-        "Designed PostgreSQL and Redis-backed customer data architectures to ensure high availability"
-      ]
-    },
-    {
-      title: "Data Analyst Intern",
-      company: "Cognizant Technology Solutions",
-      location: "Hyderabad, India",
-      date: "Jan 2022 - May 2022",
-      achievements: [
-        "Developed ETL processes using Informatica PowerCenter, ensuring high-accuracy data processing",
-        "Created interactive storage analytics dashboards in Power BI for real-time system monitoring",
-        "Worked with distributed storage environments, improving data integration efficiency"
+        "Developed React-based portal modules for Duke Energy's energy management platform, delivering real-time usage analytics, billing history, and outage status with interactive D3.js visualizations",
+        "Built Node.js/Express REST APIs integrated with Oracle and SAP backends to surface smart meter telemetry data, achieving sub-200ms p95 latency through Redis caching and connection pooling",
+        "Built an internal outage reporting dashboard (React, PostgreSQL, Mapbox GL) aggregating grid sensor data to help operations teams identify fault zones and coordinate field crew dispatch",
+        "Optimized SQL queries on multi-million-row smart meter and billing tables, reducing average execution time by 30% through composite indexing, join restructuring, and eliminating N+1 patterns",
+        "Built Node.js/RabbitMQ services that triggered real-time outage alerts via email and SMS",
+        "Wrote unit and integration tests (Jest, React Testing Library) achieving 85%+ code coverage across frontend and API layers"
       ]
     }
   ],
 
   skills: {
-    languages_frameworks: ["Python", "TypeScript", "Node.js", "JavaScript", "SQL"],
-    ai_ml_data_science: [
-      "PyTorch",
-      "TensorFlow",
-      "Scikit-learn",
-      "Transformers",
-      "Biomedical Text Mining",
-      "NLP",
-      "RAG",
-      "LangChain",
-      "LangGraph",
-      "LlamaParser"
-    ],
-    biomedical_ai: [
-      "Azure ML",
-      "Document Intelligence",
-      "SciSpacy (familiar)",
-      "BioBERT (exploring)"
-    ],
-    cloud_data_systems: [
-      "AWS",
-      "Docker",
-      "PostgreSQL",
-      "Redis",
-      "Pinecone",
-      "CI/CD",
-      "Power BI"
-    ],
-    automation_orchestration: [
-      "Temporal",
-      "Power Automate",
-      "Model Context Protocol (MCP)"
-    ],
-    web_frontend: [
-      "React.js",
-      "Next.js",
-      "Express.js"
-    ],
-    search_retrieval: [
-      "Multi-vector search",
-      "Hybrid lexical-semantic search"
-    ],
-    development_tools: [
-      "Git",
-      "VS Code",
-      "Cursor IDE",
-      "WindSurf"
-    ]
+    languages: ["JavaScript", "TypeScript", "Python", "SQL", "PowerShell", "HTML", "CSS"],
+    frontend: ["React", "Next.js", "Vite", "Tailwind CSS", "shadcn/ui", "D3.js", "Mapbox GL"],
+    backend: ["Node.js", "Express.js", "GraphQL", "REST APIs", "RabbitMQ"],
+    databases: ["PostgreSQL", "SQL Server", "Oracle", "Redis", "Pinecone"],
+    cloud_devops: ["Azure", "AWS", "Docker", "GitHub Actions", "CI/CD", "Vercel", "Supabase"],
+    ai_llm: ["Anthropic Claude API", "LangChain", "OpenAI API", "Vector Databases", "RAG"],
+    tools: ["Git", "Postman", "Jest", "React Testing Library", "Pytest"]
   },
 
   education: [
     {
-      degree: "Master's in Computer Science",
+      degree: "Master of Science in Computer Science",
       school: "Indiana State University",
       location: "Terre Haute, IN",
-      date: "Aug 2023 - Present",
-      gpa: "3.75/4.0",
-      relevantCoursework: "Cloud Computing, Artificial Intelligence, Data Visualization, Research (Machine Learning), Database Management Systems, Web Programming, Operating Systems"
+      date: "Aug 2023 - May 2025",
+      gpa: "3.66/4.0"
     },
     {
-      degree: "Bachelor's in Electronics and Communication Engineering",
-      school: "Vel Tech",
+      degree: "Bachelor of Technology in Electronics & Communication Engineering",
+      school: "Vel Tech University",
       location: "Chennai, India",
-      date: "July 2018 - May 2022",
-      gpa: "9.01/10.0",
-      relevantCoursework: "Deep Learning, Machine Learning, Major Project (Raspberry pi, ML), Minor Project (Esp32, LoRa), Python, C Programming, Java, Technical Communication, Design Thinking"
+      date: "Jun 2018 - May 2022",
+      gpa: "9.01/10"
     }
   ],
 
   contact: {
     email: "kolliparavamsikrishna80@gmail.com",
     phone: "+1 (812) 223-8818",
-    location: "San Francisco, CA",
     linkedin: "linkedin.com/in/vamsikollipara",
-    github: "github.com/vamsi876"
+    github: "github.com/vamsi876",
+    portfolio: "vamsikrishnakollipara.vercel.app"
   },
-
-  publications: [
-    {
-      title: "A New Paradigm of Smart Embedded System for Elder and Physically Challenged Person Using Raspberry Pi",
-      conference: "12th International Conference on Science and Innovative Engineering",
-      location: "Chennai, India",
-      date: "Jul 2022",
-      isbn: "978-93-87288-22-1",
-      abstract: "This paper presents a novel smart embedded system designed for elderly and physically challenged individuals, leveraging Raspberry Pi technology to provide assistance with daily activities and health monitoring."
-    }
-  ],
-
-  certifications: [
-    {
-      title: "Certified Full Stack Developer with Cloud for Web and Mobile",
-      issuer: "Hero Vired",
-      date: "2024",
-      link: "https://drive.google.com/file/d/1XHJQeDRELVtPedEsi7hsDT3Wka8rxrnL/view",
-      skills: ["Full Stack Web Development", "Mobile Development", "Cloud Architecture", "DevOps"]
-    }
-  ],
 
   openSource: [
     {
+      project: "GitBar",
+      date: "Mar 2026",
+      description: "Open-source macOS menubar app providing a unified Git dashboard aggregating PRs, issues, CI/CD status, and local repo health across GitHub, GitLab, and Bitbucket.",
+      link: "https://pypi.org/project/gitbar/",
+      technologies: ["Python", "PyObjC", "GitHub/GitLab REST APIs"]
+    },
+    {
+      project: "GadgetBox",
+      date: "Feb 2026",
+      description: "Cross-platform system tray app bundling 12 developer utilities (JSON formatter, JWT decoder, UUID generator, Base64, hash, regex tester, etc.) with intelligent clipboard auto-detection.",
+      link: "https://pypi.org/project/gadgetbox/",
+      technologies: ["Python", "pystray", "tkinter"]
+    },
+    {
       project: "WebWeaver",
-      date: "Sept 2024",
-      description: "WebWeaver is a Python package for crawling and extracting URLs from web pages. It provides an easy-to-use interface for crawling a single page or an entire site, while handling errors and incomplete URLs gracefully. All crawling functionality is encapsulated within the WebWeaver class.",
-      link: "https://github.com/RedBlackWeb/WebWeaver",
-      technologies: ["Python", "Selenium", "BeautifulSoup", "PyPI"]
+      date: "Sep 2024",
+      description: "Open-source Python library for configurable web crawling with URL validation, deduplication, robots.txt compliance, and recursive/breadth-first modes; powers the data ingestion layer behind the ISU RAG chatbot.",
+      link: "https://pypi.org/project/WebWeaver/",
+      technologies: ["Python", "asyncio", "aiohttp"]
     }
   ],
 
   projects: [
     {
-      name: "RAG-powered University Chatbot",
-      description: "A context-aware chatbot using Retrieval Augmented Generation (RAG) with Pinecone vector database for efficient similarity search. Integrates OpenAI embeddings for document vectorization and GPT models for natural responses.",
-      technologies: ["Python", "OpenAI", "Pinecone", "RAG", "FastAPI", "Vector DB"],
-      achievements: ["Processes 10,000+ university documents", "Real-time query handling"]
+      name: "GitBar — macOS Menubar Git Dashboard",
+      description: "Open-source macOS menubar app providing a unified Git dashboard aggregating PRs, issues, CI/CD status, and local repo health across GitHub, GitLab, and Bitbucket.",
+      technologies: ["Python", "PyObjC", "GitHub/GitLab REST APIs", "PyPI"],
+      date: "Mar 2026"
     },
     {
-      name: "Voice Command Canvas",
-      description: "An interactive web application that allows users to navigate on canvas using voice commands",
-      technologies: ["TypeScript", "React", "Web Speech API", "Canvas API", "Tailwind CSS"],
-      achievements: ["Voice-controlled drawing", "Real-time speech recognition"]
+      name: "GadgetBox — Cross-Platform Developer Utilities",
+      description: "Cross-platform system tray app bundling 12 developer utilities with intelligent clipboard auto-detection.",
+      technologies: ["Python", "pystray", "tkinter", "PyPI"],
+      date: "Feb 2026"
     },
     {
-      name: "COVID-19 U.S. County Map",
-      description: "Interactive map visualization of COVID-19 cases across U.S. counties",
-      technologies: ["Python", "Folium", "Pandas", "GeoJSON"],
-      achievements: ["County-level visualization", "Dynamic data updates"]
+      name: "WebWeaver — Web Scraping & Crawling Library",
+      description: "Open-source Python library for configurable web crawling with URL validation, deduplication, robots.txt compliance, and recursive/breadth-first modes.",
+      technologies: ["Python", "asyncio", "aiohttp", "PyPI"],
+      date: "Sep 2024"
     }
   ]
 };
@@ -207,7 +160,7 @@ const ChatBot: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     { 
       type: 'bot', 
-      content: "Hi! I'm Vamsi's virtual assistant. How can I help you learn more about Vamsi's experience, skills, or projects?",
+      content: "Hi! I'm Vamsi's virtual assistant. Ask me about his full-stack development experience, skills (React, TypeScript, Node.js, AI/LLM), or his 3 PyPI packages!",
       timestamp: Date.now()
     }
   ]);
@@ -299,14 +252,13 @@ const ChatBot: React.FC = () => {
         }));
         
         return `Vamsi's Master's education:
-        • Degree: ${portfolioInfo.education[0].degree}
-        • Institution: ${portfolioInfo.education[0].school}
-        • Location: ${portfolioInfo.education[0].location}
-        • Timeline: ${portfolioInfo.education[0].date}
-        • GPA: ${portfolioInfo.education[0].gpa}
-        • Key Coursework: ${portfolioInfo.education[0].relevantCoursework}
-        
-During his Master's program, Vamsi has been working as a Graduate Research & Teaching Assistant, focusing on AI applications for educational technology.`;
+• Degree: ${portfolioInfo.education[0].degree}
+• Institution: ${portfolioInfo.education[0].school}
+• Location: ${portfolioInfo.education[0].location}
+• Timeline: ${portfolioInfo.education[0].date}
+• GPA: ${portfolioInfo.education[0].gpa}
+
+During his Master's program, Vamsi worked as a Graduate Research & Teaching Assistant, building internal web applications, a RAG-powered knowledge assistant, and the WebWeaver crawling library.`;
       }
       
       // If asking about bachelor's specifically
@@ -317,14 +269,13 @@ During his Master's program, Vamsi has been working as a Graduate Research & Tea
         }));
         
         return `Vamsi's Bachelor's education:
-        • Degree: ${portfolioInfo.education[1].degree}
-        • Institution: ${portfolioInfo.education[1].school}
-        • Location: ${portfolioInfo.education[1].location}
-        • Timeline: ${portfolioInfo.education[1].date}
-        • GPA: ${portfolioInfo.education[1].gpa}
-        • Key Coursework: ${portfolioInfo.education[1].relevantCoursework}
-        
-During his undergraduate studies, Vamsi worked on multiple projects including embedded systems with Raspberry Pi and IoT applications with ESP32 and LoRa technology.`;
+• Degree: ${portfolioInfo.education[1].degree}
+• Institution: ${portfolioInfo.education[1].school}
+• Location: ${portfolioInfo.education[1].location}
+• Timeline: ${portfolioInfo.education[1].date}
+• GPA: ${portfolioInfo.education[1].gpa}
+
+During his undergraduate studies, Vamsi built a strong foundation in electronics and programming.`;
       }
       
       // General education response
@@ -332,17 +283,17 @@ During his undergraduate studies, Vamsi worked on multiple projects including em
 
 1. Master's Degree:
    • ${portfolioInfo.education[0].degree}
-   • ${portfolioInfo.education[0].school}
+   • ${portfolioInfo.education[0].school}, ${portfolioInfo.education[0].location}
    • ${portfolioInfo.education[0].date}
    • GPA: ${portfolioInfo.education[0].gpa}
 
 2. Bachelor's Degree:
    • ${portfolioInfo.education[1].degree}
-   • ${portfolioInfo.education[1].school}
+   • ${portfolioInfo.education[1].school}, ${portfolioInfo.education[1].location}
    • ${portfolioInfo.education[1].date}
    • GPA: ${portfolioInfo.education[1].gpa}
    
-Would you like more details about his Master's program, Bachelor's degree, or specific coursework?`;
+Would you like more details about his Master's program or Bachelor's degree?`;
     }
 
     // Detailed experience responses
@@ -394,18 +345,15 @@ Would you like more details about a specific role?`;
         input.includes('expertise') || input.includes('tools')) {
       
       // If asking about specific skill areas
-      if (input.includes('ai') || input.includes('ml') || input.includes('machine learning') ||
+      if (input.includes('ai') || input.includes('ml') || input.includes('machine learning') || input.includes('llm') ||
           (conversationContext.mentionedEntities['ai'] || conversationContext.mentionedEntities['ml'] || 
            conversationContext.mentionedEntities['llm'] || conversationContext.mentionedEntities['rag']) && isFollowUp) {
         
-        return `Vamsi's AI & Machine Learning expertise:
+        return `Vamsi's AI & LLM expertise:
 
-• LLM Frameworks: ${portfolioInfo.skills.ai_ml_data_science.filter(s => s.includes('Lang') || s.includes('OpenAI')).join(', ')}
-• AI Services: ${portfolioInfo.skills.ai_ml_data_science.filter(s => s.includes('Azure')).join(', ')}
-• RAG Systems: Specializes in retrieval-augmented generation architectures
-• Knowledge Retrieval: ${portfolioInfo.skills.search_retrieval.join(', ')}
+• ${portfolioInfo.skills.ai_llm.join(', ')}
 
-Vamsi has implemented these technologies in his projects, including voice AI chatbots, automated grading systems, and intelligent document processing solutions.`;
+Vamsi has hands-on experience building RAG pipelines with LangChain and Pinecone, and integrating Anthropic Claude API for automated resume screening and natural-language insights. He's built production RAG systems serving university staff and healthcare operations.`;
       }
       
       if (input.includes('programming') || input.includes('language') || input.includes('code') ||
@@ -413,44 +361,46 @@ Vamsi has implemented these technologies in his projects, including voice AI cha
         
         return `Vamsi's programming languages and development expertise:
 
-• Primary Languages: ${portfolioInfo.skills.languages_frameworks.slice(0, 2).join(', ')}
-• Secondary Languages: ${portfolioInfo.skills.languages_frameworks.slice(2).join(', ')}
-• Web Development: ${portfolioInfo.skills.web_frontend.join(', ')}
-• Development Tools: ${portfolioInfo.skills.development_tools.join(', ')}
+• Languages: ${portfolioInfo.skills.languages.join(', ')}
+• Frontend: ${portfolioInfo.skills.frontend.join(', ')}
+• Backend: ${portfolioInfo.skills.backend.join(', ')}
 
-Vamsi is particularly proficient in Python for AI/ML applications and TypeScript/JavaScript for frontend and backend web development.`;
+Vamsi is particularly proficient in TypeScript/JavaScript for full-stack web development and Python for AI/ML applications and open-source tools (3 PyPI packages published).`;
       }
       
       if (input.includes('database') || input.includes('cloud') || input.includes('infrastructure') || input.includes('devops')) {
         
         return `Vamsi's database and cloud infrastructure expertise:
 
-• Databases: ${portfolioInfo.skills.cloud_data_systems.filter(s => s === 'PostgreSQL' || s === 'Redis' || s === 'Pinecone').join(', ')}
-• Cloud Platforms: ${portfolioInfo.skills.cloud_data_systems.filter(s => s === 'AWS' || s === 'Docker').join(', ')}
-• Cloud Services: ${portfolioInfo.skills.cloud_data_systems.filter(s => s.includes('CI/CD') && s !== 'CI/CD').join(', ')}
-• DevOps: ${portfolioInfo.skills.cloud_data_systems.filter(s => s === 'Power BI').join(', ')}
-• Orchestration: ${portfolioInfo.skills.automation_orchestration.join(', ')}
+• Databases: ${portfolioInfo.skills.databases.join(', ')}
+• Cloud & DevOps: ${portfolioInfo.skills.cloud_devops.join(', ')}
 
-Vamsi has experience deploying AI solutions in cloud environments and building scalable database architectures.`;
+Vamsi has experience with Azure (SQL Server, AD SSO), AWS, Supabase (PostgreSQL, Auth, Storage, Edge Functions, RLS), and deploying full-stack applications via GitHub Actions CI/CD.`;
       }
       
       // General skills overview
       return `Vamsi's key technical skills:
 
-1. Programming Languages
-   • ${portfolioInfo.skills.languages_frameworks.join(', ')}
+1. Languages
+   • ${portfolioInfo.skills.languages.join(', ')}
 
-2. AI & Machine Learning
-   • ${portfolioInfo.skills.ai_ml_data_science.join(', ')}
+2. Frontend
+   • ${portfolioInfo.skills.frontend.join(', ')}
 
-3. Databases & Cloud
-   • ${portfolioInfo.skills.cloud_data_systems.join(', ')}
+3. Backend
+   • ${portfolioInfo.skills.backend.join(', ')}
 
-4. Web Development
-   • ${portfolioInfo.skills.web_frontend.join(', ')}
+4. Databases
+   • ${portfolioInfo.skills.databases.join(', ')}
 
-5. Knowledge Retrieval
-   • ${portfolioInfo.skills.search_retrieval.join(', ')}
+5. Cloud & DevOps
+   • ${portfolioInfo.skills.cloud_devops.join(', ')}
+
+6. AI & LLM
+   • ${portfolioInfo.skills.ai_llm.join(', ')}
+
+7. Tools
+   • ${portfolioInfo.skills.tools.join(', ')}
 
 Would you like more details about his AI expertise, programming languages, or cloud infrastructure skills?`;
     }
@@ -458,81 +408,72 @@ Would you like more details about his AI expertise, programming languages, or cl
     // Enhanced project information
     if (input.includes('project') || input.includes('portfolio') || input.includes('work on')) {
       
-      // If asking about a specific project
-      if (input.includes('voice') || input.includes('assistant') || input.includes('chatbot') ||
-          (conversationContext.mentionedEntities['voice'] && isFollowUp)) {
+      // If asking about GitBar
+      if (input.includes('gitbar') || input.includes('git') || input.includes('menubar') ||
+          input.includes('dashboard')) {
         
         const project = portfolioInfo.projects[0];
         
-        return `Vamsi's RAG-powered University Chatbot project:
+        return `Vamsi's ${project.name}:
 
 • Description: ${project.description}
 • Technologies: ${project.technologies.join(', ')}
-• Achievements:
-  - ${project.achievements.join('\n  - ')}
+• Date: ${project.date}
 
-This project leverages RAG with Pinecone for efficient similarity search and OpenAI for natural responses. It integrates with real-world data sources and provides contextually relevant answers to university students.
+This macOS menubar app aggregates PRs, issues, CI/CD status, and local repo health across GitHub, GitLab, and Bitbucket in one unified dashboard.
 
-You can learn more about this project at: https://github.com/vamsi876/rag-university-chatbot`;
+Check it out on PyPI: https://pypi.org/project/gitbar/`;
       }
       
-      if (input.includes('document') || input.includes('grading') || input.includes('automation') ||
-          (conversationContext.mentionedEntities['document'] && isFollowUp)) {
+      // If asking about GadgetBox
+      if (input.includes('gadgetbox') || input.includes('gadget') || input.includes('utilities') ||
+          input.includes('developer tools')) {
         
         const project = portfolioInfo.projects[1];
         
-        return `Vamsi's Voice Command Canvas project:
+        return `Vamsi's ${project.name}:
 
 • Description: ${project.description}
 • Technologies: ${project.technologies.join(', ')}
-• Achievements:
-  - ${project.achievements.join('\n  - ')}
+• Date: ${project.date}
 
-This project allows users to navigate on canvas using voice commands. It integrates with the Web Speech API and Canvas API for real-time speech recognition and voice-controlled drawing.
+Includes 12 utilities: JSON formatter, JWT decoder, UUID generator, Base64, hash generator, regex tester, and more with intelligent clipboard auto-detection.
 
-Check out the project at: https://github.com/vamsi876/voice-command-canvas`;
+Check it out on PyPI: https://pypi.org/project/gadgetbox/`;
       }
       
-      if (input.includes('covid') || input.includes('us') || input.includes('county') || input.includes('map')) {
+      // If asking about WebWeaver
+      if (input.includes('webweaver') || input.includes('crawl') || input.includes('scraping')) {
         const project = portfolioInfo.projects[2];
         
-        return `Vamsi's COVID-19 U.S. County Map project:
+        return `Vamsi's ${project.name}:
 
 • Description: ${project.description}
 • Technologies: ${project.technologies.join(', ')}
-• Achievements:
-  - ${project.achievements.join('\n  - ')}
+• Date: ${project.date}
 
-This project provides an interactive visualization of COVID-19 cases across U.S. counties.
+This library powers the data ingestion layer behind the ISU RAG chatbot, having crawled 40,000+ university URLs.
 
-View the project here: https://github.com/vamsi876/us-covid-map-2020`;
+Check it out on PyPI: https://pypi.org/project/WebWeaver/`;
       }
       
       // General projects overview
-      return `Vamsi's key projects:
+      return `Vamsi's key projects & open-source packages (3 published on PyPI):
 
-1. RAG-powered University Chatbot
+1. ${portfolioInfo.projects[0].name} (${portfolioInfo.projects[0].date})
    • ${portfolioInfo.projects[0].description}
    • Technologies: ${portfolioInfo.projects[0].technologies.join(', ')}
-   • Key achievement: ${portfolioInfo.projects[0].achievements[0]}
-   • Link: https://github.com/vamsi876/rag-university-chatbot
+   • PyPI: https://pypi.org/project/gitbar/
 
-2. Voice Command Canvas
+2. ${portfolioInfo.projects[1].name} (${portfolioInfo.projects[1].date})
    • ${portfolioInfo.projects[1].description}
    • Technologies: ${portfolioInfo.projects[1].technologies.join(', ')}
-   • Key achievement: ${portfolioInfo.projects[1].achievements[0]}
-   • Link: https://github.com/vamsi876/voice-command-canvas
+   • PyPI: https://pypi.org/project/gadgetbox/
 
-3. COVID-19 U.S. County Map
+3. ${portfolioInfo.projects[2].name} (${portfolioInfo.projects[2].date})
    • ${portfolioInfo.projects[2].description}
    • Technologies: ${portfolioInfo.projects[2].technologies.join(', ')}
-   • Key achievement: ${portfolioInfo.projects[2].achievements[0]}
-   • Link: https://github.com/vamsi876/us-covid-map-2020
-
-4. WebWeaver (Open Source)
-   • ${portfolioInfo.openSource[0].description}
-   • Technologies: ${portfolioInfo.openSource[0].technologies.join(', ')}
-   • Link: ${portfolioInfo.openSource[0].link}
+   • PyPI: https://pypi.org/project/WebWeaver/
 
 Would you like more details about any of these projects?`;
     }
@@ -543,54 +484,56 @@ Would you like more details about any of these projects?`;
 
 • Email: ${portfolioInfo.contact.email}
 • Phone: ${portfolioInfo.contact.phone}
-• Location: ${portfolioInfo.contact.location}
-• Professional Profiles:
-      - LinkedIn: ${portfolioInfo.contact.linkedin}
-  - GitHub: ${portfolioInfo.contact.github}
+• LinkedIn: ${portfolioInfo.contact.linkedin}
+• GitHub: ${portfolioInfo.contact.github}
+• Portfolio: ${portfolioInfo.contact.portfolio}
 
 Would you like to know about his availability for new opportunities or collaborations?`;
     }
 
-    // Enhanced publications information
+    // Publications - redirect to open source
     if (input.includes('publication') || input.includes('paper') || input.includes('research') || input.includes('published')) {
-      const pub = portfolioInfo.publications[0];
-      return `Vamsi's research publication:
+      return `Vamsi has published 3 open-source packages on PyPI:
 
-• Title: "${pub.title}"
-• Conference: ${pub.conference}
-• Location: ${pub.location}
-• Date: ${pub.date}
-• ISBN: ${pub.isbn}
-• Abstract: ${pub.abstract}
+1. GitBar (Mar 2026) - macOS menubar Git dashboard
+2. GadgetBox (Feb 2026) - Cross-platform developer utilities  
+3. WebWeaver (Sep 2024) - Web crawling library
 
-This research focuses on developing assistive technology solutions for elderly and physically challenged individuals using Raspberry Pi embedded systems.`;
+Would you like more details about any of these packages?`;
     }
 
     // Enhanced open source information
-    if (input.includes('open source') || input.includes('github') || input.includes('contribution')) {
-      const project = portfolioInfo.openSource[0];
-      return `Vamsi's open source contributions:
+    if (input.includes('open source') || input.includes('github') || input.includes('contribution') || input.includes('pypi')) {
+      return `Vamsi's open source contributions (3 PyPI packages):
 
-• ${project.project}
-  - Description: ${project.description}
-  - Technologies: ${project.technologies.join(', ')}
-  - Link: ${project.link}
+1. ${portfolioInfo.openSource[0].project} (${portfolioInfo.openSource[0].date})
+   • ${portfolioInfo.openSource[0].description}
+   • Technologies: ${portfolioInfo.openSource[0].technologies.join(', ')}
+   • PyPI: ${portfolioInfo.openSource[0].link}
 
-Would you like more details about his open source work?`;
+2. ${portfolioInfo.openSource[1].project} (${portfolioInfo.openSource[1].date})
+   • ${portfolioInfo.openSource[1].description}
+   • Technologies: ${portfolioInfo.openSource[1].technologies.join(', ')}
+   • PyPI: ${portfolioInfo.openSource[1].link}
+
+3. ${portfolioInfo.openSource[2].project} (${portfolioInfo.openSource[2].date})
+   • ${portfolioInfo.openSource[2].description}
+   • Technologies: ${portfolioInfo.openSource[2].technologies.join(', ')}
+   • PyPI: ${portfolioInfo.openSource[2].link}
+
+Would you like more details about any of these packages?`;
     }
 
-    // Enhanced certifications information
+    // Certifications - redirect to skills/experience
     if (input.includes('certification') || input.includes('certificate')) {
-      const cert = portfolioInfo.certifications[0];
-      return `Vamsi's certifications:
+      return `Vamsi's expertise comes from 2+ years of industry experience across healthcare and energy domains. He has:
 
-• ${cert.title}
-  - Issued by: ${cert.issuer}
-  - Date: ${cert.date}
-  - Skills: ${cert.skills.join(', ')}
-  - Link: ${cert.link}
+• Built full-stack applications with React, TypeScript, Node.js, and PostgreSQL
+• Shipped production systems at AIDM Software Consultancy and Cognizant
+• Published 3 open-source packages on PyPI
+• Completed MS in Computer Science from Indiana State University (GPA 3.66)
 
-Would you like more details about his certification or specific skills?`;
+Would you like more details about his skills or experience?`;
     }
 
     // Context-aware responses based on conversation history
@@ -598,15 +541,15 @@ Would you like more details about his certification or specific skills?`;
       const mostRecentTopic = conversationContext.recentTopics[0];
       
       if (mostRecentTopic === 'education') {
-        return `Regarding Vamsi's education, he has a ${portfolioInfo.education[0].degree} from ${portfolioInfo.education[0].school} and a ${portfolioInfo.education[1].degree} from ${portfolioInfo.education[1].school}. His coursework has focused on AI, machine learning, and cloud computing.`;
+        return `Regarding Vamsi's education, he has a ${portfolioInfo.education[0].degree} from ${portfolioInfo.education[0].school} (GPA ${portfolioInfo.education[0].gpa}) and a ${portfolioInfo.education[1].degree} from ${portfolioInfo.education[1].school} (GPA ${portfolioInfo.education[1].gpa}).`;
       }
       
       if (mostRecentTopic === 'experience') {
-        return `About Vamsi's professional experience, he is currently working as a ${portfolioInfo.experience[0].title} at ${portfolioInfo.experience[0].company}, where he develops AI solutions for educational technology. Previously, he worked as a ${portfolioInfo.experience[1].title} at ${portfolioInfo.experience[1].company}.`;
+        return `About Vamsi's professional experience, he is currently working as a ${portfolioInfo.experience[0].title} at ${portfolioInfo.experience[0].company}, building a Supabase-powered operations platform. Previously, he worked at ${portfolioInfo.experience[1].company} and ${portfolioInfo.experience[2].company}.`;
       }
       
       if (mostRecentTopic === 'skills') {
-        return `Regarding Vamsi's technical skills, his core expertise is in AI engineering, particularly working with LLMs, RAG systems, and NLP. He's proficient in Python, TypeScript, and has experience with cloud platforms like AWS and Azure.`;
+        return `Regarding Vamsi's technical skills, his core expertise is in full-stack development with React, TypeScript, Node.js, and PostgreSQL. He also has hands-on AI integration experience with LangChain, Anthropic Claude API, and Pinecone.`;
       }
     }
 
@@ -614,11 +557,11 @@ Would you like more details about his certification or specific skills?`;
     return `I'm here to tell you about Vamsi's background, skills, and projects. 
 
 You can ask me about:
-• His education (Master's in Computer Science, Bachelor's in Electronics and Communication)
-• Professional experience (AI research, data analysis)
-• Technical skills (AI/ML, programming languages, cloud technologies)
-• Projects (voice AI assistants, document automation)
-• Publications, certifications, or contact information
+• His education (MS in Computer Science from Indiana State, BTech from Vel Tech)
+• Professional experience (Full-Stack Developer at AIDM, Cognizant, ISU)
+• Technical skills (React, TypeScript, Node.js, PostgreSQL, AI/LLM, Cloud)
+• Open-source projects (3 PyPI packages: GitBar, GadgetBox, WebWeaver)
+• Contact information
 
 What would you like to know about?`;
   };

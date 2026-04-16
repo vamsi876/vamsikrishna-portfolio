@@ -1,49 +1,46 @@
-import React, { useState } from 'react';
-import { Download, Mail, Phone, MapPin, GraduationCap, Briefcase, Award, ExternalLink, Linkedin, Github } from 'lucide-react';
+import React from 'react';
+import { Download, Mail, Phone, GraduationCap, Briefcase, Award, ExternalLink, Linkedin, Github, Globe, Code2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import PDFViewer from './PDFViewer';
 
 const Resume: React.FC = () => {
-  const [showPDF, setShowPDF] = useState(false);
   const pdfUrl = '/vamsi_krishna.pdf';
 
   const summary = {
-    title: "AI Developer",
-    description: "AI Developer and Computer Science graduate student with strong experience delivering production AI solutions across full-stack development, machine learning, and data engineering. At AIDM, built secure healthcare web platforms from scratch for organizations with 250 and 100+ employees, integrating AI features, RBAC authentication, enterprise automations, and EHR-integrated workflows to support clinical operations. Developed HIPAA- and SOC-compliant systems with high-security controls for sensitive healthcare data and enterprise communication using Azure Enterprise Applications + Microsoft Graph API. Previously engineered a RAG chatbot by crawling 40,000+ URLs and scraping 10,000+ websites, building end-to-end pipelines for cleaning, chunking, embeddings, and vector search to support 250+ users. Experienced in scalable deployments, ETL automation, and building reliable AI applications for real-world users."
+    title: "Full-Stack Developer",
+    description: "Full-stack developer with 2+ years of industry experience shipping React/TypeScript frontends and Node.js backends across healthcare and energy domains, plus hands-on AI integration (RAG pipelines with LangChain and Pinecone, Claude API). Most recently sole developer on a Supabase-powered operations platform serving 8 organizational roles daily. MS in Computer Science from Indiana State University. 3 published PyPI packages."
   };
 
   const education = [
     {
-      degree: "Masters in Computer Science",
+      degree: "Master of Science in Computer Science",
       school: "Indiana State University",
       location: "Terre Haute, IN",
       date: "Aug 2023 - May 2025",
-      gpa: "3.66/4.0",
-      coursework: "Cloud Computing, Artificial Intelligence, Data Visualization, Research (Machine Learning), Database Management Systems, Web Programming, Operating Systems"
+      gpa: "3.66"
     },
     {
-      degree: "Bachelor's in Electronics and Communication Engineering",
-      school: "Vel Tech",
+      degree: "Bachelor of Technology in Electronics & Communication Engineering",
+      school: "Vel Tech University",
       location: "Chennai, India",
-      date: "July 2018 - May 2022",
-      gpa: "9.01/10.0",
-      relevantCoursework: "Deep Learning, Machine Learning, Major Project (Raspberry pi, ML), Minor Project (Esp32, LoRa), Python, C Programming, Java, Technical Communication, Design Thinking"
+      date: "Jun 2018 - May 2022",
+      gpa: "9.01/10"
     }
   ];
 
   const experience = [
     {
       title: "Full-Stack Developer",
-      company: "AIDM — Software Consultancy",
+      company: "AIDM Software Consultancy",
       location: "Remote",
       date: "Jul 2025 – Present",
       achievements: [
-        "Built two healthcare web portals with Next.js (TypeScript), Node.js, GraphQL, and PostgreSQL, supporting multi-role access for clinical and administrative users",
-        "Implemented HIPAA-aligned security controls — AES-256 encryption for PHI at rest, TLS in transit, RBAC with minimum-necessary access, and audit logging",
-        "Integrated Azure Active Directory with Microsoft Graph API for enterprise SSO, automating onboarding and email notification workflows",
-        "Built a healthcare-domain RAG assistant (LangChain, OpenAI API, Pinecone) with PHI-aware document filtering and MMR-based retrieval",
-        "Automated 5 internal workflows using n8n and Power Automate, eliminating ~10 hours/week of manual effort",
-        "Set up GitHub Actions CI/CD pipelines with automated linting, type-checking gates, and structured JSON logging"
+        "Architected a healthcare data integration pipeline ingesting clinical data from Homecare Homebase (HCHB) EHR via SFTP log shipping into SQL Server 2022 on Azure, feeding a Next.js operational analytics dashboard.",
+        "Built PowerShell automation chaining WinSCP SFTP download and SQL Server transaction log restore into an idempotent hourly SQL Agent job, with lock-file concurrency control, structured logging, and exit-code-driven email alerts.",
+        "Built and shipped a full-stack operations platform (React 18, TypeScript, Vite, Tailwind, shadcn/ui, GraphQL) on Supabase (PostgreSQL, Auth, Storage, Edge Functions, RLS), deployed via GitHub Actions CI/CD across AWS and Vercel, consolidating HR/applicant tracking, hospice CRM, email campaigns, training/LMS, and e-commerce into one SPA used daily across 8 organizational roles over 10 months.",
+        "Integrated Anthropic Claude via Supabase Edge Functions to automate resume screening with fit scoring and reasoning (PDF/DOCX parsing via mammoth and pdfjs-dist), generate one-click application and CRM-account summaries, and surface natural-language insights across a 24-chart analytics system with DB-level caching and per-user rate limiting.",
+        "Designed a hospice CRM with account management, a stage-tracked opportunity pipeline, territory assignment, a FullCalendar visit planner, Leaflet map views with OSRM route optimization, and an Excel-to-Supabase census pipeline powering 7/14/30-day branch visit analytics.",
+        "Developed an email campaign engine with dynamic CRM-driven templates, business-day scheduling, and Microsoft Graph API integration for organizational sending, plus transactional emails with delayed queues and reply tracking.",
+        "Enforced multi-tenant RBAC across 8 roles via a centralized permission matrix, Supabase Row Level Security, JWT-verified Edge Function auth, and Azure AD SSO with identity linking."
       ]
     },
     {
@@ -52,117 +49,59 @@ const Resume: React.FC = () => {
       location: "Terre Haute, IN",
       date: "Aug 2023 – May 2025",
       achievements: [
-        "Developed and deployed a RAG chatbot (LangChain, OpenAI API, Pinecone) to answer student queries with configurable semantic retrieval, cosine similarity thresholds, and vector indexing",
-        "Built and open-sourced WebWeaver, a Python crawling library, ingesting 40,000+ URLs into a curated knowledge base of ~8,000 documents"
+        "Built internal web applications for Indiana State University (React, Node.js, PostgreSQL), including a course catalog portal, faculty directory, and student resource dashboard used by academic departments.",
+        "Built a RAG-powered knowledge assistant (LangChain, OpenAI API, Pinecone) for university staff to query academic policies and HR procedures, with configurable semantic retrieval, chunk-overlap tuning, and vector indexing.",
+        "Built and open-sourced WebWeaver, a Python crawling library, and used it to ingest 40,000+ university URLs into a curated knowledge base of 8,000 documents powering the RAG assistant's semantic search."
       ]
     },
     {
       title: "Full-Stack Developer",
       company: "Cognizant Technology Solutions",
       location: "Hyderabad, India",
-      date: "Jul 2022 – Jul 2023",
+      date: "Jan 2022 – Jul 2023",
       achievements: [
-        "Built and shipped React UI components and Express.js REST APIs for a client-facing logistics dashboard with real-time shipment tracking",
-        "Optimized SQL queries on multi-million-row databases — reduced execution time by 30% through composite indexing and eliminating N+1 patterns"
-      ]
-    },
-    {
-      title: "Full-Stack Developer Intern",
-      company: "Cognizant Technology Solutions",
-      location: "Hyderabad, India",
-      date: "Jan 2022 – May 2022",
-      achievements: [
-        "Built frontend interfaces and integrated REST APIs for an internal reporting tool using JavaScript, HTML/CSS, and Node.js; developed SQL-driven dashboards"
+        "Developed React-based portal modules for Duke Energy's energy management platform, delivering real-time usage analytics, billing history, and outage status with interactive D3.js visualizations to residential and commercial customers.",
+        "Built Node.js/Express REST APIs integrated with Oracle and SAP backends to surface smart meter telemetry data, achieving sub-200ms p95 latency through Redis caching and connection pooling.",
+        "Built an internal outage reporting dashboard (React, PostgreSQL, Mapbox GL) aggregating grid sensor data to help operations teams identify fault zones and coordinate field crew dispatch.",
+        "Optimized SQL queries on multi-million-row smart meter and billing tables, reducing average execution time by 30% through composite indexing, join restructuring, and eliminating N+1 patterns.",
+        "Contributed to integrating grid event feeds into the customer notification system, building Node.js/RabbitMQ services that triggered real-time outage alerts via email and SMS.",
+        "Wrote unit and integration tests (Jest, React Testing Library) achieving 85%+ code coverage across frontend and API layers."
       ]
     }
   ];
 
   const openSourceContributions = [
     {
-      project: "GitBar — macOS Menubar Git Dashboard",
+      project: "GitBar — macOS Menubar Git Dashboard (PyPI)",
       date: "Mar 2026",
-      description: "Built and published an open-source macOS menubar app providing a unified Git dashboard aggregating PRs, issues, CI/CD status, and local repo health across GitHub, GitLab, and Bitbucket. Tech: Python, PyObjC, GitHub/GitLab REST APIs.",
+      description: "Built and published an open-source macOS menubar app providing a unified Git dashboard aggregating PRs, issues, CI/CD status, and local repo health across GitHub, GitLab, and Bitbucket.",
+      tech: "Python, PyObjC, GitHub/GitLab REST APIs",
       link: "https://pypi.org/project/gitbar/"
     },
     {
-      project: "GadgetBox — Cross-Platform Developer Utilities",
+      project: "GadgetBox — Cross-Platform Developer Utilities (PyPI)",
       date: "Feb 2026",
-      description: "Published a cross-platform system tray app bundling 12 developer utilities (JSON formatter, JWT decoder, UUID generator, Base64, hash, regex tester, etc.) with intelligent clipboard auto-detection. Tech: Python, pystray, tkinter.",
+      description: "Published a cross-platform system tray app bundling 12 developer utilities (JSON formatter, JWT decoder, UUID generator, Base64, hash, regex tester, etc.) with intelligent clipboard auto-detection.",
+      tech: "Python, pystray, tkinter",
       link: "https://pypi.org/project/gadgetbox/"
     },
     {
-      project: "WebWeaver — Web Scraping & Crawling Library",
+      project: "WebWeaver — Web Scraping & Crawling Library (PyPI)",
       date: "Sep 2024",
-      description: "Open-source Python library for configurable web crawling with URL validation, deduplication, robots.txt compliance, and recursive/breadth-first modes; powers the data ingestion layer behind the ISU RAG chatbot. Tech: Python, asyncio, aiohttp.",
+      description: "Open-source Python library for configurable web crawling with URL validation, deduplication, robots.txt compliance, and recursive/breadth-first modes; powers the data ingestion layer behind the ISU RAG chatbot.",
+      tech: "Python, asyncio, aiohttp",
       link: "https://pypi.org/project/WebWeaver/"
     }
   ];
 
-  const publications = [
-    {
-      title: "A New Paradigm of Smart Embedded System for Elder and Physically Challenged Person Using Raspberry Pi",
-      conference: "12th International Conference on Science and Innovative Engineering",
-      location: "Chennai, India",
-      date: "Jul 2022",
-      isbn: "978-93-81288-22-1"
-    }
-  ];
-
-  const certifications = [
-    {
-      title: "Certified Full Stack Developer with Cloud for Web and Mobile",
-      issuer: "Hero Vired",
-      date: "Nov 2023",
-      link: "https://drive.google.com/file/d/1XHJQeDRELVtPedEsi7hsDT3Wka8rxrnL/view"
-    }
-  ];
-
   const skills = {
-    languages: [
-      "JavaScript",
-      "TypeScript",
-      "Python",
-      "SQL",
-      "HTML",
-      "CSS"
-    ],
-    frontend: [
-      "React",
-      "Next.js",
-      "Tailwind CSS"
-    ],
-    backend: [
-      "Node.js",
-      "Express.js",
-      "GraphQL",
-      "REST APIs"
-    ],
-    databases: [
-      "PostgreSQL",
-      "Pinecone"
-    ],
-    cloud_and_devops: [
-      "Azure",
-      "AWS",
-      "Docker",
-      "GitHub Actions",
-      "CI/CD",
-      "Vercel",
-      "Supabase"
-    ],
-    ai_and_llm: [
-      "LangChain",
-      "OpenAI API",
-      "Vector Databases",
-      "Retrieval-Augmented Generation"
-    ],
-    tools: [
-      "Git",
-      "Postman",
-      "Jest",
-      "React Testing Library",
-      "Pytest"
-    ]
+    languages: ["JavaScript", "TypeScript", "Python", "SQL", "PowerShell", "HTML", "CSS"],
+    frontend: ["React", "Next.js", "Vite", "Tailwind CSS", "shadcn/ui", "D3.js", "Mapbox GL"],
+    backend: ["Node.js", "Express.js", "GraphQL", "REST APIs", "RabbitMQ"],
+    databases: ["PostgreSQL", "SQL Server", "Oracle", "Redis", "Pinecone"],
+    cloud_and_devops: ["Azure", "AWS", "Docker", "GitHub Actions", "CI/CD", "Vercel", "Supabase"],
+    ai_and_llm: ["Anthropic Claude API", "LangChain", "OpenAI API", "Vector Databases", "RAG"],
+    tools: ["Git", "Postman", "Jest", "React Testing Library", "Pytest"]
   };
 
   return (
@@ -178,47 +117,47 @@ const Resume: React.FC = () => {
         <div className="glass p-8 rounded-2xl">
           {/* Header */}
           <div className="text-center mb-12">
-            <div className="inline-block glass-dark px-4 py-2 rounded-full text-sm font-medium mb-4">
-              {summary.title}
-            </div>
-            <h1 className="text-4xl font-bold mb-4 text-gradient">Vamsi Krishna Kollipara</h1>
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <div className="flex items-center">
-                <Mail className="mr-2" size={16} />
-                <a href="mailto:kolliparavamsikrishna80@gmail.com" className="hover:text-primary transition-colors">
-                  kolliparavamsikrishna80@gmail.com
-                </a>
-              </div>
-              <div className="flex items-center">
-                <Phone className="mr-2" size={16} />
-                <a href="tel:+18122238818" className="hover:text-primary transition-colors">
-                  +1 (812) 223-8818
-                </a>
-              </div>
-              <div className="flex items-center">
-                <MapPin className="mr-2" size={16} />
-                <span>San Francisco, CA</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <a 
-                  href="https://www.linkedin.com/in/vamsikollipara/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-primary transition-colors flex items-center"
-                >
-                  <Linkedin size={16} className="mr-1" />
-                  LinkedIn
-                </a>
-                <a 
-                  href="https://github.com/vamsi876"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-primary transition-colors flex items-center"
-                >
-                  <Github size={16} className="mr-1" />
-                  GitHub
-                </a>
-              </div>
+            <h1 className="text-4xl font-bold mb-2 text-gradient">VAMSI KRISHNA KOLLIPARA</h1>
+            <div className="flex flex-wrap justify-center gap-3 text-sm text-muted-foreground">
+              <a href="mailto:kolliparavamsikrishna80@gmail.com" className="hover:text-primary transition-colors flex items-center">
+                <Mail className="mr-1" size={14} />
+                kolliparavamsikrishna80@gmail.com
+              </a>
+              <span>|</span>
+              <a href="tel:+18122238818" className="hover:text-primary transition-colors flex items-center">
+                <Phone className="mr-1" size={14} />
+                812-223-8818
+              </a>
+              <span>|</span>
+              <a 
+                href="https://www.linkedin.com/in/vamsikollipara/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors flex items-center"
+              >
+                <Linkedin size={14} className="mr-1" />
+                LinkedIn
+              </a>
+              <span>|</span>
+              <a 
+                href="https://github.com/vamsi876"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors flex items-center"
+              >
+                <Github size={14} className="mr-1" />
+                GitHub
+              </a>
+              <span>|</span>
+              <a 
+                href="https://vamsikrishnakollipara.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors flex items-center"
+              >
+                <Globe size={14} className="mr-1" />
+                Portfolio
+              </a>
             </div>
           </div>
 
@@ -230,27 +169,41 @@ const Resume: React.FC = () => {
             </div>
           </div>
 
-          {/* Education */}
+          {/* Skills */}
           <div className="mb-12">
             <h2 className="text-2xl font-bold mb-6 flex items-center">
-              <GraduationCap className="mr-2" size={24} />
-              Education
+              <Award className="mr-2" size={24} />
+              Skills
             </h2>
-            <div className="space-y-8">
-              {education.map((edu, index) => (
-                <div key={index} className="relative pl-6 border-l-2 border-primary/20">
-                  <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary/20"></div>
-                  <div className="mb-2">
-                    <h3 className="text-xl font-semibold">{edu.degree}</h3>
-                    <p className="text-muted-foreground">{edu.school} | {edu.location}</p>
-                    <p className="text-sm text-muted-foreground">{edu.date}</p>
-                  </div>
-                  <div className="glass-dark p-4 rounded-lg">
-                    <p className="text-sm text-muted-foreground mb-2">GPA: {edu.gpa}</p>
-                    <p className="text-sm">Relevant Coursework: {edu.coursework}</p>
-                  </div>
-                </div>
-              ))}
+            <div className="glass-dark p-4 rounded-lg space-y-3">
+              <div>
+                <span className="font-semibold">Languages:</span>{' '}
+                <span className="text-muted-foreground">{skills.languages.join(', ')}</span>
+              </div>
+              <div>
+                <span className="font-semibold">Frontend:</span>{' '}
+                <span className="text-muted-foreground">{skills.frontend.join(', ')}</span>
+              </div>
+              <div>
+                <span className="font-semibold">Backend:</span>{' '}
+                <span className="text-muted-foreground">{skills.backend.join(', ')}</span>
+              </div>
+              <div>
+                <span className="font-semibold">Databases:</span>{' '}
+                <span className="text-muted-foreground">{skills.databases.join(', ')}</span>
+              </div>
+              <div>
+                <span className="font-semibold">Cloud & DevOps:</span>{' '}
+                <span className="text-muted-foreground">{skills.cloud_and_devops.join(', ')}</span>
+              </div>
+              <div>
+                <span className="font-semibold">AI & LLM:</span>{' '}
+                <span className="text-muted-foreground">{skills.ai_and_llm.join(', ')}</span>
+              </div>
+              <div>
+                <span className="font-semibold">Tools:</span>{' '}
+                <span className="text-muted-foreground">{skills.tools.join(', ')}</span>
+              </div>
             </div>
           </div>
 
@@ -262,138 +215,76 @@ const Resume: React.FC = () => {
             </h2>
             <div className="space-y-8">
               {experience.map((exp, index) => (
-                <div key={index} className="relative pl-6 border-l-2 border-primary/20">
-                  <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary/20"></div>
-                  <div className="mb-2">
-                    <h3 className="text-xl font-semibold">{exp.title}</h3>
-                    <p className="text-muted-foreground">{exp.company} | {exp.location}</p>
-                    <p className="text-sm text-muted-foreground">{exp.date}</p>
+                <div key={index} className="glass-dark p-4 rounded-lg">
+                  <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-1 mb-3">
+                    <div>
+                      <h3 className="text-lg font-semibold">{exp.title}, {exp.company}</h3>
+                      <p className="text-sm text-muted-foreground">{exp.location}</p>
+                    </div>
+                    <span className="text-sm text-muted-foreground whitespace-nowrap">{exp.date}</span>
                   </div>
-                  <div className="glass-dark p-4 rounded-lg">
-                    <ul className="space-y-2">
-                      {exp.achievements.map((achievement, i) => (
-                        <li key={i} className="flex items-start">
-                          <ExternalLink size={14} className="mt-1 mr-2 text-primary flex-shrink-0" />
-                          <span className="text-sm">{achievement}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <ul className="space-y-2 list-disc list-outside ml-4">
+                    {exp.achievements.map((achievement, i) => (
+                      <li key={i} className="text-sm text-muted-foreground">
+                        {achievement}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Open Source Contributions */}
+          {/* Education */}
           <div className="mb-12">
             <h2 className="text-2xl font-bold mb-6 flex items-center">
-              <Award className="mr-2" size={24} />
-              Open Source Contributions
+              <GraduationCap className="mr-2" size={24} />
+              Education
             </h2>
-            <div className="space-y-8">
-              {openSourceContributions.map((contribution, index) => (
-                <div key={index} className="relative pl-6 border-l-2 border-primary/20">
-                  <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary/20"></div>
-                  <div className="glass-dark p-4 rounded-lg">
-                    <div className="flex justify-between items-start mb-2">
-                      <h3 className="text-xl font-semibold">{contribution.project}</h3>
-                      <span className="text-sm text-muted-foreground">{contribution.date}</span>
+            <div className="space-y-6">
+              {education.map((edu, index) => (
+                <div key={index} className="glass-dark p-4 rounded-lg">
+                  <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-1">
+                    <div>
+                      <h3 className="text-lg font-semibold">{edu.degree}</h3>
+                      <p className="text-muted-foreground">{edu.school}, {edu.location}</p>
                     </div>
-                    <p className="text-sm mb-2">{contribution.description}</p>
-                    {contribution.link && (
-                      <a 
-                        href={contribution.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm text-primary hover:text-primary/80 flex items-center gap-1"
-                      >
-                        <ExternalLink size={14} />
-                        View Project
-                      </a>
-                    )}
+                    <div className="text-right">
+                      <p className="text-sm text-muted-foreground">{edu.date}</p>
+                      <p className="text-sm font-medium">GPA: {edu.gpa}</p>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Publications */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold mb-6 flex items-center">
-              <Award className="mr-2" size={24} />
-              Publications
-            </h2>
-            <div className="space-y-8">
-              {publications.map((publication, index) => (
-                <div key={index} className="relative pl-6 border-l-2 border-primary/20">
-                  <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary/20"></div>
-                  <div className="glass-dark p-4 rounded-lg">
-                    <div className="flex justify-between items-start mb-2">
-                      <h3 className="text-xl font-semibold">{publication.title}</h3>
-                      <span className="text-sm text-muted-foreground">{publication.date}</span>
-                    </div>
-                    <p className="text-sm text-muted-foreground mb-1">{publication.conference}</p>
-                    <p className="text-sm text-muted-foreground mb-2">{publication.location}</p>
-                    <p className="text-sm text-muted-foreground">ISBN: {publication.isbn}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Certifications */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold mb-6 flex items-center">
-              <Award className="mr-2" size={24} />
-              Certifications
-            </h2>
-            <div className="space-y-8">
-              {certifications.map((cert, index) => (
-                <div key={index} className="relative pl-6 border-l-2 border-primary/20">
-                  <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary/20"></div>
-                  <div className="glass-dark p-4 rounded-lg">
-                    <div className="flex justify-between items-start mb-2">
-                      <h3 className="text-xl font-semibold">{cert.title}</h3>
-                      <span className="text-sm text-muted-foreground">{cert.date}</span>
-                    </div>
-                    <p className="text-sm text-muted-foreground mb-2">{cert.issuer}</p>
-                    {cert.link && (
-                      <a 
-                        href={cert.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm text-primary hover:text-primary/80 flex items-center gap-1"
-                      >
-                        <ExternalLink size={14} />
-                        View Certificate
-                      </a>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Skills */}
+          {/* Projects & Open Source */}
           <div>
             <h2 className="text-2xl font-bold mb-6 flex items-center">
-              <Award className="mr-2" size={24} />
-              Skills
+              <Code2 className="mr-2" size={24} />
+              Projects & Open-Source
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {Object.entries(skills).map(([category, items]) => (
-                <div key={category} className="glass-dark p-4 rounded-lg">
-                  <h3 className="font-semibold mb-3 capitalize">{category.replace('_', ' ')}</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {items.map((skill, index) => (
-                      <span
-                        key={index}
-                        className="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full"
-                      >
-                        {skill}
-                      </span>
-                    ))}
+            <div className="space-y-6">
+              {openSourceContributions.map((contribution, index) => (
+                <div key={index} className="glass-dark p-4 rounded-lg">
+                  <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-1 mb-2">
+                    <h3 className="text-lg font-semibold">{contribution.project}</h3>
+                    <span className="text-sm text-muted-foreground">{contribution.date}</span>
                   </div>
+                  <p className="text-sm mb-2">{contribution.description}</p>
+                  <p className="text-sm text-muted-foreground mb-2">Tech: {contribution.tech}</p>
+                  {contribution.link && (
+                    <a 
+                      href={contribution.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-primary hover:text-primary/80 flex items-center gap-1"
+                    >
+                      <ExternalLink size={14} />
+                      View on PyPI
+                    </a>
+                  )}
                 </div>
               ))}
             </div>

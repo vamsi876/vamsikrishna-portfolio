@@ -22,11 +22,11 @@ const Hero: React.FC = () => {
           </h1>
           
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-medium text-foreground/80 mt-4 text-balance max-w-3xl mx-auto opacity-0 animate-fade-in animation-delay-300">
-            Full-Stack Developer at AIDM
+            Full-Stack Developer
           </h2>
           
           <p className="max-w-xl mx-auto text-muted-foreground opacity-0 animate-fade-in animation-delay-400">
-            Full-stack developer who has shipped healthcare web portals, RAG pipelines, and data automation systems using React, Next.js, Node.js, and PostgreSQL. MS in Computer Science (Indiana State University, GPA 3.66) with enterprise experience at Cognizant and two production RAG systems built with LangChain, OpenAI API, and Pinecone.
+            Full-stack developer with 2+ years of industry experience shipping React/TypeScript frontends and Node.js backends across healthcare and energy domains, plus hands-on AI integration (RAG pipelines with LangChain and Pinecone, Claude API). Most recently sole developer on a Supabase-powered operations platform serving 8 organizational roles daily. MS in Computer Science from Indiana State University. 3 published PyPI packages.
           </p>
           
           <div className="flex justify-center pt-4 opacity-0 animate-fade-in animation-delay-500">
