@@ -4,41 +4,52 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222.2 84% 4.9%;
-    
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 9.4%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 142 71% 45%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 16.5%;
+    --input: 0 0% 16.5%;
+    --ring: 142 71% 45%;
+
     --radius: 0.75rem;
+
+    --surface: 240 5% 7.5%;
+    --card-border: 0 0% 16.5%;
+    --border-subtle: 0 0% 11.8%;
+    --text-primary: 0 0% 98%;
+    --text-secondary: 0 0% 63.9%;
+    --text-muted: 0 0% 32.2%;
+    --text-dim: 0 0% 24.7%;
+    --accent-green: 142 71% 45%;
+    --accent-muted: 142 71% 45% / 0.15;
+    --accent-border: 142 71% 45% / 0.3;
   }
 
   * {
     @apply border-border;
   }
-  
+
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
@@ -54,81 +65,54 @@
     text-wrap: balance;
   }
 
-  .text-shadow {
-    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
-  }
-
-  .glass {
-    @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-sm;
-  }
-
   .glass-dark {
-    @apply bg-black/5 backdrop-blur-xl border border-black/5 shadow-sm;
+    background: rgba(17, 17, 19, 0.8);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid hsl(var(--card-border));
   }
 
   .section-padding {
     @apply py-20 px-6 md:px-12 lg:px-24;
   }
 
-  .animation-delay-100 {
-    animation-delay: 100ms;
-  }
-  
-  .animation-delay-200 {
-    animation-delay: 200ms;
-  }
-  
-  .animation-delay-300 {
-    animation-delay: 300ms;
-  }
-  
-  .animation-delay-400 {
-    animation-delay: 400ms;
-  }
-  
-  .animation-delay-500 {
-    animation-delay: 500ms;
-  }
-  
-  .animation-delay-600 {
-    animation-delay: 600ms;
+  .mono-label {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: hsl(var(--text-muted));
   }
 
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .animate-fade-in {
-    animation: fadeIn 0.5s ease-out forwards;
-  }
-  
-  @keyframes slideInFromBottom {
-    from {
-      transform: translateY(20px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-  
-  .animate-slide-in {
-    animation: slideInFromBottom 0.3s ease-out forwards;
+  .section-number {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: hsl(var(--text-muted));
   }
 
-  /* Typing indicator animation */
+  @keyframes pulse-green {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .animate-pulse-green {
+    animation: pulse-green 2s ease-in-out infinite;
+  }
+
+  @keyframes blink-cursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .animate-blink {
+    animation: blink-cursor 0.8s step-end infinite;
+  }
+
   .typing-indicator {
     display: flex;
     gap: 4px;
@@ -151,10 +135,10 @@
   }
 
   @keyframes bounce {
-    0%, 80%, 100% { 
+    0%, 80%, 100% {
       transform: scale(0);
     }
-    40% { 
+    40% {
       transform: scale(1.0);
     }
   }

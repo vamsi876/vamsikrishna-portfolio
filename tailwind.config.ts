@@ -22,15 +22,23 @@ export default {
     extend: {
       fontFamily: {
         sans: [
-          "Inter", 
-          "SF Pro Display", 
-          "-apple-system", 
-          "BlinkMacSystemFont", 
-          "Segoe UI", 
-          "Roboto", 
-          "Helvetica Neue", 
-          "Arial", 
+          "Inter",
+          "SF Pro Display",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica Neue",
+          "Arial",
           "sans-serif"
+        ],
+        mono: [
+          "ui-monospace",
+          "SFMono-Regular",
+          "SF Mono",
+          "Menlo",
+          "Consolas",
+          "monospace"
         ],
       },
       colors: {
@@ -67,6 +75,7 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))"
         },
+        surface: "hsl(var(--surface))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -102,14 +111,6 @@ export default {
           "0%": { transform: "translateY(100%)" },
           "100%": { transform: "translateY(0)" }
         },
-        "text-shimmer": {
-          "0%": { 
-            backgroundPosition: "-200% 0"
-          },
-          "100%": {
-            backgroundPosition: "200% 0"
-          }
-        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -119,7 +120,6 @@ export default {
         "fade-in-left": "fade-in-left 0.7s ease-out forwards",
         "scale-in": "scale-in 0.7s ease-out forwards",
         "slide-up": "slide-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-        "text-shimmer": "text-shimmer 6s infinite linear"
       }
     }
   },
