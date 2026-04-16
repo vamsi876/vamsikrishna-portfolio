@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="800" y2="500">
+      <stop offset="0%" stop-color="#0f0f11"/>
+      <stop offset="100%" stop-color="#18181b"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="16" fill="url(#bg2)"/>
+
+  <!-- Title area -->
+  <text x="400" y="44" font-family="system-ui, sans-serif" font-size="14" fill="#52525b" text-anchor="middle" letter-spacing="2" font-weight="500">GADGETBOX — 12 DEVELOPER UTILITIES</text>
+
+  <!-- Grid of utility cards -->
+  <!-- Row 1 -->
+  <!-- JSON Formatter -->
+  <rect x="30" y="65" width="175" height="125" rx="10" fill="#111113" stroke="#27272a" stroke-width="1"/>
+  <text x="48" y="92" font-family="monospace" font-size="10" fill="#52525b" letter-spacing="1">JSON</text>
+  <rect x="48" y="100" width="140" height="70" rx="6" fill="#0a0a0a"/>
+  <text x="58" y="118" font-family="monospace" font-size="10" fill="#52525b">{</text>
+  <text x="68" y="132" font-family="monospace" font-size="10" fill="#22c55e">"name"</text>
+  <text x="118" y="132" font-family="monospace" font-size="10" fill="#52525b">:</text>
+  <text x="126" y="132" font-family="monospace" font-size="10" fill="#eab308">"dev"</text>
+  <text x="68" y="146" font-family="monospace" font-size="10" fill="#22c55e">"v"</text>
+  <text x="88" y="146" font-family="monospace" font-size="10" fill="#52525b">:</text>
+  <text x="96" y="146" font-family="monospace" font-size="10" fill="#3b82f6">2.1</text>
+  <text x="58" y="160" font-family="monospace" font-size="10" fill="#52525b">}</text>
+
+  <!-- JWT Decoder -->
+  <rect x="215" y="65" width="175" height="125" rx="10" fill="#111113" stroke="#27272a" stroke-width="1"/>
+  <text x="233" y="92" font-family="monospace" font-size="10" fill="#52525b" letter-spacing="1">JWT DECODER</text>
+  <rect x="233" y="100" width="140" height="70" rx="6" fill="#0a0a0a"/>
+  <text x="243" y="118" font-family="monospace" font-size="9" fill="#ef4444">eyJhbGciOi</text>
+  <text x="243" y="130" font-family="monospace" font-size="9" fill="#52525b">───────────</text>
+  <text x="243" y="144" font-family="monospace" font-size="9" fill="#22c55e">alg: HS256</text>
+  <text x="243" y="156" font-family="monospace" font-size="9" fill="#22c55e">sub: "user"</text>
+  <text x="243" y="168" font-family="monospace" font-size="9" fill="#a1a1aa">exp: valid ✓</text>
+
+  <!-- UUID Generator -->
+  <rect x="400" y="65" width="175" height="125" rx="10" fill="#111113" stroke="#27272a" stroke-width="1"/>
+  <text x="418" y="92" font-family="monospace" font-size="10" fill="#52525b" letter-spacing="1">UUID GEN</text>
+  <rect x="418" y="100" width="140" height="70" rx="6" fill="#0a0a0a"/>
+  <text x="428" y="122" font-family="monospace" font-size="8" fill="#a1a1aa">550e8400-e29b</text>
+  <text x="428" y="134" font-family="monospace" font-size="8" fill="#a1a1aa">-41d4-a716-</text>
+  <text x="428" y="146" font-family="monospace" font-size="8" fill="#a1a1aa">446655440000</text>
+  <rect x="428" y="152" width="60" height="16" rx="4" fill="#22c55e" opacity="0.15"/>
+  <text x="438" y="164" font-family="monospace" font-size="9" fill="#22c55e">Copied ✓</text>
+
+  <!-- Base64 -->
+  <rect x="585" y="65" width="185" height="125" rx="10" fill="#111113" stroke="#27272a" stroke-width="1"/>
+  <text x="603" y="92" font-family="monospace" font-size="10" fill="#52525b" letter-spacing="1">BASE64</text>
+  <rect x="603" y="100" width="150" height="70" rx="6" fill="#0a0a0a"/>
+  <text x="613" y="118" font-family="monospace" font-size="9" fill="#a1a1aa">Hello World</text>
+  <text x="613" y="132" font-family="monospace" font-size="10" fill="#52525b">↓ encode</text>
+  <text x="613" y="148" font-family="monospace" font-size="9" fill="#22c55e">SGVsbG8gV29y</text>
+  <text x="613" y="160" font-family="monospace" font-size="9" fill="#22c55e">bGQ=</text>
+
+  <!-- Row 2 -->
+  <!-- Hash Generator -->
+  <rect x="30" y="200" width="175" height="125" rx="10" fill="#111113" stroke="#27272a" stroke-width="1"/>
+  <text x="48" y="227" font-family="monospace" font-size="10" fill="#52525b" letter-spacing="1">HASH</text>
+  <rect x="48" y="235" width="140" height="70" rx="6" fill="#0a0a0a"/>
+  <text x="58" y="253" font-family="monospace" font-size="9" fill="#52525b">SHA-256</text>
+  <text x="58" y="267" font-family="monospace" font-size="8" fill="#a1a1aa">a591a6d40bf</text>
+  <text x="58" y="279" font-family="monospace" font-size="8" fill="#a1a1aa">420404a011733</text>
+  <text x="58" y="291" font-family="monospace" font-size="8" fill="#a1a1aa">cfb7b190d...</text>
+
+  <!-- Regex Tester -->
+  <rect x="215" y="200" width="175" height="125" rx="10" fill="#111113" stroke="#27272a" stroke-width="1"/>
+  <text x="233" y="227" font-family="monospace" font-size="10" fill="#52525b" letter-spacing="1">REGEX</text>
+  <rect x="233" y="235" width="140" height="70" rx="6" fill="#0a0a0a"/>
+  <text x="243" y="253" font-family="monospace" font-size="10" fill="#eab308">/\d{3}-\d{4}/g</text>
+  <text x="243" y="270" font-family="monospace" font-size="9" fill="#52525b">───────────</text>
+  <text x="243" y="285" font-family="monospace" font-size="9" fill="#a1a1aa">Call </text>
+  <text x="272" y="285" font-family="monospace" font-size="9" fill="#22c55e">555-1234</text>
+  <text x="243" y="297" font-family="monospace" font-size="9" fill="#22c55e">1 match found</text>
+
+  <!-- Color Picker -->
+  <rect x="400" y="200" width="175" height="125" rx="10" fill="#111113" stroke="#27272a" stroke-width="1"/>
+  <text x="418" y="227" font-family="monospace" font-size="10" fill="#52525b" letter-spacing="1">COLOR</text>
+  <rect x="418" y="235" width="140" height="70" rx="6" fill="#0a0a0a"/>
+  <circle cx="448" cy="262" r="12" fill="#22c55e"/>
+  <circle cx="478" cy="262" r="12" fill="#3b82f6"/>
+  <circle cx="508" cy="262" r="12" fill="#eab308"/>
+  <circle cx="538" cy="262" r="12" fill="#ef4444"/>
+  <text x="428" y="293" font-family="monospace" font-size="10" fill="#22c55e">#22c55e</text>
+  <text x="500" y="293" font-family="monospace" font-size="9" fill="#52525b">hsl(142,71%,45%)</text>
+
+  <!-- Timestamp -->
+  <rect x="585" y="200" width="185" height="125" rx="10" fill="#111113" stroke="#27272a" stroke-width="1"/>
+  <text x="603" y="227" font-family="monospace" font-size="10" fill="#52525b" letter-spacing="1">TIMESTAMP</text>
+  <rect x="603" y="235" width="150" height="70" rx="6" fill="#0a0a0a"/>
+  <text x="613" y="253" font-family="monospace" font-size="10" fill="#a1a1aa">1713283200</text>
+  <text x="613" y="270" font-family="monospace" font-size="10" fill="#52525b">↓</text>
+  <text x="613" y="286" font-family="monospace" font-size="9" fill="#22c55e">Apr 16, 2026</text>
+  <text x="613" y="298" font-family="monospace" font-size="9" fill="#22c55e">11:00:00 UTC</text>
+
+  <!-- Row 3 -->
+  <!-- URL Encoder -->
+  <rect x="30" y="335" width="175" height="125" rx="10" fill="#111113" stroke="#27272a" stroke-width="1"/>
+  <text x="48" y="362" font-family="monospace" font-size="10" fill="#52525b" letter-spacing="1">URL ENCODE</text>
+  <rect x="48" y="370" width="140" height="70" rx="6" fill="#0a0a0a"/>
+  <text x="58" y="388" font-family="monospace" font-size="9" fill="#a1a1aa">hello world</text>
+  <text x="58" y="405" font-family="monospace" font-size="10" fill="#52525b">↓</text>
+  <text x="58" y="420" font-family="monospace" font-size="9" fill="#22c55e">hello%20world</text>
+
+  <!-- Lorem Ipsum -->
+  <rect x="215" y="335" width="175" height="125" rx="10" fill="#111113" stroke="#27272a" stroke-width="1"/>
+  <text x="233" y="362" font-family="monospace" font-size="10" fill="#52525b" letter-spacing="1">LOREM</text>
+  <rect x="233" y="370" width="140" height="70" rx="6" fill="#0a0a0a"/>
+  <text x="243" y="388" font-family="monospace" font-size="9" fill="#a1a1aa">Lorem ipsum</text>
+  <text x="243" y="400" font-family="monospace" font-size="9" fill="#a1a1aa">dolor sit amet</text>
+  <text x="243" y="412" font-family="monospace" font-size="9" fill="#a1a1aa">consectetur...</text>
+  <text x="243" y="430" font-family="monospace" font-size="9" fill="#52525b">3 paragraphs</text>
+
+  <!-- Diff Viewer -->
+  <rect x="400" y="335" width="175" height="125" rx="10" fill="#111113" stroke="#27272a" stroke-width="1"/>
+  <text x="418" y="362" font-family="monospace" font-size="10" fill="#52525b" letter-spacing="1">DIFF</text>
+  <rect x="418" y="370" width="140" height="70" rx="6" fill="#0a0a0a"/>
+  <text x="428" y="390" font-family="monospace" font-size="9" fill="#ef4444">- old value</text>
+  <text x="428" y="404" font-family="monospace" font-size="9" fill="#22c55e">+ new value</text>
+  <text x="428" y="418" font-family="monospace" font-size="9" fill="#52525b">  unchanged</text>
+  <text x="428" y="432" font-family="monospace" font-size="9" fill="#22c55e">+ added line</text>
+
+  <!-- Clipboard Auto-detect -->
+  <rect x="585" y="335" width="185" height="125" rx="10" fill="#111113" stroke="#22c55e" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="603" y="362" font-family="monospace" font-size="10" fill="#22c55e" letter-spacing="1">AUTO-DETECT</text>
+  <rect x="603" y="370" width="150" height="70" rx="6" fill="#0a0a0a"/>
+  <text x="613" y="390" font-family="monospace" font-size="9" fill="#52525b">Clipboard:</text>
+  <text x="613" y="406" font-family="monospace" font-size="9" fill="#a1a1aa">eyJhbGciOi...</text>
+  <text x="613" y="424" font-family="monospace" font-size="9" fill="#22c55e">→ JWT detected</text>
+  <text x="613" y="436" font-family="monospace" font-size="9" fill="#22c55e">  Open decoder?</text>
+
+  <!-- System tray indicator -->
+  <rect x="340" y="472" width="120" height="22" rx="11" fill="#22c55e" opacity="0.1"/>
+  <text x="364" y="487" font-family="monospace" font-size="10" fill="#22c55e">PyPI v1.0.0</text>
+</svg>
