@@ -1,18 +1,34 @@
 import React from 'react';
-import { Brain } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
-  
+
   return (
-    <footer className="py-8 px-6 md:px-12" style={{ background: 'transparent' }}>
-      <div className="w-full">
-        <div className="flex flex-col md:flex-row items-center justify-between">
-          <div className="mb-4 md:mb-0">
-            <p className="text-sm text-muted-foreground">
-              © {currentYear} Vamsi Krishna Kollipara. All rights reserved.
-            </p>
-          </div>
+    <footer className="border-t border-[hsl(var(--card-border))] py-8 px-6 md:px-12">
+      <div className="container mx-auto max-w-5xl flex items-center justify-between">
+        <p className="text-sm text-muted-foreground">
+          &copy; {currentYear} Vamsi Krishna Kollipara
+        </p>
+        <div className="flex items-center gap-3">
+          <a
+            href="https://github.com/vamsi876"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-9 h-9 flex items-center justify-center rounded-lg bg-card border border-[hsl(var(--card-border))] text-muted-foreground hover:text-primary hover:border-primary/30 transition-colors"
+            aria-label="GitHub"
+          >
+            <Github size={16} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/vamsikollipara/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-9 h-9 flex items-center justify-center rounded-lg bg-card border border-[hsl(var(--card-border))] text-muted-foreground hover:text-primary hover:border-primary/30 transition-colors"
+            aria-label="LinkedIn"
+          >
+            <Linkedin size={16} />
+          </a>
         </div>
       </div>
     </footer>
