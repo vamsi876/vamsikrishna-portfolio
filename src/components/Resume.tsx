@@ -114,10 +114,10 @@ const Resume: React.FC = () => {
           </p>
         </div>
 
-        <div className="glass p-8 rounded-2xl">
+        <div className="bg-card border border-[hsl(var(--card-border))] p-8 rounded-2xl">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold mb-2 text-gradient">VAMSI KRISHNA KOLLIPARA</h1>
+            <h1 className="text-4xl font-bold mb-2 text-foreground">VAMSI KRISHNA KOLLIPARA</h1>
             <div className="flex flex-wrap justify-center gap-3 text-sm text-muted-foreground">
               <a href="mailto:kolliparavamsikrishna80@gmail.com" className="hover:text-primary transition-colors flex items-center">
                 <Mail className="mr-1" size={14} />
@@ -163,19 +163,19 @@ const Resume: React.FC = () => {
 
           {/* Summary */}
           <div className="mb-12">
-            <h2 className="text-2xl font-bold mb-6">Summary</h2>
-            <div className="glass-dark p-4 rounded-lg">
-              <p className="text-sm">{summary.description}</p>
+            <h2 className="text-2xl font-bold mb-6 text-foreground">Summary</h2>
+            <div className="bg-secondary/50 border border-[hsl(var(--card-border))] p-4 rounded-lg">
+              <p className="text-sm text-muted-foreground">{summary.description}</p>
             </div>
           </div>
 
           {/* Skills */}
           <div className="mb-12">
-            <h2 className="text-2xl font-bold mb-6 flex items-center">
+            <h2 className="text-2xl font-bold mb-6 text-foreground flex items-center">
               <Award className="mr-2" size={24} />
               Skills
             </h2>
-            <div className="glass-dark p-4 rounded-lg space-y-3">
+            <div className="bg-secondary/50 border border-[hsl(var(--card-border))] p-4 rounded-lg space-y-3">
               <div>
                 <span className="font-semibold">Languages:</span>{' '}
                 <span className="text-muted-foreground">{skills.languages.join(', ')}</span>
@@ -209,13 +209,13 @@ const Resume: React.FC = () => {
 
           {/* Experience */}
           <div className="mb-12">
-            <h2 className="text-2xl font-bold mb-6 flex items-center">
+            <h2 className="text-2xl font-bold mb-6 text-foreground flex items-center">
               <Briefcase className="mr-2" size={24} />
               Experience
             </h2>
             <div className="space-y-8">
               {experience.map((exp, index) => (
-                <div key={index} className="glass-dark p-4 rounded-lg">
+                <div key={index} className="bg-secondary/50 border border-[hsl(var(--card-border))] p-4 rounded-lg">
                   <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-1 mb-3">
                     <div>
                       <h3 className="text-lg font-semibold">{exp.title}, {exp.company}</h3>
@@ -237,13 +237,13 @@ const Resume: React.FC = () => {
 
           {/* Education */}
           <div className="mb-12">
-            <h2 className="text-2xl font-bold mb-6 flex items-center">
+            <h2 className="text-2xl font-bold mb-6 text-foreground flex items-center">
               <GraduationCap className="mr-2" size={24} />
               Education
             </h2>
             <div className="space-y-6">
               {education.map((edu, index) => (
-                <div key={index} className="glass-dark p-4 rounded-lg">
+                <div key={index} className="bg-secondary/50 border border-[hsl(var(--card-border))] p-4 rounded-lg">
                   <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-1">
                     <div>
                       <h3 className="text-lg font-semibold">{edu.degree}</h3>
@@ -261,13 +261,13 @@ const Resume: React.FC = () => {
 
           {/* Projects & Open Source */}
           <div>
-            <h2 className="text-2xl font-bold mb-6 flex items-center">
+            <h2 className="text-2xl font-bold mb-6 text-foreground flex items-center">
               <Code2 className="mr-2" size={24} />
               Projects & Open-Source
             </h2>
             <div className="space-y-6">
               {openSourceContributions.map((contribution, index) => (
-                <div key={index} className="glass-dark p-4 rounded-lg">
+                <div key={index} className="bg-secondary/50 border border-[hsl(var(--card-border))] p-4 rounded-lg">
                   <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-1 mb-2">
                     <h3 className="text-lg font-semibold">{contribution.project}</h3>
                     <span className="text-sm text-muted-foreground">{contribution.date}</span>
@@ -293,7 +293,7 @@ const Resume: React.FC = () => {
 
         {/* Download Button */}
         <div className="text-center mt-8">
-          <Button size="lg" variant="outline" className="gap-2" asChild>
+          <Button size="lg" variant="outline" className="gap-2 border-primary/30 text-primary hover:border-primary hover:bg-primary/10" asChild>
             <a 
               href="/vamsi_krishna.pdf"
               download
