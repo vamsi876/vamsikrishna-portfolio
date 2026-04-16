@@ -9,6 +9,8 @@ const Footer: React.FC = () => {
       <div className="container mx-auto max-w-5xl flex items-center justify-between">
         <p className="text-sm text-muted-foreground">
           &copy; {currentYear} Vamsi Krishna Kollipara
+          <span className="mx-2 text-[hsl(var(--text-dim))]">&middot;</span>
+          <span className="text-xs">Built with React &amp; TypeScript</span>
         </p>
         <div className="flex items-center gap-3">
           <a

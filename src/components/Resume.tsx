@@ -108,7 +108,8 @@ const Resume: React.FC = () => {
     <section className="py-20 px-6 md:px-12 lg:px-24" id="resume">
       <div className="container mx-auto max-w-5xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Resume</h2>
+          <span className="section-number">06 — RESUME</span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 mt-2">Resume</h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
             A comprehensive overview of my education, experience, and skills.
           </p>
