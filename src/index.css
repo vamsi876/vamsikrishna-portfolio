@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer base {
+  /* Dark mode (default) */
   :root {
     --background: 0 0% 4%;
     --foreground: 0 0% 98%;
@@ -46,6 +47,48 @@
     --accent-border: 142 71% 45% / 0.3;
   }
 
+  /* Light mode */
+  :root.light {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 5%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 5%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 5%;
+
+    --primary: 142 71% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 12%;
+
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 0 0% 95%;
+    --accent-foreground: 0 0% 12%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 142 71% 40%;
+
+    --surface: 0 0% 96%;
+    --card-border: 0 0% 88%;
+    --border-subtle: 0 0% 93%;
+    --text-primary: 0 0% 5%;
+    --text-secondary: 0 0% 40%;
+    --text-muted: 0 0% 60%;
+    --text-dim: 0 0% 80%;
+    --accent-green: 142 71% 40%;
+    --accent-muted: 142 71% 40% / 0.1;
+    --accent-border: 142 71% 40% / 0.25;
+  }
+
   * {
     @apply border-border;
   }
@@ -57,6 +100,14 @@
 
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Smooth theme transition */
+  html.theme-transitioning,
+  html.theme-transitioning *,
+  html.theme-transitioning *::before,
+  html.theme-transitioning *::after {
+    transition: background-color 0.4s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, fill 0.3s ease, stroke 0.3s ease !important;
   }
 }
 
@@ -70,6 +121,10 @@
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     border: 1px solid hsl(var(--card-border));
+  }
+
+  .light .glass-dark {
+    background: rgba(255, 255, 255, 0.85);
   }
 
   .section-padding {
@@ -141,5 +196,21 @@
     40% {
       transform: scale(1.0);
     }
+  }
+
+  /* Theme toggle button animation */
+  @keyframes theme-rotate-in {
+    from {
+      transform: rotate(-90deg) scale(0);
+      opacity: 0;
+    }
+    to {
+      transform: rotate(0deg) scale(1);
+      opacity: 1;
+    }
+  }
+
+  .theme-icon-enter {
+    animation: theme-rotate-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   }
 }

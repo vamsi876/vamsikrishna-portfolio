@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 import { AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
+import { ThemeProvider } from "./hooks/useTheme";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import SkillsPage from "./pages/SkillsPage";
@@ -45,20 +46,22 @@ function AnimatedRoutes() {
 }
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollProgress />
-        <ScrollToTop />
-        <div className="relative">
-          <AnimatedRoutes />
-        </div>
-      </BrowserRouter>
-      <Analytics />
-    </TooltipProvider>
-  </QueryClientProvider>
+  <ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <ScrollProgress />
+          <ScrollToTop />
+          <div className="relative">
+            <AnimatedRoutes />
+          </div>
+        </BrowserRouter>
+        <Analytics />
+      </TooltipProvider>
+    </QueryClientProvider>
+  </ThemeProvider>
 );
 
 export default App;
