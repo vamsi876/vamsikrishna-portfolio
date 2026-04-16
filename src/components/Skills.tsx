@@ -14,7 +14,8 @@ const SkillCategoryCard: React.FC<{
   icon: React.ReactNode;
   skills: { name: string; icon?: React.ReactNode }[];
   delay: number;
-}> = ({ title, icon, skills, delay }) => {
+  className?: string;
+}> = ({ title, icon, skills, delay, className }) => {
   const { ref, spotlightStyle, handlers } = useSpotlight();
 
   return (
@@ -23,6 +24,7 @@ const SkillCategoryCard: React.FC<{
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ delay, duration: 0.5 }}
+      className={className}
     >
       <div
         ref={ref}
@@ -160,6 +162,10 @@ const Skills: React.FC = () => {
           <p className="text-muted-foreground mt-2 max-w-xl">
             A comprehensive overview of my technical skills and areas of expertise.
           </p>
+          <div className="flex gap-3 mt-4">
+            <span className="text-xs px-3 py-1.5 rounded-full bg-primary/10 text-primary font-medium">7 Categories</span>
+            <span className="text-xs px-3 py-1.5 rounded-full bg-primary/10 text-primary font-medium">40+ Technologies</span>
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -170,6 +176,7 @@ const Skills: React.FC = () => {
               icon={category.icon}
               skills={category.skills}
               delay={index * 0.05}
+              className={category.title === 'AI & LLM' ? 'lg:col-span-2' : ''}
             />
           ))}
         </div>

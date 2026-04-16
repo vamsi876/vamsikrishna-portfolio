@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Mail, FileText } from 'lucide-react';
+import { Mail, FileText, ChevronDown } from 'lucide-react';
 import { useTypewriter } from '@/hooks/useTypewriter';
 import { useMagnetic } from '@/hooks/useMagnetic';
 import { useSpotlight } from '@/hooks/useSpotlight';
@@ -110,7 +110,24 @@ const Hero: React.FC = () => {
               Resume
             </Link>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 3, duration: 1 }}
+            className="mt-12 flex items-center gap-2 text-[hsl(var(--text-muted))]"
+          >
+            <motion.div
+              animate={{ y: [0, 6, 0] }}
+              transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+            >
+              <ChevronDown size={16} />
+            </motion.div>
+            <span className="text-xs font-mono tracking-wider uppercase">Scroll to explore</span>
+          </motion.div>
         </div>
+
+        <div className="w-full h-px bg-[hsl(var(--card-border))] my-12" />
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -211,7 +228,7 @@ const Hero: React.FC = () => {
               ].map((job, i) => (
                 <div key={i} className="flex items-center gap-4 flex-shrink-0">
                   {i > 0 && <div className="w-12 h-px bg-[hsl(var(--card-border))]" />}
-                  <div className="flex items-center gap-3">
+                  <div className={`flex items-center gap-3 ${job.active ? 'bg-primary/5 px-3 py-1.5 rounded-lg' : ''}`}>
                     <div className={`w-2.5 h-2.5 rounded-full flex-shrink-0 ${job.active ? 'bg-primary animate-pulse-green' : 'bg-[hsl(var(--card-border))]'}`} />
                     <div>
                       <div className={`text-sm font-medium ${job.active ? 'text-foreground' : 'text-muted-foreground'}`}>{job.company}</div>

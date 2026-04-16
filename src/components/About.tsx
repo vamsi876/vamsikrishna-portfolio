@@ -29,13 +29,29 @@ const About: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-bold mt-2 text-foreground">About Me</h2>
         </motion.div>
 
+        <motion.div {...fadeUp} transition={{ delay: 0.05, duration: 0.5 }} className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          {[
+            { label: 'Years Experience', value: '2+' },
+            { label: 'PyPI Packages', value: '3' },
+            { label: 'Domains', value: '3' },
+            { label: 'Org Roles Served', value: '8' },
+          ].map((stat) => (
+            <div key={stat.label} className="bg-card border border-[hsl(var(--card-border))] rounded-xl p-4 text-center">
+              <div className="text-2xl font-bold text-primary">{stat.value}</div>
+              <div className="text-xs text-muted-foreground mt-1">{stat.label}</div>
+            </div>
+          ))}
+        </motion.div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div className="space-y-6">
             <motion.div {...fadeUp} transition={{ delay: 0.1, duration: 0.5 }}>
-              <h3 className="text-xl font-bold text-foreground mb-3">Full-Stack Developer</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Full-stack developer with 2+ years of industry experience shipping React/TypeScript frontends and Node.js backends across healthcare and energy domains. At AIDM, I built and shipped a full-stack operations platform on Supabase serving 8 organizational roles daily, integrating Anthropic Claude for AI-powered features. Previously at Cognizant, developed React-based portal modules for Duke Energy's energy management platform with D3.js visualizations.
-              </p>
+              <div className="bg-card border border-[hsl(var(--card-border))] rounded-xl p-5">
+                <h3 className="text-xl font-bold text-foreground mb-3">Full-Stack Developer</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Full-stack developer with 2+ years of industry experience shipping React/TypeScript frontends and Node.js backends across healthcare and energy domains. At AIDM, I built and shipped a full-stack operations platform on Supabase serving 8 organizational roles daily, integrating Anthropic Claude for AI-powered features. Previously at Cognizant, developed React-based portal modules for Duke Energy's energy management platform with D3.js visualizations.
+                </p>
+              </div>
             </motion.div>
 
             <motion.div {...fadeUp} transition={{ delay: 0.2, duration: 0.5 }}>
