@@ -1,14 +1,40 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Logo from './Logo';
+import { useTextScramble } from '@/hooks/useTextScramble';
+
+const NavLink: React.FC<{ name: string; href: string; isActive: boolean; onClick?: () => void }> = ({
+  name,
+  href,
+  isActive,
+  onClick,
+}) => {
+  const { text, scramble, reset } = useTextScramble(name);
+
+  return (
+    <Link
+      to={href}
+      className={cn(
+        'text-sm font-medium transition-colors duration-200 whitespace-nowrap',
+        isActive ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+      )}
+      onMouseEnter={scramble}
+      onMouseLeave={reset}
+      onClick={onClick}
+    >
+      {text}
+    </Link>
+  );
+};
 
 const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,12 +49,23 @@ const Header: React.FC = () => {
 
     window.addEventListener('scroll', handleScroll);
     document.addEventListener('mousedown', handleClickOutside);
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
 
   const navItems = [
     { name: 'Home', href: '/' },
@@ -40,69 +77,101 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <header 
-      className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out',
-        scrolled || isMenuOpen ? 'glass shadow-lg' : 'bg-transparent'
-      )}
-    >
-      <div className="container mx-auto">
-        <div className="flex items-center justify-between py-4 px-6 md:px-12">
-          <Logo />
+    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4">
+      <nav
+        ref={menuRef}
+        className={cn(
+          'glass-dark rounded-full px-6 py-2.5 flex items-center gap-6 transition-shadow duration-300',
+          scrolled && 'shadow-lg shadow-black/20'
+        )}
+      >
+        <Logo />
 
-          {/* Desktop navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors duration-200"
-              >
-                {item.name}
-              </Link>
-            ))}
-            <Button asChild>
-              <Link to="/resume">Resume</Link>
-            </Button>
-          </nav>
-
-          {/* Mobile menu button */}
-          <button 
-            className="md:hidden p-2 hover:bg-accent rounded-lg transition-colors"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+        <div className="hidden md:flex items-center gap-6">
+          {navItems.map((item) => (
+            <NavLink
+              key={item.name}
+              name={item.name}
+              href={item.href}
+              isActive={location.pathname === item.href}
+            />
+          ))}
         </div>
 
-        {/* Mobile navigation */}
-        <div 
-          ref={menuRef}
+        <Link
+          to="/resume"
           className={cn(
-            'md:hidden overflow-hidden transition-all duration-300 ease-in-out',
-            isMenuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+            'hidden md:inline-flex text-sm font-medium px-4 py-1.5 rounded-full border transition-colors duration-200',
+            location.pathname === '/resume'
+              ? 'border-primary text-primary'
+              : 'border-primary/30 text-primary hover:border-primary hover:bg-primary/10'
           )}
         >
-          <nav className="py-4 px-6 bg-background/80 backdrop-blur-lg border-t">
-            <div className="flex flex-col space-y-3">
-              {navItems.map((item) => (
-                <Link
+          Resume
+        </Link>
+
+        <button
+          className="md:hidden p-1.5 text-muted-foreground hover:text-foreground transition-colors"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
+      </nav>
+
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden fixed inset-0 top-0 bg-background/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center"
+          >
+            <button
+              className="absolute top-6 right-6 p-2 text-muted-foreground hover:text-foreground transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              <X size={24} />
+            </button>
+            <div className="flex flex-col items-center gap-8">
+              {navItems.map((item, index) => (
+                <motion.div
                   key={item.name}
-                  to={item.href}
-                  className="text-base py-3 px-4 font-medium text-foreground/80 hover:text-foreground hover:bg-accent/50 rounded-lg transition-colors"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.05, duration: 0.3 }}
+                >
+                  <Link
+                    to={item.href}
+                    className={cn(
+                      'text-2xl font-semibold transition-colors',
+                      location.pathname === item.href ? 'text-primary' : 'text-foreground'
+                    )}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                </motion.div>
+              ))}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: navItems.length * 0.05, duration: 0.3 }}
+              >
+                <Link
+                  to="/resume"
+                  className="text-2xl font-semibold text-primary"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {item.name}
+                  Resume
                 </Link>
-              ))}
-              <Button className="mt-2 w-full" asChild>
-                <Link to="/resume" onClick={() => setIsMenuOpen(false)}>Resume</Link>
-              </Button>
+              </motion.div>
             </div>
-          </nav>
-        </div>
-      </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
