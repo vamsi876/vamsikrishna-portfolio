@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
+import { useTheme } from '@/hooks/useTheme';
 
 const Background3D: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const { isDark } = useTheme();
 
   useEffect(() => {
     if (!mountRef.current) return;
@@ -28,9 +30,9 @@ const Background3D: React.FC = () => {
 
     const particlesMaterial = new THREE.PointsMaterial({
       size: 0.003,
-      color: '#3f3f46',
+      color: isDark ? '#3f3f46' : '#d4d4d8',
       transparent: true,
-      opacity: 0.3,
+      opacity: isDark ? 0.3 : 0.4,
     });
 
     const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
@@ -86,7 +88,7 @@ const Background3D: React.FC = () => {
       particlesMaterial.dispose();
       renderer.dispose();
     };
-  }, []);
+  }, [isDark]);
 
   return (
     <div
@@ -98,7 +100,7 @@ const Background3D: React.FC = () => {
         width: '100%',
         height: '100%',
         zIndex: -1,
-        background: '#0a0a0a',
+        background: isDark ? '#0a0a0a' : '#ffffff',
       }}
     />
   );

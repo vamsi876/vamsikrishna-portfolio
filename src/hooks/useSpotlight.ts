@@ -19,7 +19,11 @@ export function useSpotlight() {
 
   const spotlightStyle: React.CSSProperties = isHovered
     ? {
-        background: `radial-gradient(400px circle at ${position.x}px ${position.y}px, rgba(34, 197, 94, 0.06), transparent 60%)`,
+        background: `radial-gradient(400px circle at ${position.x}px ${position.y}px, ${
+          document.documentElement.classList.contains('light')
+            ? 'rgba(34, 197, 94, 0.08)'
+            : 'rgba(34, 197, 94, 0.06)'
+        }, transparent 60%)`,
       }
     : {};
 
