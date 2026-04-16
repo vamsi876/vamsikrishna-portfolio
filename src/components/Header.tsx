@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Logo from './Logo';
 import { useTextScramble } from '@/hooks/useTextScramble';
+import { useTheme } from '@/hooks/useTheme';
 
 const NavLink: React.FC<{ name: string; href: string; isActive: boolean; onClick?: () => void }> = ({
   name,
@@ -35,6 +36,7 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
+  const { isDark, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -98,6 +100,16 @@ const Header: React.FC = () => {
           ))}
         </div>
 
+        <button
+          onClick={toggleTheme}
+          className="relative w-8 h-8 flex items-center justify-center rounded-full hover:bg-card transition-colors"
+          aria-label="Toggle theme"
+        >
+          <span key={isDark ? 'moon' : 'sun'} className="theme-icon-enter">
+            {isDark ? <Moon size={16} className="text-muted-foreground" /> : <Sun size={16} className="text-muted-foreground" />}
+          </span>
+        </button>
+
         <Link
           to="/resume"
           className={cn(
@@ -158,7 +170,20 @@ const Header: React.FC = () => {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: navItems.length * 0.05, duration: 0.3 }}
+                transition={{ delay: (navItems.length - 1) * 0.05, duration: 0.3 }}
+              >
+                <button
+                  onClick={toggleTheme}
+                  className="w-12 h-12 flex items-center justify-center rounded-full bg-card border border-[hsl(var(--card-border))] mx-auto"
+                  aria-label="Toggle theme"
+                >
+                  {isDark ? <Moon size={20} className="text-muted-foreground" /> : <Sun size={20} className="text-muted-foreground" />}
+                </button>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: navItems.length * 0.05 + 0.05, duration: 0.3 }}
               >
                 <Link
                   to="/resume"
