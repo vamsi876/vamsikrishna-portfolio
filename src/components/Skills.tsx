@@ -1,223 +1,178 @@
 import React from 'react';
-import { Code2, Database, Brain, Globe, Terminal, Wrench, Cloud, Bot } from 'lucide-react';
+import { Code2, Database, Brain, Globe, Terminal, Wrench, Cloud } from 'lucide-react';
 import { motion } from 'framer-motion';
 import {
-  SiPython,
-  SiJavascript,
-  SiTypescript,
-  SiPostgresql,
-  SiReact,
-  SiNodedotjs,
-  SiExpress,
-  SiAmazon,
-  SiDocker,
-  SiVercel,
-  SiGit,
-  SiPostman,
-  SiGraphql,
-  SiNextdotjs,
-  SiTailwindcss,
-  SiSupabase,
-  SiHtml5,
-  SiCss3,
-  SiMysql,
-  SiVite,
-  SiD3Dotjs,
-  SiRabbitmq,
-  SiRedis,
-  SiGithubactions,
-  SiJest,
-  SiPytest
+  SiPython, SiJavascript, SiTypescript, SiPostgresql, SiReact, SiNodedotjs, SiExpress,
+  SiAmazon, SiDocker, SiVercel, SiGit, SiPostman, SiGraphql, SiNextdotjs, SiTailwindcss,
+  SiSupabase, SiHtml5, SiCss3, SiMysql, SiVite, SiD3Dotjs, SiRabbitmq, SiRedis,
+  SiGithubactions, SiJest, SiPytest
 } from 'react-icons/si';
+import { useSpotlight } from '@/hooks/useSpotlight';
+
+const SkillCategoryCard: React.FC<{
+  title: string;
+  icon: React.ReactNode;
+  skills: { name: string; icon?: React.ReactNode }[];
+  delay: number;
+}> = ({ title, icon, skills, delay }) => {
+  const { ref, spotlightStyle, handlers } = useSpotlight();
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-50px' }}
+      transition={{ delay, duration: 0.5 }}
+    >
+      <div
+        ref={ref}
+        {...handlers}
+        className="bg-card border border-[hsl(var(--card-border))] rounded-xl p-5 h-full transition-colors hover:border-[hsl(var(--accent-border))] group"
+        style={spotlightStyle}
+      >
+        <div className="flex items-center gap-3 mb-4">
+          <div className="text-muted-foreground group-hover:text-primary group-hover:rotate-12 transition-all duration-300">
+            {icon}
+          </div>
+          <h3 className="text-lg font-semibold text-foreground">{title}</h3>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {skills.map((skill, i) => (
+            <motion.span
+              key={skill.name}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: delay + i * 0.03, duration: 0.3 }}
+              className="text-xs px-2.5 py-1.5 rounded-md bg-secondary border border-[hsl(var(--card-border))] text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors flex items-center gap-1.5 cursor-default"
+            >
+              {skill.icon && <span className="text-muted-foreground">{skill.icon}</span>}
+              {skill.name}
+            </motion.span>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  );
+};
 
 const Skills: React.FC = () => {
-  // Mapping of skill names to their icons
-  const skillIcons: Record<string, React.ReactNode> = {
-    // Programming Languages
-    "JavaScript": <SiJavascript className="text-primary" size={16} />,
-    "TypeScript": <SiTypescript className="text-primary" size={16} />,
-    "Python": <SiPython className="text-primary" size={16} />,
-    "SQL": <SiMysql className="text-primary" size={16} />,
-    "PowerShell": <Terminal className="text-primary" size={16} />,
-    "HTML": <SiHtml5 className="text-primary" size={16} />,
-    "CSS": <SiCss3 className="text-primary" size={16} />,
-
-    // Frontend
-    "React": <SiReact className="text-primary" size={16} />,
-    "Next.js": <SiNextdotjs className="text-primary" size={16} />,
-    "Vite": <SiVite className="text-primary" size={16} />,
-    "Tailwind CSS": <SiTailwindcss className="text-primary" size={16} />,
-    "shadcn/ui": <Globe className="text-primary" size={16} />,
-    "D3.js": <SiD3Dotjs className="text-primary" size={16} />,
-    "Mapbox GL": <Globe className="text-primary" size={16} />,
-
-    // Backend
-    "Node.js": <SiNodedotjs className="text-primary" size={16} />,
-    "Express.js": <SiExpress className="text-primary" size={16} />,
-    "GraphQL": <SiGraphql className="text-primary" size={16} />,
-    "RabbitMQ": <SiRabbitmq className="text-primary" size={16} />,
-
-    // Databases
-    "PostgreSQL": <SiPostgresql className="text-primary" size={16} />,
-    "SQL Server": <Database className="text-primary" size={16} />,
-    "Oracle": <Database className="text-primary" size={16} />,
-    "Redis": <SiRedis className="text-primary" size={16} />,
-    "Pinecone": <Database className="text-primary" size={16} />,
-
-    // Cloud & DevOps
-    "Azure": <Cloud className="text-primary" size={16} />,
-    "AWS": <SiAmazon className="text-primary" size={16} />,
-    "Docker": <SiDocker className="text-primary" size={16} />,
-    "GitHub Actions": <SiGithubactions className="text-primary" size={16} />,
-    "Vercel": <SiVercel className="text-primary" size={16} />,
-    "Supabase": <SiSupabase className="text-primary" size={16} />,
-
-    // AI & LLM
-    "Anthropic Claude API": <Bot className="text-primary" size={16} />,
-    "LangChain": <Bot className="text-primary" size={16} />,
-    "OpenAI API": <Bot className="text-primary" size={16} />,
-
-    // Tools
-    "Git": <SiGit className="text-primary" size={16} />,
-    "Postman": <SiPostman className="text-primary" size={16} />,
-    "Jest": <SiJest className="text-primary" size={16} />,
-    "React Testing Library": <Wrench className="text-primary" size={16} />,
-    "Pytest": <SiPytest className="text-primary" size={16} />,
-  };
+  const iconSize = 12;
 
   const skillCategories = [
     {
-      title: "Languages",
-      icon: <Code2 className="text-primary" size={24} />,
-      skills: ["JavaScript", "TypeScript", "Python", "SQL", "PowerShell", "HTML", "CSS"]
+      title: 'Languages',
+      icon: <Code2 size={22} />,
+      skills: [
+        { name: 'JavaScript', icon: <SiJavascript size={iconSize} /> },
+        { name: 'TypeScript', icon: <SiTypescript size={iconSize} /> },
+        { name: 'Python', icon: <SiPython size={iconSize} /> },
+        { name: 'SQL', icon: <SiMysql size={iconSize} /> },
+        { name: 'PowerShell', icon: <Terminal size={iconSize} /> },
+        { name: 'HTML', icon: <SiHtml5 size={iconSize} /> },
+        { name: 'CSS', icon: <SiCss3 size={iconSize} /> },
+      ],
     },
     {
-      title: "Frontend",
-      icon: <Globe className="text-primary" size={24} />,
-      skills: ["React", "Next.js", "Vite", "Tailwind CSS", "shadcn/ui", "D3.js", "Mapbox GL"]
+      title: 'Frontend',
+      icon: <Globe size={22} />,
+      skills: [
+        { name: 'React', icon: <SiReact size={iconSize} /> },
+        { name: 'Next.js', icon: <SiNextdotjs size={iconSize} /> },
+        { name: 'Vite', icon: <SiVite size={iconSize} /> },
+        { name: 'Tailwind CSS', icon: <SiTailwindcss size={iconSize} /> },
+        { name: 'shadcn/ui' },
+        { name: 'D3.js', icon: <SiD3Dotjs size={iconSize} /> },
+        { name: 'Mapbox GL' },
+      ],
     },
     {
-      title: "Backend",
-      icon: <Terminal className="text-primary" size={24} />,
-      skills: ["Node.js", "Express.js", "GraphQL", "REST APIs", "RabbitMQ"]
+      title: 'Backend',
+      icon: <Terminal size={22} />,
+      skills: [
+        { name: 'Node.js', icon: <SiNodedotjs size={iconSize} /> },
+        { name: 'Express.js', icon: <SiExpress size={iconSize} /> },
+        { name: 'GraphQL', icon: <SiGraphql size={iconSize} /> },
+        { name: 'REST APIs' },
+        { name: 'RabbitMQ', icon: <SiRabbitmq size={iconSize} /> },
+      ],
     },
     {
-      title: "Databases",
-      icon: <Database className="text-primary" size={24} />,
-      skills: ["PostgreSQL", "SQL Server", "Oracle", "Redis", "Pinecone"]
+      title: 'Databases',
+      icon: <Database size={22} />,
+      skills: [
+        { name: 'PostgreSQL', icon: <SiPostgresql size={iconSize} /> },
+        { name: 'SQL Server' },
+        { name: 'Oracle' },
+        { name: 'Redis', icon: <SiRedis size={iconSize} /> },
+        { name: 'Pinecone' },
+      ],
     },
     {
-      title: "Cloud & DevOps",
-      icon: <Cloud className="text-primary" size={24} />,
-      skills: ["Azure", "AWS", "Docker", "GitHub Actions", "CI/CD", "Vercel", "Supabase"]
+      title: 'Cloud & DevOps',
+      icon: <Cloud size={22} />,
+      skills: [
+        { name: 'Azure' },
+        { name: 'AWS', icon: <SiAmazon size={iconSize} /> },
+        { name: 'Docker', icon: <SiDocker size={iconSize} /> },
+        { name: 'GitHub Actions', icon: <SiGithubactions size={iconSize} /> },
+        { name: 'CI/CD' },
+        { name: 'Vercel', icon: <SiVercel size={iconSize} /> },
+        { name: 'Supabase', icon: <SiSupabase size={iconSize} /> },
+      ],
     },
     {
-      title: "AI & LLM",
-      icon: <Brain className="text-primary" size={24} />,
-      skills: ["Anthropic Claude API", "LangChain", "OpenAI API", "Vector Databases", "RAG"]
+      title: 'AI & LLM',
+      icon: <Brain size={22} />,
+      skills: [
+        { name: 'Anthropic Claude API' },
+        { name: 'LangChain' },
+        { name: 'OpenAI API' },
+        { name: 'Vector Databases' },
+        { name: 'RAG' },
+      ],
     },
     {
-      title: "Tools",
-      icon: <Wrench className="text-primary" size={24} />,
-      skills: ["Git", "Postman", "Jest", "React Testing Library", "Pytest"]
-    }
+      title: 'Tools',
+      icon: <Wrench size={22} />,
+      skills: [
+        { name: 'Git', icon: <SiGit size={iconSize} /> },
+        { name: 'Postman', icon: <SiPostman size={iconSize} /> },
+        { name: 'Jest', icon: <SiJest size={iconSize} /> },
+        { name: 'React Testing Library' },
+        { name: 'Pytest', icon: <SiPytest size={iconSize} /> },
+      ],
+    },
   ];
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { 
-      opacity: 0,
-      y: 20
-    },
-    visible: { 
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5
-      }
-    }
-  };
-
-  const skillVariants = {
-    hidden: { scale: 0.8, opacity: 0 },
-    visible: { 
-      scale: 1, 
-      opacity: 1,
-      transition: {
-        duration: 0.3
-      }
-    }
-  };
 
   return (
     <section className="py-20 px-6 md:px-12 lg:px-24" id="skills">
-      <div className="container mx-auto max-w-6xl">
-        <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+      <div className="container mx-auto max-w-5xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5 }}
+          className="mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60">
-            Skills & Expertise
-          </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
-            A comprehensive overview of my technical skills and areas of expertise
+          <span className="section-number">02 — SKILLS</span>
+          <h2 className="text-3xl md:text-4xl font-bold mt-2 text-foreground">Skills & Expertise</h2>
+          <p className="text-muted-foreground mt-2 max-w-xl">
+            A comprehensive overview of my technical skills and areas of expertise.
           </p>
         </motion.div>
 
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {skillCategories.map((category, index) => (
-            <motion.div 
-              key={index}
-              variants={itemVariants}
-              className="glass-dark p-6 rounded-xl hover:shadow-lg transition-all duration-300 group"
-              whileHover={{ scale: 1.02 }}
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="group-hover:rotate-12 transition-transform duration-300">
-                  {category.icon}
-                </div>
-                <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
-                  {category.title}
-                </h3>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill, skillIndex) => {
-                  const skillIcon = skillIcons[skill];
-                  return (
-                  <motion.span
-                    key={skillIndex}
-                    variants={skillVariants}
-                    className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium
-                             hover:bg-primary hover:text-white cursor-default
-                               transition-colors duration-300 flex items-center gap-2"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                      {skillIcon && <span className="flex-shrink-0">{skillIcon}</span>}
-                      <span>{skill}</span>
-                  </motion.span>
-                  );
-                })}
-              </div>
-            </motion.div>
+            <SkillCategoryCard
+              key={category.title}
+              title={category.title}
+              icon={category.icon}
+              skills={category.skills}
+              delay={index * 0.05}
+            />
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
