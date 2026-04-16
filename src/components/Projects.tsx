@@ -69,6 +69,10 @@ const Projects: React.FC = () => {
           <p className="text-muted-foreground mt-2 max-w-xl">
             Open-source tools and full-stack projects — 3 packages published on PyPI.
           </p>
+          <div className="flex items-center gap-2 mt-4">
+            <span className="text-xs px-3 py-1.5 rounded-full bg-primary/10 text-primary font-medium">{projects.length} Projects</span>
+            <span className="text-xs px-3 py-1.5 rounded-full bg-primary/10 text-primary font-medium">3 PyPI Packages</span>
+          </div>
         </motion.div>
 
         <div className="space-y-16">
@@ -103,6 +107,9 @@ const Projects: React.FC = () => {
 
               <div className="md:w-1/2">
                 <div className="flex items-center gap-3 mb-4">
+                  <span className="text-xs font-mono text-[hsl(var(--text-muted))]">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
                   <h3 className="text-xl font-bold text-foreground">{project.title}</h3>
                   <span className="text-xs text-muted-foreground bg-secondary px-2 py-1 rounded">{project.date}</span>
                 </div>

@@ -88,6 +88,10 @@ const Contact: React.FC = () => {
 
         <div className="grid md:grid-cols-2 gap-12">
           <motion.div {...fadeUp} transition={{ delay: 0.1, duration: 0.5 }} className="space-y-8">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-2 h-2 rounded-full bg-primary animate-pulse-green" />
+              <span className="text-xs font-mono tracking-wider uppercase text-primary">Available for opportunities</span>
+            </div>
             <h3 className="text-xl font-semibold text-foreground">Contact Information</h3>
 
             <div className="space-y-4">
@@ -131,6 +135,10 @@ const Contact: React.FC = () => {
                   </a>
                 ))}
               </div>
+            </div>
+
+            <div className="pt-4 border-t border-[hsl(var(--card-border))]">
+              <p className="text-xs text-muted-foreground">Typical response time: within 24 hours</p>
             </div>
           </motion.div>
 

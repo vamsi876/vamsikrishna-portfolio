@@ -108,7 +108,10 @@ const Experience: React.FC = () => {
                       'w-2 h-2 rounded-full flex-shrink-0',
                       job.active && activeJob === job.id ? 'bg-primary animate-pulse-green' : activeJob === job.id ? 'bg-primary' : 'bg-[hsl(var(--card-border))]'
                     )} />
-                    {job.company}
+                    <div>
+                      <div>{job.company}</div>
+                      <div className="text-xs text-[hsl(var(--text-muted))]">{job.startDate} – {job.endDate}</div>
+                    </div>
                   </div>
                 </motion.button>
               ))}
@@ -117,52 +120,54 @@ const Experience: React.FC = () => {
 
           {/* Job detail */}
           <div className="md:w-2/3">
-            <AnimatePresence mode="wait">
-              {jobs
-                .filter((job) => job.id === activeJob)
-                .map((job) => (
-                  <motion.div
-                    key={job.id}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="mb-4">
-                      <h3 className="text-xl font-semibold text-foreground">
-                        {job.title}{' '}
-                        <span className="text-primary">@ {job.company}</span>
-                      </h3>
+            <div className="bg-card border border-[hsl(var(--card-border))] rounded-xl p-6">
+              <AnimatePresence mode="wait">
+                {jobs
+                  .filter((job) => job.id === activeJob)
+                  .map((job) => (
+                    <motion.div
+                      key={job.id}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div className="mb-4">
+                        <h3 className="text-xl font-semibold text-foreground">
+                          {job.title}{' '}
+                          <span className="text-primary">@ {job.company}</span>
+                        </h3>
 
-                      <div className="flex items-center text-sm text-muted-foreground mt-1 gap-3">
-                        <span className="flex items-center gap-1">
-                          <Calendar size={14} />
-                          {job.startDate} – {job.endDate}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Briefcase size={14} />
-                          {job.location}
-                        </span>
+                        <div className="flex items-center text-sm text-muted-foreground mt-1 gap-3">
+                          <span className="flex items-center gap-1">
+                            <Calendar size={14} />
+                            {job.startDate} – {job.endDate}
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <Briefcase size={14} />
+                            {job.location}
+                          </span>
+                        </div>
                       </div>
-                    </div>
 
-                    <ul className="space-y-3">
-                      {job.description.map((item, index) => (
-                        <motion.li
-                          key={index}
-                          initial={{ opacity: 0, x: 10 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: index * 0.05, duration: 0.3 }}
-                          className="flex text-sm text-muted-foreground"
-                        >
-                          <ChevronRight size={16} className="mt-0.5 mr-2 text-primary flex-shrink-0" />
-                          <span>{item}</span>
-                        </motion.li>
-                      ))}
-                    </ul>
-                  </motion.div>
-                ))}
-            </AnimatePresence>
+                      <ul className="space-y-3">
+                        {job.description.map((item, index) => (
+                          <motion.li
+                            key={index}
+                            initial={{ opacity: 0, x: 10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: index * 0.05, duration: 0.3 }}
+                            className="flex text-sm text-muted-foreground"
+                          >
+                            <ChevronRight size={16} className="mt-0.5 mr-2 text-primary flex-shrink-0" />
+                            <span>{item}</span>
+                          </motion.li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  ))}
+              </AnimatePresence>
+            </div>
           </div>
         </div>
       </div>
