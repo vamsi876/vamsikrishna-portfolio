@@ -13,23 +13,22 @@ interface Message {
 // Enhanced with more detailed information about Vamsi - Updated to match resume
 const portfolioInfo = {
   name: "Vamsi Krishna Kollipara",
-  summary: "Full-stack developer with 2+ years of industry experience shipping React/TypeScript frontends and Node.js backends across healthcare and energy domains, plus hands-on AI integration (RAG pipelines with LangChain and Pinecone, Claude API). Most recently sole developer on a Supabase-powered operations platform serving 8 organizational roles daily. MS in Computer Science from Indiana State University. 3 published PyPI packages.",
-  
+  summary: "AI Full-Stack Engineer with 2+ years shipping production React/TypeScript frontends and Node.js/Express backends on PostgreSQL, Redis, and Azure. Built an enterprise CRM with calendar, email (Microsoft Graph), and Claude-powered conversation analysis serving 8 roles daily, plus a RAG knowledge assistant on Pinecone vector search. Strong on enterprise auth (OAuth 2.0, JWT, Azure AD SSO, Row-Level Security) and secure API design. MS in Computer Science. 3 published PyPI packages.",
+
   experience: [
     {
-      title: "Full-Stack Developer",
+      title: "AI Full-Stack Engineer",
       company: "AIDM Software Consultancy",
       location: "Remote",
       date: "Jul 2025 - Present",
       achievements: [
-        "Architected a healthcare data integration pipeline ingesting clinical data from Homecare Homebase (HCHB) EHR via SFTP log shipping into SQL Server 2022 on Azure, feeding a Next.js operational analytics dashboard",
-        "Built PowerShell automation chaining WinSCP SFTP download and SQL Server transaction log restore into an idempotent hourly SQL Agent job, with lock-file concurrency control, structured logging, and exit-code-driven email alerts",
-        "Built and shipped a full-stack operations platform (React 18, TypeScript, Vite, Tailwind, shadcn/ui, GraphQL) on Supabase (PostgreSQL, Auth, Storage, Edge Functions, RLS), deployed via GitHub Actions CI/CD across AWS and Vercel",
-        "Consolidated HR/applicant tracking, hospice CRM, email campaigns, training/LMS, and e-commerce into one SPA used daily across 8 organizational roles over 10 months",
-        "Integrated Anthropic Claude via Supabase Edge Functions to automate resume screening with fit scoring and reasoning, generate one-click application and CRM-account summaries",
-        "Designed a hospice CRM with account management, stage-tracked opportunity pipeline, territory assignment, FullCalendar visit planner, Leaflet map views with OSRM route optimization",
-        "Developed an email campaign engine with dynamic CRM-driven templates, business-day scheduling, and Microsoft Graph API integration",
-        "Enforced multi-tenant RBAC across 8 roles via centralized permission matrix, Supabase Row Level Security, JWT-verified Edge Function auth, and Azure AD SSO"
+        "Architected and shipped an enterprise operations platform (React 18, TypeScript, Vite, Tailwind, shadcn/ui, GraphQL) on Node.js/Express services and Supabase Postgres, deployed via GitHub Actions across AWS and Vercel, consolidating CRM, applicant tracking, email campaigns, training/LMS, and analytics into one SPA used daily across 8 organizational roles for 10+ months",
+        "Designed LLM-powered NLU services on Anthropic Claude (via Supabase Edge Functions) for client-relationship workflows: automated PDF/DOCX résumé screening with fit scoring and reasoning, one-click CRM-account and applicant summaries, action-item extraction, and natural-language insights across a 24-chart analytics system, with DB-level result caching and per-user rate limiting",
+        "Built an audio-to-notes pipeline using OpenAI Whisper for transcription of uploaded recordings and in-browser live audio capture, with downstream Claude processing for summarization and action-item extraction; output stored both as CRM notes attached to accounts/contacts and as a searchable transcript table",
+        "Implemented a CRM with stage-tracked opportunity pipeline, account/contact management, territory assignment, and a FullCalendar visit planner with Leaflet + OSRM route optimization covering the full advisor-style workflow from prospect to follow-up",
+        "Built an email integration and campaign engine on Microsoft Graph API for organizational sending, with dynamic CRM-driven templates, business-day scheduling, transactional delayed queues, and webhook-driven inbound reply tracking",
+        "Hardened the platform with enterprise auth and security: OAuth 2.0 + Azure AD SSO with identity linking, JWT-verified Edge Function endpoints, session management, and a centralized 8-role RBAC matrix enforced at the database layer via Postgres Row-Level Security",
+        "Integrated semantic search using vector embeddings to surface relevant CRM history, prior meeting context, and policy documents inline in the user workflow"
       ]
     },
     {
@@ -38,9 +37,9 @@ const portfolioInfo = {
       location: "Terre Haute, IN",
       date: "Aug 2023 - May 2025",
       achievements: [
-        "Built internal web applications for Indiana State University (React, Node.js, PostgreSQL), including a course catalog portal, faculty directory, and student resource dashboard",
-        "Built a RAG-powered knowledge assistant (LangChain, OpenAI API, Pinecone) for university staff to query academic policies and HR procedures, with configurable semantic retrieval and vector indexing",
-        "Built and open-sourced WebWeaver, a Python crawling library, and used it to ingest 40,000+ university URLs into a curated knowledge base of 8,000 documents powering the RAG assistant's semantic search"
+        "Built a RAG-powered knowledge assistant (LangChain, OpenAI API, Pinecone vector DB) for university staff to query academic policies and HR procedures in natural language, with configurable semantic retrieval, chunk-overlap tuning, and vector indexing",
+        "Built internal web applications (React, Node.js, Express, PostgreSQL) including a course catalog portal, faculty directory, and student resource dashboard used by academic departments, with JWT session auth and REST APIs",
+        "Open-sourced WebWeaver, a Python crawling library, and used it to ingest 40,000+ university URLs into a curated knowledge base of 8,000 documents powering the RAG assistant's semantic search"
       ]
     },
     {
@@ -49,7 +48,7 @@ const portfolioInfo = {
       location: "Hyderabad, India",
       date: "Jan 2022 - Jul 2023",
       achievements: [
-        "Developed React-based portal modules for Duke Energy's energy management platform, delivering real-time usage analytics, billing history, and outage status with interactive D3.js visualizations",
+        "Developed React-based portal modules for an enterprise energy management platform, delivering real-time usage analytics, billing history, and outage status with interactive D3.js visualizations",
         "Built Node.js/Express REST APIs integrated with Oracle and SAP backends to surface smart meter telemetry data, achieving sub-200ms p95 latency through Redis caching and connection pooling",
         "Built an internal outage reporting dashboard (React, PostgreSQL, Mapbox GL) aggregating grid sensor data to help operations teams identify fault zones and coordinate field crew dispatch",
         "Optimized SQL queries on multi-million-row smart meter and billing tables, reducing average execution time by 30% through composite indexing, join restructuring, and eliminating N+1 patterns",
@@ -61,11 +60,12 @@ const portfolioInfo = {
 
   skills: {
     languages: ["JavaScript", "TypeScript", "Python", "SQL", "PowerShell", "HTML", "CSS"],
-    frontend: ["React", "Next.js", "Vite", "Tailwind CSS", "shadcn/ui", "D3.js", "Mapbox GL"],
-    backend: ["Node.js", "Express.js", "GraphQL", "REST APIs", "RabbitMQ"],
-    databases: ["PostgreSQL", "SQL Server", "Oracle", "Redis", "Pinecone"],
-    cloud_devops: ["Azure", "AWS", "Docker", "GitHub Actions", "CI/CD", "Vercel", "Supabase"],
-    ai_llm: ["Anthropic Claude API", "LangChain", "OpenAI API", "Vector Databases", "RAG"],
+    frontend: ["React", "Next.js", "Vite", "Tailwind CSS", "shadcn/ui", "D3.js", "Mapbox GL", "Responsive UI"],
+    backend: ["Node.js", "Express.js", "REST APIs", "GraphQL", "Webhooks", "RabbitMQ", "Edge Functions"],
+    databases: ["PostgreSQL", "SQL Server", "Oracle", "Redis", "Pinecone", "Supabase"],
+    ai_llm: ["Anthropic Claude API", "OpenAI API", "LangChain", "RAG", "Vector Search", "Embeddings", "Prompt Engineering"],
+    auth_security: ["OAuth 2.0", "JWT", "Session Management", "Azure AD SSO", "Row-Level Security", "RBAC", "Encryption at Rest/Transit"],
+    cloud_devops: ["Azure", "AWS", "Docker", "GitHub Actions", "CI/CD", "Vercel"],
     tools: ["Git", "Postman", "Jest", "React Testing Library", "Pytest"]
   },
 
@@ -379,16 +379,19 @@ Vamsi has experience with Azure (SQL Server, AD SSO), AWS, Supabase (PostgreSQL,
 4. Databases
    • ${portfolioInfo.skills.databases.join(', ')}
 
-5. Cloud & DevOps
-   • ${portfolioInfo.skills.cloud_devops.join(', ')}
-
-6. AI & LLM
+5. AI & LLM
    • ${portfolioInfo.skills.ai_llm.join(', ')}
 
-7. Tools
+6. Auth & Security
+   • ${portfolioInfo.skills.auth_security.join(', ')}
+
+7. Cloud & DevOps
+   • ${portfolioInfo.skills.cloud_devops.join(', ')}
+
+8. Tools
    • ${portfolioInfo.skills.tools.join(', ')}
 
-Would you like more details about his AI expertise, programming languages, or cloud infrastructure skills?`;
+Would you like more details about his AI expertise, enterprise auth experience, or cloud infrastructure skills?`;
     }
 
     // Enhanced project information
@@ -544,8 +547,8 @@ Would you like more details about his skills or experience?`;
 
 You can ask me about:
 • His education (MS in Computer Science from Indiana State, BTech from Vel Tech)
-• Professional experience (Full-Stack Developer at AIDM, Cognizant, ISU)
-• Technical skills (React, TypeScript, Node.js, PostgreSQL, AI/LLM, Cloud)
+• Professional experience (AI Full-Stack Engineer at AIDM, Graduate Assistant at ISU, Full-Stack Developer at Cognizant)
+• Technical skills (React, TypeScript, Node.js, PostgreSQL, Claude/LangChain/RAG, enterprise auth, Cloud)
 • Open-source projects (3 PyPI packages: GitBar, GadgetBox, WebWeaver)
 • Contact information
 

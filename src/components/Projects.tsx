@@ -1,7 +1,8 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
+import { FaGithub } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 interface Project {
@@ -54,8 +55,38 @@ const Projects: React.FC = () => {
     },
   ];
 
+  const projectsSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Projects by Vamsi Krishna Kollipara',
+    itemListElement: projects.map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'SoftwareApplication',
+        name: p.title.split('—')[0].trim(),
+        description: p.description,
+        applicationCategory: 'DeveloperApplication',
+        operatingSystem: 'Cross-platform',
+        url: p.links.live || p.links.github,
+        codeRepository: p.links.github,
+        author: {
+          '@type': 'Person',
+          name: 'Vamsi Krishna Kollipara',
+          url: 'https://vamsikrishnakollipara.vercel.app/',
+        },
+        programmingLanguage: p.tags.filter((t) => ['Python', 'TypeScript', 'React'].includes(t)),
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+      },
+    })),
+  };
+
   return (
     <section className="py-20 px-6 md:px-12 lg:px-24" id="projects">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectsSchema) }}
+      />
       <div className="container mx-auto max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -65,7 +96,7 @@ const Projects: React.FC = () => {
           className="mb-12"
         >
           <span className="section-number">04 — PROJECTS</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-2 text-foreground">Projects</h2>
+          <h1 className="text-3xl md:text-4xl font-bold mt-2 text-foreground">Projects &amp; Open-Source Work</h1>
           <p className="text-muted-foreground mt-2 max-w-xl">
             Open-source tools and full-stack projects — 3 packages published on PyPI.
           </p>
@@ -130,7 +161,7 @@ const Projects: React.FC = () => {
                   {project.links.github && (
                     <Button variant="outline" size="sm" className="gap-2 border-[hsl(var(--card-border))] text-muted-foreground hover:text-foreground hover:border-foreground/20" asChild>
                       <a href={project.links.github} target="_blank" rel="noopener noreferrer">
-                        <Github size={14} />
+                        <FaGithub size={14} />
                         Code
                       </a>
                     </Button>

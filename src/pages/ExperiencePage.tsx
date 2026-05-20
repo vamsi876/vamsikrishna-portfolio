@@ -2,22 +2,28 @@ import React from 'react';
 import Header from '@/components/Header';
 import Experience from '@/components/Experience';
 import Footer from '@/components/Footer';
-import ChatBot from '@/components/ChatBot';
-import Background3D from '@/components/Background3D';
 import PageTransition from '@/components/PageTransition';
+import { useDocumentMeta } from '@/hooks/useDocumentMeta';
 
 const ExperiencePage: React.FC = () => {
+  useDocumentMeta({
+    title: 'Experience — Vamsi Krishna Kollipara, AI Full-Stack Engineer',
+    description: 'Professional experience of Vamsi Krishna Kollipara — AI Full-Stack Engineer at AIDM Software, Graduate Assistant at Indiana State University, Full-Stack Developer at Cognizant.',
+    path: '/experience',
+    breadcrumbs: [
+      { name: 'Home', path: '/' },
+      { name: 'Experience', path: '/experience' },
+    ],
+  });
   return (
     <PageTransition>
       <div className="relative min-h-screen">
-        <Background3D />
         <div className="relative z-10">
           <Header />
-          <main className="pt-24">
+          <main id="main-content" className="pt-24">
             <Experience />
           </main>
           <Footer />
-          <ChatBot />
         </div>
       </div>
     </PageTransition>

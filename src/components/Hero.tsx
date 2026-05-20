@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
   const ctaMagnetic = useMagnetic(0.2);
   const resumeMagnetic = useMagnetic(0.2);
 
-  const bioWords = 'Full-stack developer with 2+ years shipping React/TypeScript frontends and Node.js backends across healthcare and energy domains.'.split(' ');
+  const bioWords = 'AI Full-Stack Engineer with 2+ years shipping production React/TypeScript frontends and Node.js/Express backends. Built enterprise CRM with Claude-powered NLU and a Pinecone RAG knowledge assistant.'.split(' ');
 
   return (
     <section className="min-h-screen pt-28 pb-20 px-6 md:px-12 lg:px-24">
@@ -64,14 +64,17 @@ const Hero: React.FC = () => {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground leading-[1.1] mb-4">
-            {displayText}
-            {!isComplete && (
-              <span className="inline-block w-[3px] h-[0.85em] bg-primary ml-1 align-middle animate-blink" />
-            )}
+            <span className="sr-only">Vamsi Krishna Kollipara — AI Full-Stack Engineer</span>
+            <span aria-hidden="true">
+              {displayText}
+              {!isComplete && (
+                <span className="inline-block w-[3px] h-[0.85em] bg-primary ml-1 align-middle animate-blink" />
+              )}
+            </span>
           </h1>
 
           <h2 className="text-xl md:text-2xl font-medium text-muted-foreground mb-6">
-            Full-Stack Developer
+            AI Full-Stack Engineer
           </h2>
 
           <p className="text-muted-foreground max-w-xl mb-8">
@@ -145,7 +148,7 @@ const Hero: React.FC = () => {
             }
           >
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Sole developer on a Supabase-powered operations platform serving 8 organizational roles daily. Shipping React/TypeScript frontends and Node.js backends across healthcare and energy domains, plus AI integration with LangChain and Claude API.
+              Architected an enterprise operations platform on Supabase Postgres serving 8 roles daily. Built Claude-powered NLU, a Pinecone RAG assistant, OAuth 2.0 + Azure AD SSO, and Microsoft Graph email integration.
             </p>
           </BentoCard>
 
@@ -174,7 +177,7 @@ const Hero: React.FC = () => {
             }
           >
             <div className="flex flex-wrap gap-1.5">
-              {['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Python', 'AI/LLM', 'AWS', 'Docker'].map((skill) => (
+              {['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Claude', 'LangChain', 'Pinecone', 'Azure'].map((skill) => (
                 <span key={skill} className="text-xs px-2.5 py-1 rounded-md bg-secondary border border-[hsl(var(--card-border))] text-muted-foreground">
                   {skill}
                 </span>
@@ -224,7 +227,7 @@ const Hero: React.FC = () => {
               {[
                 { company: 'Cognizant', role: 'Full-Stack Developer', date: 'Jan 2022 – Jul 2023', active: false },
                 { company: 'Indiana State University', role: 'Research & Teaching Assistant', date: 'Aug 2023 – May 2025', active: false },
-                { company: 'AIDM Software', role: 'Full-Stack Developer', date: 'Jul 2025 – Present', active: true },
+                { company: 'AIDM Software', role: 'AI Full-Stack Engineer', date: 'Jul 2025 – Present', active: true },
               ].map((job, i) => (
                 <div key={i} className="flex items-center gap-4 flex-shrink-0">
                   {i > 0 && <div className="w-12 h-px bg-[hsl(var(--card-border))]" />}

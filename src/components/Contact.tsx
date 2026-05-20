@@ -80,7 +80,7 @@ const Contact: React.FC = () => {
       <div className="container mx-auto max-w-5xl">
         <motion.div {...fadeUp} className="mb-12">
           <span className="section-number">05 — CONTACT</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-2 text-foreground">Get In Touch</h2>
+          <h1 className="text-3xl md:text-4xl font-bold mt-2 text-foreground">Contact Vamsi Krishna Kollipara</h1>
           <p className="text-muted-foreground mt-2 max-w-xl">
             Have a project in mind or want to discuss potential opportunities? Feel free to reach out!
           </p>

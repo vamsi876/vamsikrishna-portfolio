@@ -18,6 +18,7 @@ const NavLink: React.FC<{ name: string; href: string; isActive: boolean; onClick
   return (
     <Link
       to={href}
+      aria-current={isActive ? 'page' : undefined}
       className={cn(
         'text-sm font-medium transition-colors duration-200 whitespace-nowrap',
         isActive ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
@@ -82,6 +83,7 @@ const Header: React.FC = () => {
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4">
       <nav
         ref={menuRef}
+        aria-label="Primary navigation"
         className={cn(
           'glass-dark rounded-full px-6 py-2.5 flex items-center gap-6 transition-shadow duration-300',
           scrolled && 'shadow-lg shadow-black/20'
@@ -112,6 +114,7 @@ const Header: React.FC = () => {
 
         <Link
           to="/resume"
+          aria-current={location.pathname === '/resume' ? 'page' : undefined}
           className={cn(
             'hidden md:inline-flex text-sm font-medium px-4 py-1.5 rounded-full border transition-colors duration-200',
             location.pathname === '/resume'
@@ -157,6 +160,7 @@ const Header: React.FC = () => {
                 >
                   <Link
                     to={item.href}
+                    aria-current={location.pathname === item.href ? 'page' : undefined}
                     className={cn(
                       'text-2xl font-semibold transition-colors',
                       location.pathname === item.href ? 'text-primary' : 'text-foreground'

@@ -26,7 +26,7 @@ const About: React.FC = () => {
       <div className="container mx-auto max-w-5xl">
         <motion.div {...fadeUp} className="mb-12">
           <span className="section-number">01 — ABOUT</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-2 text-foreground">About Me</h2>
+          <h1 className="text-3xl md:text-4xl font-bold mt-2 text-foreground">About Vamsi Krishna Kollipara</h1>
         </motion.div>
 
         <motion.div {...fadeUp} transition={{ delay: 0.05, duration: 0.5 }} className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
@@ -47,9 +47,9 @@ const About: React.FC = () => {
           <div className="space-y-6">
             <motion.div {...fadeUp} transition={{ delay: 0.1, duration: 0.5 }}>
               <div className="bg-card border border-[hsl(var(--card-border))] rounded-xl p-5">
-                <h3 className="text-xl font-bold text-foreground mb-3">Full-Stack Developer</h3>
+                <h3 className="text-xl font-bold text-foreground mb-3">AI Full-Stack Engineer</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Full-stack developer with 2+ years of industry experience shipping React/TypeScript frontends and Node.js backends across healthcare and energy domains. At AIDM, I built and shipped a full-stack operations platform on Supabase serving 8 organizational roles daily, integrating Anthropic Claude for AI-powered features. Previously at Cognizant, developed React-based portal modules for Duke Energy's energy management platform with D3.js visualizations.
+                  AI Full-Stack Engineer with 2+ years shipping production React/TypeScript frontends and Node.js/Express backends on PostgreSQL, Redis, and Azure. Built an enterprise CRM with calendar, email (Microsoft Graph), and Claude-powered conversation analysis serving 8 roles daily, plus a RAG knowledge assistant on Pinecone vector search. Strong on enterprise auth (OAuth 2.0, JWT, Azure AD SSO, Row-Level Security) and secure API design.
                 </p>
               </div>
             </motion.div>
@@ -58,10 +58,12 @@ const About: React.FC = () => {
               <h4 className="text-lg font-semibold text-foreground mb-3">Key Focus Areas</h4>
               <div className="flex flex-wrap gap-2">
                 {[
-                  'Full-stack web development',
-                  'Healthcare & energy domains',
-                  'AI integration (RAG, Claude, LangChain)',
-                  'Open-source developer tools',
+                  'AI integration (Claude, LangChain, RAG)',
+                  'Pinecone vector search & embeddings',
+                  'Enterprise auth (OAuth 2.0, Azure AD SSO, RLS)',
+                  'Full-stack web development (React, Node.js)',
+                  'Microsoft Graph email integration',
+                  'Open-source developer tools (PyPI)',
                 ].map((area) => (
                   <span key={area} className="text-xs px-3 py-1.5 rounded-md bg-secondary border border-[hsl(var(--card-border))] text-muted-foreground">
                     {area}
@@ -73,7 +75,7 @@ const About: React.FC = () => {
             <motion.div {...fadeUp} transition={{ delay: 0.3, duration: 0.5 }}>
               <h4 className="text-lg font-semibold text-foreground mb-3">Current Work</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                At AIDM Software Consultancy, I'm the sole developer on a Supabase-powered operations platform (React 18, TypeScript, Vite, GraphQL) consolidating HR/applicant tracking, hospice CRM, email campaigns, training/LMS, and e-commerce. Integrated Anthropic Claude for automated resume screening, built a hospice CRM with Leaflet maps and OSRM route optimization, and enforced multi-tenant RBAC across 8 roles via Supabase RLS and Azure AD SSO.
+                At AIDM Software Consultancy, I architected an enterprise operations platform on Node.js/Express services and Supabase Postgres consolidating CRM, applicant tracking, email campaigns, training/LMS, and analytics into one SPA used daily across 8 organizational roles. Designed LLM-powered NLU on Anthropic Claude for résumé screening and conversation analysis, built an OpenAI Whisper audio-to-notes pipeline, and hardened the platform with OAuth 2.0 + Azure AD SSO, JWT-verified Edge Functions, and Postgres Row-Level Security.
               </p>
             </motion.div>
 

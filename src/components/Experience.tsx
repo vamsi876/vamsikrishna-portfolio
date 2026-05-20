@@ -20,20 +20,20 @@ const Experience: React.FC = () => {
   const jobs: Job[] = [
     {
       id: 'job1',
-      title: 'Full-Stack Developer',
+      title: 'AI Full-Stack Engineer',
       company: 'AIDM Software Consultancy',
       location: 'Remote',
       startDate: 'Jul 2025',
       endDate: 'Present',
       active: true,
       description: [
-        'Architected a healthcare data integration pipeline ingesting clinical data from Homecare Homebase (HCHB) EHR via SFTP log shipping into SQL Server 2022 on Azure, feeding a Next.js operational analytics dashboard.',
-        'Built PowerShell automation chaining WinSCP SFTP download and SQL Server transaction log restore into an idempotent hourly SQL Agent job, with lock-file concurrency control, structured logging, and exit-code-driven email alerts.',
-        'Built and shipped a full-stack operations platform (React 18, TypeScript, Vite, Tailwind, shadcn/ui, GraphQL) on Supabase (PostgreSQL, Auth, Storage, Edge Functions, RLS), deployed via GitHub Actions CI/CD across AWS and Vercel, consolidating HR/applicant tracking, hospice CRM, email campaigns, training/LMS, and e-commerce into one SPA used daily across 8 organizational roles over 10 months.',
-        'Integrated Anthropic Claude via Supabase Edge Functions to automate resume screening with fit scoring and reasoning (PDF/DOCX parsing via mammoth and pdfjs-dist), generate one-click application and CRM-account summaries, and surface natural-language insights across a 24-chart analytics system with DB-level caching and per-user rate limiting.',
-        'Designed a hospice CRM with account management, a stage-tracked opportunity pipeline, territory assignment, a FullCalendar visit planner, Leaflet map views with OSRM route optimization, and an Excel-to-Supabase census pipeline powering 7/14/30-day branch visit analytics.',
-        'Developed an email campaign engine with dynamic CRM-driven templates, business-day scheduling, and Microsoft Graph API integration for organizational sending, plus transactional emails with delayed queues and reply tracking.',
-        'Enforced multi-tenant RBAC across 8 roles via a centralized permission matrix, Supabase Row Level Security, JWT-verified Edge Function auth, and Azure AD SSO with identity linking.',
+        'Architected and shipped an enterprise operations platform (React 18, TypeScript, Vite, Tailwind, shadcn/ui, GraphQL) on Node.js/Express services and Supabase Postgres, deployed via GitHub Actions across AWS and Vercel, consolidating CRM, applicant tracking, email campaigns, training/LMS, and analytics into one SPA used daily across 8 organizational roles for 10+ months.',
+        'Designed LLM-powered NLU services on Anthropic Claude (via Supabase Edge Functions) for client-relationship workflows: automated PDF/DOCX résumé screening with fit scoring and reasoning, one-click CRM-account and applicant summaries, action-item extraction, and natural-language insights across a 24-chart analytics system, with DB-level result caching and per-user rate limiting.',
+        'Built an audio-to-notes pipeline using OpenAI Whisper for transcription of uploaded recordings and in-browser live audio capture, with downstream Claude processing for summarization and action-item extraction; output stored both as CRM notes attached to accounts/contacts and as a searchable transcript table.',
+        'Implemented a CRM with stage-tracked opportunity pipeline, account/contact management, territory assignment, and a FullCalendar visit planner with Leaflet + OSRM route optimization covering the full advisor-style workflow from prospect to follow-up.',
+        'Built an email integration and campaign engine on Microsoft Graph API for organizational sending, with dynamic CRM-driven templates, business-day scheduling, transactional delayed queues, and webhook-driven inbound reply tracking.',
+        'Hardened the platform with enterprise auth and security: OAuth 2.0 + Azure AD SSO with identity linking, JWT-verified Edge Function endpoints, session management, and a centralized 8-role RBAC matrix enforced at the database layer via Postgres Row-Level Security.',
+        'Integrated semantic search using vector embeddings to surface relevant CRM history, prior meeting context, and policy documents inline in the user workflow.',
       ],
     },
     {
@@ -44,9 +44,9 @@ const Experience: React.FC = () => {
       startDate: 'Aug 2023',
       endDate: 'May 2025',
       description: [
-        'Built internal web applications for Indiana State University (React, Node.js, PostgreSQL), including a course catalog portal, faculty directory, and student resource dashboard used by academic departments.',
-        'Built a RAG-powered knowledge assistant (LangChain, OpenAI API, Pinecone) for university staff to query academic policies and HR procedures, with configurable semantic retrieval, chunk-overlap tuning, and vector indexing.',
-        "Built and open-sourced WebWeaver, a Python crawling library, and used it to ingest 40,000+ university URLs into a curated knowledge base of 8,000 documents powering the RAG assistant's semantic search.",
+        'Built a RAG-powered knowledge assistant (LangChain, OpenAI API, Pinecone vector DB) for university staff to query academic policies and HR procedures in natural language, with configurable semantic retrieval, chunk-overlap tuning, and vector indexing — production patterns directly applicable to advisor-facing client/policy NLU.',
+        'Built internal web applications (React, Node.js, Express, PostgreSQL) including a course catalog portal, faculty directory, and student resource dashboard used by academic departments, with JWT session auth and REST APIs.',
+        "Open-sourced WebWeaver, a Python crawling library, and used it to ingest 40,000+ university URLs into a curated knowledge base of 8,000 documents powering the RAG assistant's semantic search.",
       ],
     },
     {
@@ -57,7 +57,7 @@ const Experience: React.FC = () => {
       startDate: 'Jan 2022',
       endDate: 'Jul 2023',
       description: [
-        "Developed React-based portal modules for Duke Energy's energy management platform, delivering real-time usage analytics, billing history, and outage status with interactive D3.js visualizations to residential and commercial customers.",
+        'Developed React-based portal modules for an enterprise energy management platform, delivering real-time usage analytics, billing history, and outage status with interactive D3.js visualizations to residential and commercial customers.',
         'Built Node.js/Express REST APIs integrated with Oracle and SAP backends to surface smart meter telemetry data, achieving sub-200ms p95 latency through Redis caching and connection pooling.',
         'Built an internal outage reporting dashboard (React, PostgreSQL, Mapbox GL) aggregating grid sensor data to help operations teams identify fault zones and coordinate field crew dispatch.',
         'Optimized SQL queries on multi-million-row smart meter and billing tables, reducing average execution time by 30% through composite indexing, join restructuring, and eliminating N+1 patterns.',
@@ -78,9 +78,9 @@ const Experience: React.FC = () => {
           className="mb-12"
         >
           <span className="section-number">03 — EXPERIENCE</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-2 text-foreground">Experience</h2>
+          <h1 className="text-3xl md:text-4xl font-bold mt-2 text-foreground">Experience — AI Full-Stack Engineer</h1>
           <p className="text-muted-foreground mt-2 max-w-xl">
-            My professional journey in full-stack development, from enterprise systems to open-source tools.
+            From energy-sector enterprise React to RAG-powered knowledge assistants and Claude-powered CRM NLU.
           </p>
         </motion.div>
 

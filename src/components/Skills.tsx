@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code2, Database, Brain, Globe, Terminal, Wrench, Cloud } from 'lucide-react';
+import { Code2, Database, Brain, Globe, Terminal, Wrench, Cloud, Shield } from 'lucide-react';
 import { motion } from 'framer-motion';
 import {
   SiPython, SiJavascript, SiTypescript, SiPostgresql, SiReact, SiNodedotjs, SiExpress,
@@ -86,6 +86,7 @@ const Skills: React.FC = () => {
         { name: 'shadcn/ui' },
         { name: 'D3.js', icon: <SiD3Dotjs size={iconSize} /> },
         { name: 'Mapbox GL' },
+        { name: 'Responsive UI' },
       ],
     },
     {
@@ -94,9 +95,11 @@ const Skills: React.FC = () => {
       skills: [
         { name: 'Node.js', icon: <SiNodedotjs size={iconSize} /> },
         { name: 'Express.js', icon: <SiExpress size={iconSize} /> },
-        { name: 'GraphQL', icon: <SiGraphql size={iconSize} /> },
         { name: 'REST APIs' },
+        { name: 'GraphQL', icon: <SiGraphql size={iconSize} /> },
+        { name: 'Webhooks' },
         { name: 'RabbitMQ', icon: <SiRabbitmq size={iconSize} /> },
+        { name: 'Edge Functions' },
       ],
     },
     {
@@ -108,6 +111,33 @@ const Skills: React.FC = () => {
         { name: 'Oracle' },
         { name: 'Redis', icon: <SiRedis size={iconSize} /> },
         { name: 'Pinecone' },
+        { name: 'Supabase', icon: <SiSupabase size={iconSize} /> },
+      ],
+    },
+    {
+      title: 'AI & LLM',
+      icon: <Brain size={22} />,
+      skills: [
+        { name: 'Anthropic Claude API' },
+        { name: 'OpenAI API' },
+        { name: 'LangChain' },
+        { name: 'RAG' },
+        { name: 'Vector Search' },
+        { name: 'Embeddings' },
+        { name: 'Prompt Engineering' },
+      ],
+    },
+    {
+      title: 'Auth & Security',
+      icon: <Shield size={22} />,
+      skills: [
+        { name: 'OAuth 2.0' },
+        { name: 'JWT' },
+        { name: 'Session Management' },
+        { name: 'Azure AD SSO' },
+        { name: 'Row-Level Security' },
+        { name: 'RBAC' },
+        { name: 'Encryption at Rest/Transit' },
       ],
     },
     {
@@ -120,18 +150,6 @@ const Skills: React.FC = () => {
         { name: 'GitHub Actions', icon: <SiGithubactions size={iconSize} /> },
         { name: 'CI/CD' },
         { name: 'Vercel', icon: <SiVercel size={iconSize} /> },
-        { name: 'Supabase', icon: <SiSupabase size={iconSize} /> },
-      ],
-    },
-    {
-      title: 'AI & LLM',
-      icon: <Brain size={22} />,
-      skills: [
-        { name: 'Anthropic Claude API' },
-        { name: 'LangChain' },
-        { name: 'OpenAI API' },
-        { name: 'Vector Databases' },
-        { name: 'RAG' },
       ],
     },
     {
@@ -158,13 +176,13 @@ const Skills: React.FC = () => {
           className="mb-12"
         >
           <span className="section-number">02 — SKILLS</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-2 text-foreground">Skills & Expertise</h2>
+          <h1 className="text-3xl md:text-4xl font-bold mt-2 text-foreground">Skills &amp; Expertise</h1>
           <p className="text-muted-foreground mt-2 max-w-xl">
-            A comprehensive overview of my technical skills and areas of expertise.
+            The toolchain I use to ship production AI full-stack systems: React/TypeScript, Node.js, Claude/LangChain, and enterprise auth.
           </p>
-          <div className="flex gap-3 mt-4">
-            <span className="text-xs px-3 py-1.5 rounded-full bg-primary/10 text-primary font-medium">7 Categories</span>
-            <span className="text-xs px-3 py-1.5 rounded-full bg-primary/10 text-primary font-medium">40+ Technologies</span>
+          <div className="flex gap-3 mt-4 flex-wrap">
+            <span className="text-xs px-3 py-1.5 rounded-full bg-primary/10 text-primary font-medium">8 Categories</span>
+            <span className="text-xs px-3 py-1.5 rounded-full bg-primary/10 text-primary font-medium">50+ Technologies</span>
           </div>
         </motion.div>
 
@@ -176,7 +194,7 @@ const Skills: React.FC = () => {
               icon={category.icon}
               skills={category.skills}
               delay={index * 0.05}
-              className={category.title === 'AI & LLM' ? 'lg:col-span-2' : ''}
+              className=""
             />
           ))}
         </div>

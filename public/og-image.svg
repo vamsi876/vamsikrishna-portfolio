@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+  <rect x="0" y="0" width="1200" height="6" fill="#27272a"/>
+  <rect x="0" y="624" width="1200" height="6" fill="#27272a"/>
+
+  <g transform="translate(80, 110)">
+    <text font-family="ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, monospace" font-size="18" fill="#71717a" letter-spacing="3">PORTFOLIO / 2026</text>
+  </g>
+
+  <g transform="translate(80, 200)">
+    <text font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="84" font-weight="700" fill="#fafafa" letter-spacing="-2">Vamsi Krishna</text>
+    <text y="100" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="84" font-weight="700" fill="#fafafa" letter-spacing="-2">Kollipara</text>
+  </g>
+
+  <g transform="translate(80, 430)">
+    <rect x="0" y="0" width="60" height="2" fill="#a1a1aa"/>
+    <text y="38" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="28" font-weight="500" fill="#a1a1aa">AI Full-Stack Engineer</text>
+    <text y="78" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="22" font-weight="400" fill="#71717a">React  ·  TypeScript  ·  Node.js  ·  Claude  ·  RAG</text>
+  </g>
+
+  <g transform="translate(80, 560)">
+    <text font-family="ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, monospace" font-size="18" fill="#52525b">vamsikrishnakollipara.vercel.app</text>
+  </g>
+
+  <g transform="translate(1050, 110)">
+    <rect x="0" y="0" width="70" height="70" fill="none" stroke="#27272a" stroke-width="2"/>
+    <text x="35" y="46" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, monospace" font-size="32" font-weight="700" fill="#fafafa">VK</text>
+  </g>
+</svg>
