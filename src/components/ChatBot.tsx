@@ -106,6 +106,9 @@ const portfolioInfo = {
   ]
 };
 
+const roleAt = (company: string) =>
+  portfolioInfo.experience.find((e) => e.company.includes(company)) ?? portfolioInfo.experience[0];
+
 // ChatBot with enhanced memory and conversation context
 const ChatBot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -254,24 +257,24 @@ Would you like more details about his Master's program or Bachelor's degree?`;
       if (input.includes('university') || input.includes('teaching') || input.includes('research assistant') ||
           ((conversationContext.mentionedEntities['university'] || conversationContext.mentionedEntities['voice']) && isFollowUp)) {
         
-        const exp = portfolioInfo.experience[0]; // Graduate assistant position
-        
+        const exp = roleAt('Indiana State University');
+
         return `Vamsi's experience as ${exp.title} at ${exp.company} (${exp.date}):
 
 ${exp.achievements.map((achievement, index) => `${index + 1}. ${achievement}`).join('\n')}
 
-This role involves developing AI solutions for educational technology, including voice assistants, automated grading systems, and conversational AI interfaces for student support.`;
+In this role he built a RAG knowledge assistant end-to-end over a curated 8,000-document corpus, open-sourced the crawler that fed it, and built internal web apps used by academic departments.`;
       }
       
       // If asking about data analyst role
       if (input.includes('data') || input.includes('analyst') || input.includes('cognizant')) {
-        const exp = portfolioInfo.experience[1]; // Data Analyst position
-        
-        return `Vamsi's experience as ${exp.title} at ${exp.company} (${exp.date}):
+        const exp = roleAt('Cognizant');
+
+        return `Vamsi's experience as ${exp.title} at ${exp.company} (${exp.date}) — client: Duke Energy:
 
 ${exp.achievements.map((achievement, index) => `${index + 1}. ${achievement}`).join('\n')}
 
-In this role, Vamsi worked with large-scale data processing and analytics systems, focusing on optimizing data workflows and implementing AI-driven analytics solutions.`;
+This was backend and API work over multi-million-row utility billing and metering data, serving a high-traffic customer self-service platform.`;
       }
       
       // General experience overview with chronological ordering
@@ -305,7 +308,7 @@ Would you like more details about a specific role?`;
 
 • ${portfolioInfo.skills.ai_llm.join(', ')}
 
-Vamsi has hands-on experience building RAG pipelines with LangChain and Pinecone, and integrating Anthropic Claude API for automated resume screening and natural-language insights. He's built production RAG systems serving university staff and healthcare operations.`;
+Vamsi owns a production LLM pipeline and the guardrails around it: retrieval, context management, schema-validated structured output so downstream code can trust the shape, per-user rate limiting, response caching, and human review before any output counts. He built the Claude + RAG chart-audit product over EHR records, and a RAG knowledge assistant over an 8,000-document corpus at Indiana State.`;
       }
       
       if (input.includes('programming') || input.includes('language') || input.includes('code') ||
@@ -317,7 +320,7 @@ Vamsi has hands-on experience building RAG pipelines with LangChain and Pinecone
 • Frontend: ${portfolioInfo.skills.frontend.join(', ')}
 • Backend: ${portfolioInfo.skills.backend.join(', ')}
 
-Vamsi is particularly proficient in TypeScript/JavaScript for full-stack web development and Python for AI/ML applications and open-source tools (3 PyPI packages published).`;
+Vamsi works primarily in TypeScript for API and frontend work and Python for data and LLM pipelines, plus 3 published PyPI packages.`;
       }
       
       if (input.includes('database') || input.includes('cloud') || input.includes('infrastructure') || input.includes('devops')) {
@@ -451,8 +454,8 @@ Would you like to know about his availability for new opportunities or collabora
       return `Vamsi has published 3 open-source packages on PyPI:
 
 1. GitBar (Mar 2026) - macOS menubar Git dashboard
-2. GadgetBox (Feb 2026) - Cross-platform developer utilities  
-3. WebWeaver (Sep 2024) - Web crawling library
+2. GadgetBox (Feb 2026) - Cross-platform developer utilities
+3. WebWeaver (Sep 2024) - Async web crawling library
 
 Would you like more details about any of these packages?`;
     }
@@ -481,10 +484,10 @@ Would you like more details about any of these packages?`;
 
     // Certifications - redirect to skills/experience
     if (input.includes('certification') || input.includes('certificate')) {
-      return `Vamsi's expertise comes from 2+ years of industry experience across healthcare and energy domains. He has:
+      return `Vamsi doesn't lead with certifications — his expertise comes from shipping production systems across healthcare and energy domains. He has:
 
-• Built full-stack applications with React, TypeScript, Node.js, and PostgreSQL
-• Shipped production systems at AI Data Management and Cognizant
+• Designed and shipped a multi-tenant platform end-to-end: GraphQL over Postgres, serverless functions, React, CI/CD to Vercel and AWS
+• Built delegated authorization over sensitive data: 8-role RBAC, database-enforced Row Level Security, JWT-verified endpoints, Azure AD SSO
 • Published 3 open-source packages on PyPI
 • Completed MS in Computer Science from Indiana State University (GPA 3.66)
 
@@ -504,7 +507,7 @@ Would you like more details about his skills or experience?`;
       }
       
       if (mostRecentTopic === 'skills') {
-        return `Regarding Vamsi's technical skills, his core expertise is in full-stack development with React, TypeScript, Node.js, and PostgreSQL. He also has hands-on AI integration experience with LangChain, Anthropic Claude API, and Pinecone.`;
+        return `Regarding Vamsi's technical skills, his core expertise is TypeScript and Python services, GraphQL and REST APIs over PostgreSQL and SQL Server, and production LLM pipelines on the Anthropic Claude API with RAG, LangChain, and Pinecone — deployed on AWS, Azure, Supabase, and Vercel.`;
       }
     }
 
@@ -514,7 +517,7 @@ Would you like more details about his skills or experience?`;
 You can ask me about:
 • His education (MS in Computer Science from Indiana State, BTech from Vel Tech)
 • Professional experience (Full-Stack Engineer at AI Data Management, Graduate Assistant at ISU, Programmer Analyst at Cognizant)
-• Technical skills (React, TypeScript, Node.js, PostgreSQL, Claude/LangChain/RAG, enterprise auth, Cloud)
+• Technical skills (TypeScript, Python, Node.js, GraphQL, PostgreSQL, Claude/RAG, authorization, AWS/Azure)
 • Open-source projects (3 PyPI packages: GitBar, GadgetBox, WebWeaver)
 • Contact information
 
