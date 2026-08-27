@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Download, ExternalLink } from 'lucide-react';
 import { useSpotlight } from '@/hooks/useSpotlight';
+import { summary } from '@/data/resume';
 
 const AboutCard: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { ref, spotlightStyle, handlers } = useSpotlight();
@@ -31,10 +32,10 @@ const About: React.FC = () => {
 
         <motion.div {...fadeUp} transition={{ delay: 0.05, duration: 0.5 }} className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
           {[
-            { label: 'Years Experience', value: '2+' },
+            { label: 'Years Experience', value: '4+' },
             { label: 'PyPI Packages', value: '3' },
             { label: 'Domains', value: '3' },
-            { label: 'Org Roles Served', value: '8' },
+            { label: 'Roles in RBAC Model', value: '8' },
           ].map((stat) => (
             <div key={stat.label} className="bg-card border border-[hsl(var(--card-border))] rounded-xl p-4 text-center">
               <div className="text-2xl font-bold text-primary">{stat.value}</div>
@@ -47,10 +48,8 @@ const About: React.FC = () => {
           <div className="space-y-6">
             <motion.div {...fadeUp} transition={{ delay: 0.1, duration: 0.5 }}>
               <div className="bg-card border border-[hsl(var(--card-border))] rounded-xl p-5">
-                <h3 className="text-xl font-bold text-foreground mb-3">AI Full-Stack Engineer</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  AI Full-Stack Engineer with 2+ years shipping production React/TypeScript frontends and Node.js/Express backends on PostgreSQL, Redis, and Azure. Built an enterprise CRM with calendar, email (Microsoft Graph), and Claude-powered conversation analysis serving 8 roles daily, plus a RAG knowledge assistant on Pinecone vector search. Strong on enterprise auth (OAuth 2.0, JWT, Azure AD SSO, Row-Level Security) and secure API design.
-                </p>
+                <h3 className="text-xl font-bold text-foreground mb-3">Full-Stack Engineer</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{summary}</p>
               </div>
             </motion.div>
 
@@ -58,11 +57,11 @@ const About: React.FC = () => {
               <h4 className="text-lg font-semibold text-foreground mb-3">Key Focus Areas</h4>
               <div className="flex flex-wrap gap-2">
                 {[
-                  'AI integration (Claude, LangChain, RAG)',
-                  'Pinecone vector search & embeddings',
-                  'Enterprise auth (OAuth 2.0, Azure AD SSO, RLS)',
-                  'Full-stack web development (React, Node.js)',
-                  'Microsoft Graph email integration',
+                  'APIs other teams build on (GraphQL, REST)',
+                  'Delegated authorization (RBAC, Row Level Security)',
+                  'Production LLM pipelines with guardrails',
+                  'RAG and retrieval over regulated data',
+                  'ELT pipelines and data integration',
                   'Open-source developer tools (PyPI)',
                 ].map((area) => (
                   <span key={area} className="text-xs px-3 py-1.5 rounded-md bg-secondary border border-[hsl(var(--card-border))] text-muted-foreground">
@@ -75,7 +74,7 @@ const About: React.FC = () => {
             <motion.div {...fadeUp} transition={{ delay: 0.3, duration: 0.5 }}>
               <h4 className="text-lg font-semibold text-foreground mb-3">Current Work</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                At AIDM Software Consultancy, I architected an enterprise operations platform on Node.js/Express services and Supabase Postgres consolidating CRM, applicant tracking, email campaigns, training/LMS, and analytics into one SPA used daily across 8 organizational roles. Designed LLM-powered NLU on Anthropic Claude for résumé screening and conversation analysis, built an OpenAI Whisper audio-to-notes pipeline, and hardened the platform with OAuth 2.0 + Azure AD SSO, JWT-verified Edge Functions, and Postgres Row-Level Security.
+At AI Data Management I am the only engineer on client-facing products in HIPAA-regulated environments, owning them from discovery through production incident response. I shipped a multi-tenant platform end-to-end — GraphQL API over Postgres with serverless functions, a React frontend, GitHub Actions CI/CD to Vercel and AWS — built its delegated authorization model (8-role RBAC, database-enforced Row Level Security, JWT-verified endpoints, Azure AD SSO), and own the production Claude + RAG pipeline behind a chart-audit product that raised physician throughput from 10 to 30+ audits/day.
               </p>
             </motion.div>
 
@@ -101,12 +100,12 @@ const About: React.FC = () => {
                 <h4 className="text-lg font-semibold text-foreground mb-4">Education</h4>
                 <div className="space-y-4">
                   <div>
-                    <h5 className="font-medium text-foreground">Masters in Computer Science</h5>
+                    <h5 className="font-medium text-foreground">M.S. Computer Science</h5>
                     <p className="text-xs text-muted-foreground">Indiana State University — Terre Haute, IN</p>
                     <p className="text-xs text-muted-foreground">Aug 2023 – May 2025 | GPA: 3.66/4.0</p>
                   </div>
                   <div>
-                    <h5 className="font-medium text-foreground">B.Tech in Electronics & Communication</h5>
+                    <h5 className="font-medium text-foreground">B.Tech Electronics &amp; Communication Engineering</h5>
                     <p className="text-xs text-muted-foreground">Vel Tech University — Chennai, India</p>
                     <p className="text-xs text-muted-foreground">Jun 2018 – May 2022 | GPA: 9.01/10</p>
                   </div>
@@ -119,9 +118,9 @@ const About: React.FC = () => {
                 <h4 className="text-lg font-semibold text-foreground mb-4">Open Source — PyPI Packages</h4>
                 <div className="space-y-3">
                   {[
-                    { name: 'GitBar', desc: 'Unified menubar dashboard for PRs, issues, CI/CD', url: 'https://pypi.org/project/gitbar/' },
+                    { name: 'GitBar', desc: 'Menubar Git dashboard for PRs, issues, CI status', url: 'https://pypi.org/project/gitbar/' },
                     { name: 'GadgetBox', desc: 'System tray app with 12 dev utilities', url: 'https://pypi.org/project/gadgetbox/' },
-                    { name: 'WebWeaver', desc: 'Async web crawling with robots.txt compliance', url: 'https://pypi.org/project/WebWeaver/' },
+                    { name: 'WebWeaver', desc: 'Async crawling with robots.txt compliance', url: 'https://pypi.org/project/WebWeaver/' },
                   ].map((pkg) => (
                     <div key={pkg.name}>
                       <h5 className="font-medium text-foreground">{pkg.name}</h5>

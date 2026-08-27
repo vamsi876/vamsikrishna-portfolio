@@ -8,7 +8,7 @@ import { useDocumentMeta } from '@/hooks/useDocumentMeta';
 const ProjectsPage: React.FC = () => {
   useDocumentMeta({
     title: 'Projects — Vamsi Krishna Kollipara | GitBar, GadgetBox, WebWeaver, RAG, Claude NLU',
-    description: 'Open-source projects and production work by Vamsi Krishna Kollipara: 3 PyPI packages (GitBar, GadgetBox, WebWeaver), enterprise CRM with Claude-powered NLU, and a Pinecone RAG knowledge assistant.',
+    description: 'Open-source projects and production work by Vamsi Krishna Kollipara: 3 PyPI packages (GitBar, GadgetBox, WebWeaver), a multi-tenant GraphQL platform, a Claude + RAG chart-audit product, and a Pinecone RAG knowledge assistant.',
     path: '/projects',
     breadcrumbs: [
       { name: 'Home', path: '/' },

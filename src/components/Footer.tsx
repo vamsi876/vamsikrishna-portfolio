@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
           <div>
             <h2 className="text-sm font-semibold text-foreground mb-3">Vamsi Krishna Kollipara</h2>
             <p className="text-xs text-muted-foreground leading-relaxed">
-              AI Full-Stack Engineer building React, TypeScript, Node.js, and Claude-powered applications.
+              Full-Stack Engineer building APIs, authorization systems, and LLM pipelines in TypeScript and Python.
             </p>
           </div>
 

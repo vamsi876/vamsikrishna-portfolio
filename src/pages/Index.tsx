@@ -7,8 +7,8 @@ import { useDocumentMeta } from '@/hooks/useDocumentMeta';
 
 const Index: React.FC = () => {
   useDocumentMeta({
-    title: 'Vamsi Krishna Kollipara — AI Full-Stack Engineer (React, TypeScript, Node.js, Claude, RAG)',
-    description: 'Portfolio of Vamsi Krishna Kollipara — AI Full-Stack Engineer with 2+ years building React/TypeScript and Node.js production systems. Claude-powered NLU, Pinecone RAG, enterprise auth. Author of 3 PyPI packages.',
+    title: 'Vamsi Krishna Kollipara — Full-Stack Engineer (React, TypeScript, Node.js, Claude, RAG)',
+    description: 'Portfolio of Vamsi Krishna Kollipara — full-stack engineer building APIs other teams depend on, delegated authorization over sensitive data, and production LLM pipelines with guardrails. TypeScript, Python, GraphQL, Claude, RAG. Author of 3 PyPI packages.',
     path: '/',
   });
   return (

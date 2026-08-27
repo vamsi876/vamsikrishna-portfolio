@@ -7,8 +7,8 @@ import { useDocumentMeta } from '@/hooks/useDocumentMeta';
 
 const ResumePage: React.FC = () => {
   useDocumentMeta({
-    title: 'Resume — Vamsi Krishna Kollipara, AI Full-Stack Engineer',
-    description: 'Resume of Vamsi Krishna Kollipara — AI Full-Stack Engineer experienced in React, TypeScript, Node.js, Anthropic Claude, LangChain, RAG, and enterprise auth. Download PDF or view inline.',
+    title: 'Resume — Vamsi Krishna Kollipara, Full-Stack Engineer',
+    description: 'Resume of Vamsi Krishna Kollipara — Full-Stack Engineer experienced in TypeScript, Python, Node.js, GraphQL, PostgreSQL, Anthropic Claude, RAG, and delegated authorization. Download PDF or view inline.',
     path: '/resume',
     breadcrumbs: [
       { name: 'Home', path: '/' },

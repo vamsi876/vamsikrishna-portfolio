@@ -5,6 +5,7 @@ import { Mail, FileText, ChevronDown } from 'lucide-react';
 import { useTypewriter } from '@/hooks/useTypewriter';
 import { useMagnetic } from '@/hooks/useMagnetic';
 import { useSpotlight } from '@/hooks/useSpotlight';
+import { shortBio } from '@/data/resume';
 
 const BentoCard: React.FC<{
   to: string;
@@ -51,7 +52,7 @@ const Hero: React.FC = () => {
   const ctaMagnetic = useMagnetic(0.2);
   const resumeMagnetic = useMagnetic(0.2);
 
-  const bioWords = 'AI Full-Stack Engineer with 2+ years shipping production React/TypeScript frontends and Node.js/Express backends. Built enterprise CRM with Claude-powered NLU and a Pinecone RAG knowledge assistant.'.split(' ');
+  const bioWords = shortBio.split(' ');
 
   return (
     <section className="min-h-screen pt-28 pb-20 px-6 md:px-12 lg:px-24">
@@ -64,7 +65,7 @@ const Hero: React.FC = () => {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground leading-[1.1] mb-4">
-            <span className="sr-only">Vamsi Krishna Kollipara — AI Full-Stack Engineer</span>
+            <span className="sr-only">Vamsi Krishna Kollipara — Full-Stack Engineer</span>
             <span aria-hidden="true">
               {displayText}
               {!isComplete && (
@@ -74,7 +75,7 @@ const Hero: React.FC = () => {
           </h1>
 
           <h2 className="text-xl md:text-2xl font-medium text-muted-foreground mb-6">
-            AI Full-Stack Engineer
+            Full-Stack Engineer
           </h2>
 
           <p className="text-muted-foreground max-w-xl mb-8">
@@ -148,7 +149,7 @@ const Hero: React.FC = () => {
             }
           >
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Architected an enterprise operations platform on Supabase Postgres serving 8 roles daily. Built Claude-powered NLU, a Pinecone RAG assistant, OAuth 2.0 + Azure AD SSO, and Microsoft Graph email integration.
+Sole engineer on a multi-tenant platform in HIPAA-regulated environments: GraphQL API over Postgres, delegated RBAC enforced at the database layer, and a production Claude + RAG pipeline with guardrails around it.
             </p>
           </BentoCard>
 
@@ -158,14 +159,14 @@ const Hero: React.FC = () => {
             delay={0.15}
             hoverContent={
               <div className="flex flex-col gap-1">
-                <span className="text-xs text-muted-foreground">AIDM Software</span>
+                <span className="text-xs text-muted-foreground">AI Data Management</span>
                 <span className="text-xs text-muted-foreground">Indiana State University</span>
                 <span className="text-xs text-muted-foreground">Cognizant</span>
               </div>
             }
           >
-            <div className="text-4xl font-bold text-foreground">2+</div>
-            <div className="text-sm text-muted-foreground">years industry experience</div>
+            <div className="text-4xl font-bold text-foreground">4+</div>
+            <div className="text-sm text-muted-foreground">years building software</div>
           </BentoCard>
 
           <BentoCard
@@ -173,11 +174,11 @@ const Hero: React.FC = () => {
             label="SKILLS"
             delay={0.2}
             hoverContent={
-              <div className="text-xs text-primary">View all 7 categories &rarr;</div>
+              <div className="text-xs text-primary">View all categories &rarr;</div>
             }
           >
             <div className="flex flex-wrap gap-1.5">
-              {['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Claude', 'LangChain', 'Pinecone', 'Azure'].map((skill) => (
+              {['TypeScript', 'Python', 'Node.js', 'GraphQL', 'PostgreSQL', 'Claude API', 'RAG', 'AWS'].map((skill) => (
                 <span key={skill} className="text-xs px-2.5 py-1 rounded-md bg-secondary border border-[hsl(var(--card-border))] text-muted-foreground">
                   {skill}
                 </span>
@@ -225,9 +226,9 @@ const Hero: React.FC = () => {
           >
             <div className="flex items-center gap-4 overflow-x-auto py-2">
               {[
-                { company: 'Cognizant', role: 'Full-Stack Developer', date: 'Jan 2022 – Jul 2023', active: false },
-                { company: 'Indiana State University', role: 'Research & Teaching Assistant', date: 'Aug 2023 – May 2025', active: false },
-                { company: 'AIDM Software', role: 'AI Full-Stack Engineer', date: 'Jul 2025 – Present', active: true },
+                { company: 'Cognizant', role: 'Programmer Analyst, Full-Stack', date: 'Jan 2022 – Jul 2023', active: false },
+                { company: 'Indiana State University', role: 'Graduate Assistant', date: 'Aug 2023 – May 2025', active: false },
+                { company: 'AI Data Management', role: 'Full-Stack Engineer (Forward-Deployed)', date: 'Jul 2025 – Present', active: true },
               ].map((job, i) => (
                 <div key={i} className="flex items-center gap-4 flex-shrink-0">
                   {i > 0 && <div className="w-12 h-px bg-[hsl(var(--card-border))]" />}

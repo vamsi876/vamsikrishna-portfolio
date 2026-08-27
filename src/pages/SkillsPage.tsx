@@ -8,7 +8,7 @@ import { useDocumentMeta } from '@/hooks/useDocumentMeta';
 const SkillsPage: React.FC = () => {
   useDocumentMeta({
     title: 'Skills — Vamsi Krishna Kollipara | React, TypeScript, Node.js, Claude, LangChain, RAG',
-    description: 'Technical skills of Vamsi Krishna Kollipara: React, TypeScript, Node.js, Python, PostgreSQL, Anthropic Claude, LangChain, Pinecone vector search, OAuth 2.0, Azure AD SSO, AWS, Vercel.',
+    description: 'Technical skills of Vamsi Krishna Kollipara: TypeScript, JavaScript, Python, SQL, Node.js, GraphQL, REST, PostgreSQL, SQL Server, Anthropic Claude API, RAG, LangChain, Pinecone, AWS, Azure, Supabase, Vercel, React, Next.js, Tailwind CSS.',
     path: '/skills',
     breadcrumbs: [
       { name: 'Home', path: '/' },

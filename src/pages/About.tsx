@@ -7,8 +7,8 @@ import { useDocumentMeta } from '@/hooks/useDocumentMeta';
 
 const AboutPage: React.FC = () => {
   useDocumentMeta({
-    title: 'About Vamsi Krishna Kollipara — AI Full-Stack Engineer',
-    description: 'About Vamsi Krishna Kollipara: 2+ years building React/TypeScript and Node.js production systems. Claude-powered NLU, Pinecone RAG, OAuth 2.0 + Azure AD SSO. MS in Computer Science.',
+    title: 'About Vamsi Krishna Kollipara — Full-Stack Engineer',
+    description: 'About Vamsi Krishna Kollipara: full-stack engineer, sole engineer on client-facing products in HIPAA-regulated environments. GraphQL over Postgres, delegated RBAC and Row Level Security, Claude + RAG pipelines. MS in Computer Science.',
     path: '/about',
     breadcrumbs: [
       { name: 'Home', path: '/' },

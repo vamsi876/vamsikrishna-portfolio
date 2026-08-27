@@ -7,8 +7,8 @@ import { useDocumentMeta } from '@/hooks/useDocumentMeta';
 
 const ExperiencePage: React.FC = () => {
   useDocumentMeta({
-    title: 'Experience — Vamsi Krishna Kollipara, AI Full-Stack Engineer',
-    description: 'Professional experience of Vamsi Krishna Kollipara — AI Full-Stack Engineer at AIDM Software, Graduate Assistant at Indiana State University, Full-Stack Developer at Cognizant.',
+    title: 'Experience — Vamsi Krishna Kollipara, Full-Stack Engineer',
+    description: 'Professional experience of Vamsi Krishna Kollipara — Full-Stack Engineer (Forward-Deployed) at AI Data Management, Graduate Assistant at Indiana State University, Programmer Analyst at Cognizant (client: Duke Energy).',
     path: '/experience',
     breadcrumbs: [
       { name: 'Home', path: '/' },

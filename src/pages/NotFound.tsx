@@ -8,7 +8,7 @@ const NotFound = () => {
 
   useDocumentMeta({
     title: '404 — Page Not Found | Vamsi Krishna Kollipara',
-    description: 'The page you are looking for does not exist. Return to the homepage of Vamsi Krishna Kollipara, AI Full-Stack Engineer.',
+    description: 'The page you are looking for does not exist. Return to the homepage of Vamsi Krishna Kollipara, Full-Stack Engineer.',
     path: location.pathname,
   });
 
