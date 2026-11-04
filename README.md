@@ -12,7 +12,7 @@ A modern, responsive portfolio website built with cutting-edge web technologies.
 - React Router - For client-side routing
 - Framer Motion - For smooth animations
 - React Query - For efficient data fetching
-- Recharts - For data visualization
+- Recharts For data visualization
 
 ## Getting Started
 
